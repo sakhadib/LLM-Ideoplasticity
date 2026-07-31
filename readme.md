@@ -108,12 +108,20 @@ A tenth subject, GPT-OSS-120B, appears only in the JBS audit and is excluded fro
 
 ## Results at a glance
 
-The year-specific hulls make the central global result visible: across all three projection spaces, the evaluated LLM cohort occupies a substantially narrower region than the European party reference set. Select the image for the full-resolution figure.
+<p align="center">
+  <a href="images/polytope_combined_compressed.gif">
+    <img src="images/polytope_combined_compressed.gif" alt="Rotating three-dimensional convex hulls comparing European political parties with the pooled nine-model LLM cohort across the 2009, 2014, and 2019 VAA–CHES projection spaces" width="600">
+  </a>
+  <br>
+  <sub><strong>Aggregate Overton geometry across 2009, 2014, and 2019.</strong> The outer reference hull spans the central 90% of European party positions in the shared CHES space, while the smaller inner hull encloses the central 90% of pooled coordinates from the nine evaluated LLMs. Their volumetric gap visualizes the paper’s central finding: substantial local context sensitivity within a globally compressed ideological envelope.</sub>
+</p>
 
 <p align="center">
-  <a href="images/temporal_stability_algo_monoculture_polytopes.png">
-    <img src="images/temporal_stability_algo_monoculture_polytopes.png" alt="European party and evaluated-LLM convex hulls across the 2009, 2014, and 2019 projection spaces" width="680">
+  <a href="images/polytope_separate_compressed.gif">
+    <img src="images/polytope_separate_compressed.gif" alt="Rotating year-specific convex hulls comparing European political parties with the pooled nine-model LLM cohort in the 2009, 2014, and 2019 VAA–CHES projection spaces" width="900">
   </a>
+  <br>
+  <sub><strong>Temporal stability of algorithmic monoculture.</strong> The rotating three-dimensional views show the 2009, 2014, and 2019 projections in the rescaled <code>lrgen</code>–<code>lrecon</code>–<code>galtan</code> CHES space. In each year, the expansive outer cyan hull encloses the central 90% of European party coordinates, while the compressed inner purple hull encloses the central 90% of pooled coordinates from the nine evaluated LLMs. The party geometry shifts across electoral contexts, but the model envelope remains consistently narrow.</sub>
 </p>
 
 The per-model summary below consolidates PSS, PIS, RSS, JBS, LDS, DS, IAS, and OW, making it easier to compare local context sensitivity with each model’s aggregate ideological envelope.
