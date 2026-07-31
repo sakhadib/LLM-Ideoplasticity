@@ -28,9 +28,11 @@ $$
 rather than as a single, fixed ideological coordinate. The framework projects model responses into a shared European political space and measures how those coordinates change with prompt register, paraphrase, reasoning, language, conversational pressure, and argumentative role.
 
 <p align="center">
-  <a href="images/algo_monoculture_teaser.png">
-    <img src="images/algo_monoculture_teaser.png" alt="Comparison of European political-party and evaluated-LLM ideological contours in VAA–CHES space" width="420">
+  <a href="images/algo_monoculture_teaser_animated.gif">
+    <img src="images/algo_monoculture_teaser_animated.gif" alt="Rotating three-dimensional contour comparison of cyan European Parliament party positions and magenta evaluated-LLM positions in VAA–CHES space" width="900">
   </a>
+  <br>
+  <sub><strong>Figure 1 — Evidence of Algorithmic Monoculture.</strong> Rotating three-dimensional contour plots in VAA–CHES space: $\color{#d946ef}{\textsf{\mathbf{Magenta}}}$ represents the evaluated LLMs, while $\color{#06b6d4}{\textsf{\mathbf{Cyan}}}$ represents European Parliament parties. The volumetric disparity visualizes the severe compression of the models’ ideological space relative to human political diversity.</sub>
 </p>
 
 ## Key findings
