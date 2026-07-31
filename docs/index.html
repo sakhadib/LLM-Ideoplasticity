@@ -8,20 +8,20 @@
 <meta name="keywords" content="LLM, ideology, political behavior, VAA, CHES, ideological plasticity, AI evaluation, empirical study" />
 <meta name="author" content="Adib Sakhawat, Syed Rifat Raiyan, Tahsin Islam, Takia Farhin, Hasan Mahmud, Md Kamrul Hasan" />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://your-domain.com/" />
+<link rel="canonical" href="https://sakhadib.github.io/LLM-Ideoplasticity/" />
 
 <meta property="og:title" content="LLM-Ideoplasticity — Measuring Ideological Plasticity in LLMs" />
 <meta property="og:description" content="Empirical evidence that LLM ideology is a conditional distribution across context, measured via VAA–CHES projection across six axes." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://your-domain.com/" />
-<meta property="og:image" content="https://your-domain.com/asset/f1.svg" />
+<meta property="og:url" content="https://sakhadib.github.io/LLM-Ideoplasticity/" />
+<meta property="og:image" content="https://sakhadib.github.io/LLM-Ideoplasticity/asset/f1.svg" />
 <meta property="og:image:alt" content="Algorithmic Monoculture teaser visualization" />
 <meta property="og:site_name" content="LLM-Ideoplasticity" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="LLM-Ideoplasticity — Measuring Ideological Plasticity in LLMs" />
 <meta name="twitter:description" content="Empirical study of ideological plasticity in LLMs across context axes using VAA–CHES projections." />
-<meta name="twitter:image" content="https://your-domain.com/asset/f1.svg" />
+<meta name="twitter:image" content="https://sakhadib.github.io/LLM-Ideoplasticity/asset/f1.svg" />
 <meta name="twitter:image:alt" content="Algorithmic Monoculture teaser visualization" />
 
 <script type="application/ld+json">
@@ -38,9 +38,9 @@
     { "@type": "Person", "name": "Hasan Mahmud" },
     { "@type": "Person", "name": "Md Kamrul Hasan" }
   ],
-  "datePublished": "2026-05-25",
-  "url": "https://your-domain.com/",
-  "image": "https://your-domain.com/asset/f1.svg",
+  "datePublished": "2026",
+  "url": "https://sakhadib.github.io/LLM-Ideoplasticity/",
+  "image": "https://sakhadib.github.io/LLM-Ideoplasticity/asset/f1.svg",
   "publisher": {
     "@type": "Organization",
     "name": "LLM-Ideoplasticity"
@@ -273,17 +273,17 @@
       <span class="font-mono text-xs tracking-widest text-neutral-700 uppercase">LLM-Ideoplasticity</span>
     </div>
     <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-neutral-600">
-      <a href="#abstract" class="hover:text-black">Abstract</a>
-      <a href="#hypothesis" class="hover:text-black">Hypothesis</a>
-      <a href="#pipeline" class="hover:text-black">Pipeline</a>
-      <a href="#metrics" class="hover:text-black">Metrics</a>
-      <a href="#setup" class="hover:text-black">Setup</a>
+      <a href="#overview" class="hover:text-black">Overview</a>
+      <a href="#framework" class="hover:text-black">Framework</a>
+      <a href="#coordinate-system" class="hover:text-black">VAA-CHES</a>
+      <a href="#cohort" class="hover:text-black">Models</a>
       <a href="#results" class="hover:text-black">Results</a>
-      <a href="#discussion" class="hover:text-black">Discussion</a>
+      <a href="#repository" class="hover:text-black">Repository</a>
+      <a href="#scope" class="hover:text-black">Scope</a>
     </nav>
     <div class="flex items-center gap-2">
-      <a href="#" class="tag hover:border-neutral-400">PDF</a>
-      <a href="#" class="tag hover:border-neutral-400">Code</a>
+      <a href="https://arxiv.org/pdf/2606.28335" class="tag hover:border-neutral-400">PDF</a>
+      <a href="https://github.com/sakhadib/LLM-Ideoplasticity" class="tag hover:border-neutral-400">Code</a>
     </div>
   </div>
 </header>
@@ -302,7 +302,7 @@
   </div>
 
   <div class="relative max-w-5xl mx-auto px-6 pt-20 pb-14 text-center">
-    <div class="flex justify-center gap-2 mb-6">
+    <div class="flex justify-center gap-2 mb-6 flex-wrap">
       <span class="tag">Empirical Study</span>
       <span class="tag">LLM Evaluation</span>
       <span class="tag">Political Behavior</span>
@@ -310,35 +310,35 @@
 
     <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] tracking-tight">
       <span class="block">LLM-Ideoplasticity:</span>
-      <span class="block mt-2 hl-lilac mt-3">Measuring Ideological Plasticity</span>
-      <span class="block mt-1 text-neutral-700 text-2xl sm:text-3xl md:text-4xl font-normal italic mt-3">
+      <span class="block mt-3 hl-lilac">Measuring Ideological Plasticity</span>
+      <span class="block mt-3 text-neutral-700 text-2xl sm:text-3xl md:text-4xl font-normal italic">
         in the political behavior of LLMs as a context-conditioned distribution
       </span>
     </h1>
 
     <p class="mt-8 max-w-2xl mx-auto text-neutral-600 text-base leading-relaxed">
-      We argue, with systematic empirical evidence, that an LLM's political ideology is not a fixed point but a
-      <em class="text-neutral-900 not-italic font-medium">conditional distribution</em>
-      over a real political space.
+      This project measures an LLM's expressed political position as
+      <em class="text-neutral-900 not-italic font-medium">$\mathbb{P}(\text{position}\mid\text{context})$</em>,
+      not as one fixed ideological coordinate.
     </p>
 
-    <div class="flex justify-center gap-4 mt-10">
-      <a href="#" class="inline-flex items-center gap-2 px-6 py-3 border border-neutral-900 text-neutral-900 hover:bg-neutral-50 transition-colors">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+    <div class="flex justify-center gap-4 mt-10 flex-wrap">
+      <a href="https://github.com/sakhadib/LLM-Ideoplasticity" class="inline-flex items-center gap-2 px-6 py-3 border border-neutral-900 text-neutral-900 hover:bg-neutral-50 transition-colors">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
         </svg>
         GitHub
       </a>
 
-      <a href="#" class="inline-flex items-center gap-2 px-6 py-3 border border-neutral-900 text-neutral-900 hover:bg-neutral-50 transition-colors">
+      <a href="https://arxiv.org/abs/2606.28335" class="inline-flex items-center gap-2 px-6 py-3 border border-neutral-900 text-neutral-900 hover:bg-neutral-50 transition-colors">
         <img src="arxiv-logo.png" alt="arXiv" style="width: 40px;">
       </a>
 
-      <a href="#" class="inline-flex items-center gap-2 px-6 py-3 border border-neutral-900 text-neutral-900 hover:bg-neutral-50 transition-colors">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/Runs" class="inline-flex items-center gap-2 px-6 py-3 border border-neutral-900 text-neutral-900 hover:bg-neutral-50 transition-colors">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 16h-4l-3 3-3-3H5V4h14v14zm-6-7h2v2h-2zm0-4h2v2h-2zm-4 0h2v2H9zm0 4h2v2H9z"/>
         </svg>
-        Dataset
+        Artifacts
       </a>
     </div>
   </div>
@@ -363,629 +363,202 @@
       Islamic University of Technology, Dhaka, Bangladesh
     </p>
     <p class="mt-3 font-mono text-xs text-neutral-500">
-      {adibsakhawat, tahsinislam, takiafarhin, rifatraiyan, hasan, hasank}@iut-dhaka.edu
+      {adibsakhawat, rifatraiyan, tahsinislam, takiafarhin, hasan, hasank}@iut-dhaka.edu
     </p>
   </div>
 </section>
 
 <!-- ============================================================== -->
-<!-- TEASER FIGURE -->
+<!-- OVERVIEW -->
 <!-- ============================================================== -->
-<section class="max-w-6xl mx-auto px-6 pb-20">
+<section id="overview" class="max-w-6xl mx-auto px-6 pb-20">
   <div class="card p-6 md:p-10 tint-cyan">
-    <div class="grid md:grid-cols-2 gap-6 items-center">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
       <div>
-        <img src="asset/f1.svg" alt="Algorithmic Monoculture — Top panel"
-             class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-72&quot;>asset/teaser12_panelB_smallpdf-pages-2.svg — top teaser panel (CHES space, European parties)</div>'">
+        <div class="section-num mb-3">// Overview</div>
+        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">From a point to a distribution</h2>
+        <div class="prose-academic text-neutral-800 text-[1.02rem] leading-[1.8] text-justify">
+          <p>
+            The paper argues that an LLM's expressed political position is better modeled as a context-conditioned
+            distribution rather than a single, fixed ideological coordinate. The framework projects model responses
+            into a shared European political space and measures how those coordinates move with prompt register,
+            paraphrase, reasoning, language, conversational pressure, and argumentative role.
+          </p>
+          <div class="eqn-box my-4">
+            $$\mathbb{P}(\text{position}\mid\text{context})$$
+          </div>
+          <p>
+            The result is a geometry of political behavior: local context can move models substantially, yet the pooled
+            model cohort remains compressed relative to European party diversity.
+          </p>
+        </div>
       </div>
       <div>
-        <img src="asset/f1-2.svg" alt="Algorithmic Monoculture — Bottom panel"
-             class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-72&quot;>asset/teaser12_panelB_smallpdf-pages-1.svg — bottom teaser panel (LLM cohort)</div>'">
+        <img src="asset/f1.svg" alt="Comparison of European political-party and evaluated-LLM ideological contours in VAA-CHES space" class="w-full">
+        <img src="asset/f1-2.svg" alt="Evaluated LLM ideological contours in VAA-CHES space" class="w-full mt-4">
       </div>
     </div>
     <div class="caption">
-      <b>Figure 1. Evidence of Algorithmic Monoculture.</b> 3D contour plots in VAA-CHES space:
-      <span style="color:#00B8D4;font-weight:600">cyan</span> for European Parliament parties,
-      <span style="color:#B084FF;font-weight:600">magenta</span> for the evaluated LLMs.
-      The volumetric disparity visualizes the severe compression of the model's ideological space
-      <em>vis-à-vis</em> human political diversity.
+      <b>Algorithmic monoculture teaser.</b> Cyan contours show European Parliament parties; magenta contours show the evaluated LLM cohort.
     </div>
   </div>
 </section>
 
 <!-- ============================================================== -->
-<!-- HYPOTHESIS -->
-<!-- ============================================================== -->
-<section id="hypothesis" class="max-w-5xl mx-auto px-6 py-16">
-  <div class="section-num mb-3">// Central Thesis</div>
-  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-8">Hypothesis</h2>
-
-  <div class="card p-8 md:p-12 tint-lilac">
-    <p class="pull-quote text-neutral-900">
-      LLM political ideology is more accurately modeled <span class="hl-lilac">not as a static point estimate</span>,
-      but as a <span class="hl-cyan">conditional distribution</span> over a bounded ideological space
-      $\mathcal{I} \subset \mathbb{R}^d$.
-    </p>
-
-    <div class="mt-6 text-neutral-700 leading-relaxed">
-      <p>
-        Formally, the model's stance is a random variable $\mathbf{p} \in \mathcal{I}$ conditioned on a multi-dimensional
-        context vector $\mathbf{c}$, such that:
-      </p>
-      <div class="eqn-box my-4">
-        $$\mathbf{p} \sim \mathbb{P}(\,\cdot\;|\;\mathbf{c}\,)$$
-      </div>
-      <p>
-        Evaluation must therefore shift from <em>point estimation</em> to <em>geometric characterization</em>. By
-        decomposing the context space into a product of operationally distinct axes
-        $\mathcal{C} = \mathcal{C}_1 \times \mathcal{C}_2 \times \cdots \times \mathcal{C}_k$, we can evaluate the
-        <strong>shape</strong> of this distribution by quantifying the ideological displacement induced by
-        perturbations along any single axis $c_i \in \mathcal{C}_i$.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================== -->
-<!-- ABSTRACT -->
-<!-- ============================================================== -->
-<section id="abstract" class="max-w-5xl mx-auto px-6 py-16">
-  <div class="section-num mb-3">// Abstract</div>
-  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-8">Abstract</h2>
-
-  <div class="prose-academic text-neutral-800 text-[1.02rem] leading-[1.8] w-full text-justify">
-    <p>
-      We argue, with systematic empirical evidence, that a large language model's political ideology is not a fixed
-      point, but a conditional distribution $\mathbb{P}(\text{position}\,|\,\text{context})$ over a real political space.
-      We evaluate <span class="hl-lilac">nine current LLMs</span> using a unified measurement framework anchored by VAA-CHES projection models,
-      which map responses onto three validated dimensions
-      (<span class="font-mono text-sm">lrgen</span>, <span class="font-mono text-sm">lrecon</span>, <span class="font-mono text-sm">galtan</span>)
-      across six contextual axes.
-    </p>
-    <p>
-      Our findings reveal high sensitivity to context: persuasive framing and under-represented languages displace
-      coordinates by up to <strong>0.57</strong> and <strong>0.52</strong> units, respectively, while chain-of-thought
-      reasoning often <em>amplifies</em> rather than dampens paraphrase instability. <span class="hl-cyan">Despite this local plasticity,
-      the model cohort occupies a remarkably narrow Overton envelope overall</span>, occupying roughly
-      <strong>one-third</strong> the spread of major European parties.
-    </p>
-    <p>
-      Supported by a multi-trait multi-method (MTMM) analysis, we conclude that a single point cannot summarize LLM
-      political behavior; it must be characterized as a <strong>shape</strong>.
-    </p>
-  </div>
-</section>
-
-<!-- ============================================================== -->
-<!-- HEADLINE NUMBERS -->
+<!-- KEY FINDINGS -->
 <!-- ============================================================== -->
 <section class="max-w-7xl mx-auto px-6 py-16">
-  <div class="section-num mb-3">// At a Glance</div>
-  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-10">Headline Numbers</h2>
+  <div class="section-num mb-3">// Key Findings</div>
+  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-10">Results at a Glance</h2>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
     <div class="card p-6 tint-cyan">
-      <div class="headline-num text-5xl text-neutral-900">9</div>
-      <div class="mt-3 text-sm text-neutral-700">Frontier LLMs evaluated across closed and open-weight families</div>
+      <div class="headline-num text-5xl text-neutral-900">0.5721</div>
+      <div class="mt-3 text-sm text-neutral-700">Maximum reported 2D PSS under prompt-register changes; 3D PSS reached 0.7272.</div>
     </div>
     <div class="card p-6 tint-lilac">
-      <div class="headline-num text-5xl text-neutral-900">6</div>
-      <div class="mt-3 text-sm text-neutral-700">Contextual axes decomposed into operationally distinct metrics</div>
+      <div class="headline-num text-5xl text-neutral-900">0.5150</div>
+      <div class="mt-3 text-sm text-neutral-700">Largest multilingual displacement under LDS.</div>
     </div>
     <div class="card p-6 tint-pink">
-      <div class="headline-num text-5xl text-neutral-900">0.57</div>
-      <div class="mt-3 text-sm text-neutral-700">Max coordinate displacement under persuasive framing (PSS)</div>
-    </div>
-    <div class="card p-6 tint-cyan">
-      <div class="headline-num text-5xl text-neutral-900">0.52</div>
-      <div class="mt-3 text-sm text-neutral-700">Max displacement under under-represented languages (LDS)</div>
-    </div>
-
-    <div class="card p-6 tint-lilac">
       <div class="headline-num text-5xl text-neutral-900">17<span class="text-2xl text-neutral-500">/27</span></div>
-      <div class="mt-3 text-sm text-neutral-700">Configurations where CoT reasoning <em>amplifies</em> paraphrase instability</div>
-    </div>
-    <div class="card p-6 tint-pink">
-      <div class="headline-num text-5xl text-neutral-900">~0.3</div>
-      <div class="mt-3 text-sm text-neutral-700">Cohort/CHES monoculture ratio — LLMs cover ⅓ of human political diversity</div>
+      <div class="mt-3 text-sm text-neutral-700">Model-year configurations where reasoning amplified paraphrase instability.</div>
     </div>
     <div class="card p-6 tint-cyan">
-      <div class="headline-num text-5xl text-neutral-900">83.3<span class="text-2xl">%</span></div>
-      <div class="mt-3 text-sm text-neutral-700">Variance explained by 3 latent factors in MTMM exploratory PCA</div>
+      <div class="headline-num text-5xl text-neutral-900">2.56<span class="text-2xl">%</span></div>
+      <div class="mt-3 text-sm text-neutral-700">Mean individual-model 3D hull coverage of the reference CHES party hull.</div>
     </div>
     <div class="card p-6 tint-lilac">
-      <div class="headline-num text-5xl text-neutral-900">1.43<span class="text-2xl">%</span></div>
-      <div class="mt-3 text-sm text-neutral-700">Global directional JBS — judge passes invariance precondition</div>
+      <div class="headline-num text-5xl text-neutral-900">20.53<span class="text-2xl">%</span></div>
+      <div class="mt-3 text-sm text-neutral-700">Mean 2D coverage in the <span class="font-mono">lrecon</span>-<span class="font-mono">galtan</span> plane.</div>
     </div>
+    <div class="card p-6 tint-pink">
+      <div class="headline-num text-5xl text-neutral-900">12.36<span class="text-2xl">%</span></div>
+      <div class="mt-3 text-sm text-neutral-700">Implied coverage along <span class="font-mono">lrgen</span>, showing anisotropic compression.</div>
+    </div>
+    <div class="card p-6 tint-cyan">
+      <div class="headline-num text-5xl text-neutral-900">0.29</div>
+      <div class="mt-3 text-sm text-neutral-700">Approximate inter-model to party-family centroid-distance ratio.</div>
+    </div>
+    <div class="card p-6 tint-lilac">
+      <div class="headline-num text-5xl text-neutral-900">83.30<span class="text-2xl">%</span></div>
+      <div class="mt-3 text-sm text-neutral-700">Variance explained by three exploratory PCA components; suggestive because n = 9.</div>
+    </div>
+  </div>
+
+  <div class="card overflow-x-auto">
+    <table class="results">
+      <thead><tr><th>Finding</th><th>Evidence from the evaluated cohort</th></tr></thead>
+      <tbody>
+        <tr><td>Context can move projected positions substantially.</td><td>Prompt register, language, and debate produced maximum shifts of 0.5721, 0.5150, and approximately 0.481.</td></tr>
+        <tr><td>Reasoning usually did not stabilize paraphrase variation.</td><td>CoT amplified instability in 17 of 27 model-year configurations; mean finite RSS was 1.92.</td></tr>
+        <tr><td>Local plasticity coexists with a narrow global envelope.</td><td>The widest model reached only 4.11% of the 3D CHES party hull.</td></tr>
+        <tr><td>The compression is anisotropic.</td><td>Coverage is broader in 2D than along the general left-right axis.</td></tr>
+        <tr><td>The metrics show shared but differentiated structure.</td><td>An exploratory cross-metric PCA yielded three components explaining 83.30% of variance.</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
 <!-- ============================================================== -->
-<!-- VAA & CHES BACKGROUND -->
+<!-- FRAMEWORK -->
 <!-- ============================================================== -->
-<section class="max-w-5xl mx-auto px-6 py-16">
-  <div class="section-num mb-3">// Foundational Instruments</div>
-  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-8">VAA &amp; CHES</h2>
+<section id="framework" class="max-w-6xl mx-auto px-6 py-16">
+  <div class="section-num mb-3">// Measurement Framework</div>
+  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-3">Eight Measures, Three Roles</h2>
+  <p class="text-neutral-600 w-full text-justify mb-10">
+    JBS audits the evaluator, six metrics isolate contextual axes, and OW summarizes the geometry obtained by pooling positional coordinates.
+  </p>
 
-  <div class="grid md:grid-cols-2 gap-6">
-    <div class="card p-7">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-2 h-8 rounded-sm" style="background:#00E5FF"></div>
-        <h3 class="font-display text-2xl font-medium">VAA</h3>
-      </div>
-      <p class="text-sm text-neutral-500 -mt-2 mb-3 font-medium">Voting Advice Applications</p>
-      <p class="text-neutral-700 leading-relaxed text-sm">
-        Public tools — like the EU Profiler and <span class="font-mono">euandi</span> — that ask voters and parties
-        to express agreement with 22–30 concrete policy statements on a five-point scale. Their natural-language
-        items closely parallel the input space of LLM prompting, making them an ideal probe.
-      </p>
-      <p class="text-neutral-700 leading-relaxed text-sm mt-3">
-        We use three waves: <span class="font-mono">2009</span>, <span class="font-mono">2014</span>,
-        and <span class="font-mono">2019</span>.
-      </p>
-    </div>
+  <div class="card p-6 md:p-10 flex justify-center items-center mb-8">
+    <img src="asset/f2.svg" alt="Operational pipeline from JBS through six contextual axes, VAA-CHES projection, and Overton Width" style="width: 400px;">
+  </div>
 
-    <div class="card p-7">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-2 h-8 rounded-sm" style="background:#C9B6FF"></div>
-        <h3 class="font-display text-2xl font-medium">CHES</h3>
-      </div>
-      <p class="text-sm text-neutral-500 -mt-2 mb-3 font-medium">Chapel Hill Expert Survey</p>
-      <p class="text-neutral-700 leading-relaxed text-sm">
-        Expert-coded ideological coordinates for European political parties on three validated dimensions:
-      </p>
-      <ul class="text-sm text-neutral-700 mt-3 space-y-1.5">
-        <li><span class="font-mono text-xs px-2 py-0.5 rounded bg-neutral-100">lrgen</span> General Left–Right</li>
-        <li><span class="font-mono text-xs px-2 py-0.5 rounded bg-neutral-100">lrecon</span> Economic Left–Right</li>
-        <li><span class="font-mono text-xs px-2 py-0.5 rounded bg-neutral-100">galtan</span> Green-Alternative-Libertarian vs. Traditional-Authoritarian-Nationalist</li>
-      </ul>
-    </div>
+  <div class="grid md:grid-cols-2 gap-5">
+    <div class="card p-6"><div class="flex items-baseline gap-3 mb-2"><span class="font-display text-3xl font-medium" style="color:#A47BFF">JBS</span><span class="tag">Evaluator audit</span></div><p class="text-sm text-neutral-600">Exact and directional instability across three option-order permutations.</p></div>
+    <div class="card p-6"><div class="flex items-baseline gap-3 mb-2"><span class="font-display text-3xl font-medium" style="color:#00B8D4">PSS</span><span class="tag">Prompt register</span></div><p class="text-sm text-neutral-600">Displacement under three altered registers relative to a neutral baseline.</p></div>
+    <div class="card p-6"><div class="flex items-baseline gap-3 mb-2"><span class="font-display text-3xl font-medium" style="color:#A47BFF">PIS</span><span class="tag">Surface form</span></div><p class="text-sm text-neutral-600">Mean coordinate dispersion across ten semantic paraphrases.</p></div>
+    <div class="card p-6"><div class="flex items-baseline gap-3 mb-2"><span class="font-display text-3xl font-medium" style="color:#FF8FA6">RSS</span><span class="tag">Reasoning</span></div><p class="text-sm text-neutral-600">Ratio of chain-of-thought-conditioned paraphrase dispersion to direct dispersion.</p></div>
+    <div class="card p-6"><div class="flex items-baseline gap-3 mb-2"><span class="font-display text-3xl font-medium" style="color:#00B8D4">LDS</span><span class="tag">Language</span></div><p class="text-sm text-neutral-600">Displacement between a target-language response and its English baseline.</p></div>
+    <div class="card p-6"><div class="flex items-baseline gap-3 mb-2"><span class="font-display text-3xl font-medium" style="color:#A47BFF">DS</span><span class="tag">Conversational pressure</span></div><p class="text-sm text-neutral-600">Endpoint drift, path length, tortuosity, and peak velocity over an eight-turn adversarial debate.</p></div>
+    <div class="card p-6"><div class="flex items-baseline gap-3 mb-2"><span class="font-display text-3xl font-medium" style="color:#FF8FA6">IAS</span><span class="tag">Argument role</span></div><p class="text-sm text-neutral-600">Judged quality difference when arguing for versus against the same proposition.</p></div>
+    <div class="card p-6"><div class="flex items-baseline gap-3 mb-2"><span class="font-display text-3xl font-medium" style="color:#00B8D4">OW</span><span class="tag">Aggregate geometry</span></div><p class="text-sm text-neutral-600">Convex-hull volume, surface area, and spread of the inner 90% of pooled coordinates.</p></div>
   </div>
 </section>
 
 <!-- ============================================================== -->
-<!-- VAA → CHES PROJECTION -->
+<!-- COORDINATE SYSTEM -->
 <!-- ============================================================== -->
-<section class="max-w-5xl mx-auto px-6 py-16">
-  <div class="section-num mb-3">// The Shared Coordinate System</div>
-  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-6">VAA → CHES Projection</h2>
+<section id="coordinate-system" class="max-w-5xl mx-auto px-6 py-16">
+  <div class="section-num mb-3">// Shared VAA-CHES Coordinate System</div>
+  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-8">Projection Instrument</h2>
 
   <div class="prose-academic text-neutral-800 leading-relaxed w-full text-justify">
     <p>
-      To project stance elicitations into a fixed ideological coordinate system, we train three
-      <strong>year-specific supervised regressors</strong> mapping party-level VAA responses to the three CHES
-      dimensions. Each pipeline uses a <strong>bagged ElasticNet</strong> ensemble inside a multi-output regressor,
-      with five-fold cross-validation. Targets are min–max rescaled to $[0,1]$ to ensure commensurability and
-      interpretable Euclidean distances across years.
-    </p>
-    <p>
-      We deliberately choose regularized linear estimation over more flexible learners: at $N \in [122, 153]$ parties
-      per year, gradient-boosted trees or deep regressors produce opaque, brittle fits. The estimators achieve
-      in-sample $R^2 \in [0.75,\,0.80]$. Because the projection is fixed across every condition, residual mapping
-      error acts as a <em>constant offset</em>; the relative ideological distances on which our metrics depend
-      remain robust.
-    </p>
-    <img src="asset/vaa_ches_pipeline.png" alt="" class="w-full mt-6 mb-6">
-    <p class="caption">
-    <b>Figure.</b> The operational pipeline for the projection models.
+      The shared coordinate system uses two public European party-position infrastructures: EU Profiler/euandi supplies issue-level VAA responses, while the Chapel Hill Expert Survey supplies target dimensions and reference party positions. Responses to 82 VAA statements are mapped onto three CHES dimensions rescaled to $[0,1]$.
     </p>
   </div>
 
-  <div class="mt-8 grid md:grid-cols-3 gap-4">
-    <div class="card p-5">
-      <div class="text-xs font-mono uppercase tracking-widest text-cyan-electric" style="color:#00B8D4">2009</div>
-      <div class="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 text-sm font-mono">
-        <div class="text-neutral-500">N</div><div>153</div>
-        <div class="text-neutral-500">features</div><div>30</div>
-        <div class="text-neutral-500">α</div><div>0.0219</div>
-        <div class="text-neutral-500">ℓ₁-ratio</div><div>0.4457</div>
-        <div class="text-neutral-500">CV MSE</div><div>0.0216</div>
-        <div class="text-neutral-500">R²</div><div>0.7512</div>
-      </div>
-    </div>
-    <div class="card p-5">
-      <div class="text-xs font-mono uppercase tracking-widest" style="color:#A47BFF">2014</div>
-      <div class="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 text-sm font-mono">
-        <div class="text-neutral-500">N</div><div>141</div>
-        <div class="text-neutral-500">features</div><div>30</div>
-        <div class="text-neutral-500">α</div><div>0.0202</div>
-        <div class="text-neutral-500">ℓ₁-ratio</div><div>0.5579</div>
-        <div class="text-neutral-500">CV MSE</div><div>0.0195</div>
-        <div class="text-neutral-500">R²</div><div>0.7548</div>
-      </div>
-    </div>
-    <div class="card p-5">
-      <div class="text-xs font-mono uppercase tracking-widest" style="color:#FF8FA6">2019</div>
-      <div class="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 text-sm font-mono">
-        <div class="text-neutral-500">N</div><div>122</div>
-        <div class="text-neutral-500">features</div><div>22</div>
-        <div class="text-neutral-500">α</div><div>0.0340</div>
-        <div class="text-neutral-500">ℓ₁-ratio</div><div>0.2702</div>
-        <div class="text-neutral-500">CV MSE</div><div>0.0174</div>
-        <div class="text-neutral-500">R²</div><div>0.8034</div>
-      </div>
-    </div>
-
+  <div class="grid md:grid-cols-3 gap-4 my-8">
+    <div class="card p-5 tint-cyan"><div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">lrgen</div><p class="text-sm text-neutral-700">General left-right.</p></div>
+    <div class="card p-5 tint-lilac"><div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">lrecon</div><p class="text-sm text-neutral-700">Economic left-right.</p></div>
+    <div class="card p-5 tint-pink"><div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">galtan</div><p class="text-sm text-neutral-700">Green/Alternative/Libertarian versus Traditional/Authoritarian/Nationalist.</p></div>
   </div>
-  <p class="caption">
-    <b>Table.</b> Per-year hyperparameters and projection model performance. Models are tuned via Optuna under
-    RepeatedKFold (5 splits × 10 repeats, 100 trials per year). The convergence of the 2019 model to
-    <span class="font-mono">n_estimators = 50</span> (search-space ceiling) suggests regularization, not
-    flexibility, is the binding constraint on this small-sample regime.
-  </p>
+
+  <img src="asset/vaa_ches_pipeline.png" alt="VAA-CHES operational pipeline" class="w-full mb-6">
 
   <div class="card overflow-x-auto mt-8">
     <table class="results">
-      <thead>
-        <tr>
-          <th>Metric / parameter</th>
-          <th>2009</th>
-          <th>2014</th>
-          <th>2019</th>
-        </tr>
-      </thead>
+      <thead><tr><th>VAA wave</th><th>Parties</th><th>VAA features</th><th>CV MSE</th><th>In-sample R²</th></tr></thead>
       <tbody>
-        <tr><td>Clean observations</td><td class="metric-cell">153</td><td class="metric-cell">141</td><td class="metric-cell">122</td></tr>
-        <tr><td>Effective VAA features</td><td class="metric-cell">30</td><td class="metric-cell">30</td><td class="metric-cell">22</td></tr>
-        <tr><td>Optuna alpha</td><td class="metric-cell">0.0219</td><td class="metric-cell">0.0202</td><td class="metric-cell">0.0340</td></tr>
-        <tr><td>L1 ratio</td><td class="metric-cell">0.4457</td><td class="metric-cell">0.5579</td><td class="metric-cell">0.2702</td></tr>
-        <tr><td>Bagged estimators</td><td class="metric-cell">38</td><td class="metric-cell">30</td><td class="metric-cell hl-pink">50</td></tr>
-        <tr><td>Cross-validated MSE</td><td class="metric-cell">0.0216</td><td class="metric-cell">0.0195</td><td class="metric-cell hl-cyan">0.0174</td></tr>
-        <tr><td>Final MSE</td><td class="metric-cell">0.0165</td><td class="metric-cell">0.0150</td><td class="metric-cell hl-cyan">0.0136</td></tr>
-        <tr><td>RMSE</td><td class="metric-cell">0.1284</td><td class="metric-cell">0.1225</td><td class="metric-cell hl-cyan">0.1167</td></tr>
-        <tr><td>MAE</td><td class="metric-cell">0.1006</td><td class="metric-cell">0.0973</td><td class="metric-cell hl-cyan">0.0934</td></tr>
-        <tr><td>R-squared</td><td class="metric-cell">0.7512</td><td class="metric-cell">0.7548</td><td class="metric-cell hl-pink">0.8034</td></tr>
+        <tr><td>2009</td><td class="metric-cell">153</td><td class="metric-cell">30</td><td class="metric-cell">0.0216</td><td class="metric-cell">0.7512</td></tr>
+        <tr><td>2014</td><td class="metric-cell">141</td><td class="metric-cell">30</td><td class="metric-cell">0.0195</td><td class="metric-cell">0.7548</td></tr>
+        <tr><td>2019</td><td class="metric-cell">122</td><td class="metric-cell">22</td><td class="metric-cell">0.0174</td><td class="metric-cell">0.8034</td></tr>
       </tbody>
     </table>
   </div>
   <p class="caption">
-    <b>Projection validation table.</b> The same deterministic exported model for each year is reused downstream, so
-    mapping error is a shared instrument bias. The site therefore emphasizes relative distances, dispersions, paths,
-    and hull volumes rather than treating any absolute coordinate as ground truth.
-  </p>
-</section>
-
-<!-- ============================================================== -->
-<!-- PIPELINE -->
-<!-- ============================================================== -->
-<section id="pipeline" class="max-w-6xl mx-auto px-6 py-16">
-  <div class="section-num mb-3">// Operational Workflow</div>
-  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-6">Full Pipeline</h2>
-
-  <p class="text-neutral-700 leading-relaxed text-justify w-full mb-8">
-    The conditional distribution $\mathbb{P}(\,\cdot\,|\,\mathbf{c})$ is gated by a Judge Bias Score (JBS) audit, then
-    decomposed into six contextual axes — Register (PSS), Paraphrase (PIS), Reasoning (RSS), Language (LDS),
-    Multi-Turn (DS), Argument Role (IAS) — projected via the VAA → CHES regressor onto
-    $\langle \texttt{lrgen}, \texttt{lrecon}, \texttt{galtan} \rangle$, and aggregated into the Overton Width (OW)
-    and final score.
+    Three year-specific bagged multi-output ElasticNet regressors provide the shared projection instrument. Keeping projection fixed makes relative displacement and dispersion the primary quantities of interest; absolute coordinates are instrument outputs, not ground-truth ideological labels. See <a href="https://arxiv.org/pdf/2606.28335" class="ul-link">Section 3.1 and Appendix B</a> for design and diagnostics.
   </p>
 
-  <div class="card p-6 md:p-10 flex justify-center items-center">
-    <img src="asset/f2.svg" alt="Operational pipeline"
-         style="width: 400px;" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-80&quot;>asset/IdeoPlasticityLLM_pipeline2.svg — operational pipeline diagram (JBS → 6 axes → VAA→CHES projection → OW + score)</div>'">
-  </div>
-  <div class="caption">
-    <b>Figure 2. Operational pipeline.</b> The conditional distribution is decomposed into six contextual axes, each
-    projected via VAA→CHES onto $\langle \texttt{lrgen}, \texttt{lrecon}, \texttt{galtan} \rangle$, then fed into the
-    aggregate Overton Width and final score calculation.
+  <div class="card p-7 tint-lilac mt-8">
+    <h3 class="font-display text-2xl font-medium mb-4">Data Foundation</h3>
+    <p class="text-sm text-neutral-700 leading-relaxed text-justify">
+      CHES is foundational to both the learned projection and the comparison between LLM breadth and European party breadth. The principal CHES trend-file source is Seth Jolly, Ryan Bakker, Liesbet Hooghe, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova, <a href="https://doi.org/10.1016/j.electstud.2021.102420" class="ul-link">Chapel Hill Expert Survey trend file, 1999-2019</a>. The project also builds on public VAA infrastructures described by <a href="https://doi.org/10.1016/j.dib.2020.105968" class="ul-link">Reiljan et al.</a> and <a href="https://doi.org/10.1080/19331681.2011.533533" class="ul-link">Trechsel and Mair</a>.
+    </p>
   </div>
 </section>
 
 <!-- ============================================================== -->
-<!-- METRIC DEFINITIONS -->
+<!-- COHORT -->
 <!-- ============================================================== -->
-<section id="metrics" class="max-w-6xl mx-auto px-6 py-16">
-  <div class="section-num mb-3">// Decomposing the Conditional Distribution</div>
-  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-3">Metric Definitions</h2>
-  <p class="text-neutral-600 w-full text-justify mb-10">
-    Eight metrics systematically decompose $\mathbb{P}(\text{position}\,|\,\text{context})$ across operationally
-    distinct contextual axes. Each metric is a different projection of the same underlying construct, validated
-    jointly via MTMM analysis.
-  </p>
+<section id="cohort" class="max-w-6xl mx-auto px-6 py-16">
+  <div class="section-num mb-3">// Evaluated Models and Judge</div>
+  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-8">Nine Subject Snapshots</h2>
 
-  <!-- Common setup -->
-  <div class="card p-7 mb-8">
-    <h4 class="font-mono text-xs uppercase tracking-widest text-neutral-500">Common notation</h4>
-    <p class="mt-3 text-sm text-neutral-700 leading-relaxed">
-      Let $\mathcal{M}$ denote the evaluated models, $\mathcal{S}$ the canonical policy statements, and
-      $\mathcal{P} \subset \mathbb{R}^3$ the CHES space. A projected stance is a vector
-      $\mathbf{p} = (x, y, z)$ corresponding to
-      $(\texttt{lrgen}, \texttt{lrecon}, \texttt{galtan})$. Euclidean distance is taken under the $L_2$ norm:
-    </p>
-    <div class="eqn-box">
-      $$d(\mathbf{u},\mathbf{v}) = \left[(u_\text{lrgen}-v_\text{lrgen})^2 + (u_\text{lrecon}-v_\text{lrecon})^2 + (u_\text{galtan}-v_\text{galtan})^2 \right]^{1/2}$$
-    </div>
-  </div>
-
-  <div class="grid md:grid-cols-2 gap-5">
-
-    <!-- PSS -->
-    <div class="card p-6">
-      <div class="flex items-baseline gap-3 mb-2">
-        <span class="font-display text-3xl font-medium" style="color:#00B8D4">PSS</span>
-        <span class="tag">Register</span>
-      </div>
-      <p class="text-sm text-neutral-600">3D Euclidean displacement induced by persuasive framing relative to a neutral baseline.</p>
-      <div class="eqn-box mt-3">
-        $$\text{PSS}(m,c,s) = d(\mathbf{p}_{m,c,s},\,\mathbf{p}_{m,c_0,s})$$
-      </div>
-    </div>
-
-    <!-- PIS -->
-    <div class="card p-6">
-      <div class="flex items-baseline gap-3 mb-2">
-        <span class="font-display text-3xl font-medium" style="color:#A47BFF">PIS</span>
-        <span class="tag">Surface form</span>
-      </div>
-      <p class="text-sm text-neutral-600">Mean coordinate dispersion across ten semantic paraphrases.</p>
-      <div class="eqn-box mt-3">
-        $$\boldsymbol{\mu}_{m,s} = \tfrac{1}{|V|}\sum_{v\in V}\mathbf{p}_{m,s,v}$$
-        $$\text{PIS}(m,s) = \tfrac{1}{|V|}\sum_{v\in V} d(\mathbf{p}_{m,s,v},\boldsymbol{\mu}_{m,s})$$
-      </div>
-    </div>
-
-    <!-- RSS -->
-    <div class="card p-6">
-      <div class="flex items-baseline gap-3 mb-2">
-        <span class="font-display text-3xl font-medium" style="color:#FF8FA6">RSS</span>
-        <span class="tag">Reasoning</span>
-      </div>
-      <p class="text-sm text-neutral-600">Ratio of paraphrase dispersion under chain-of-thought vs. direct response.</p>
-      <div class="eqn-box mt-3">
-        $$\text{RSS}(m,s) = \frac{\text{PIS}_\text{CoT}(m,s)}{\text{PIS}_\text{direct}(m,s)}$$
-      </div>
-      <p class="text-xs text-neutral-500 mt-2">If direct PIS is zero while CoT-PIS is non-zero, RSS diverges — indicating <em>de novo</em> variance injection by reasoning.</p>
-    </div>
-
-    <!-- LDS -->
-    <div class="card p-6">
-      <div class="flex items-baseline gap-3 mb-2">
-        <span class="font-display text-3xl font-medium" style="color:#00B8D4">LDS</span>
-        <span class="tag">Language</span>
-      </div>
-      <p class="text-sm text-neutral-600">Displacement between target-language and English-baseline responses.</p>
-      <div class="eqn-box mt-3">
-        $$\text{LDS}(m,\ell,s) = d(\mathbf{p}_{m,\ell,s},\,\mathbf{p}_{m,\ell_0,s})$$
-      </div>
-    </div>
-
-    <!-- DS -->
-    <div class="card p-6">
-      <div class="flex items-baseline gap-3 mb-2">
-        <span class="font-display text-3xl font-medium" style="color:#A47BFF">DS</span>
-        <span class="tag">Debate</span>
-      </div>
-      <p class="text-sm text-neutral-600">Eight-turn adversarial trajectory: net drift, path length, tortuosity, peak velocity.</p>
-      <div class="eqn-box mt-3">
-        $$\text{NetDrift} = d(\mathbf{p}^{(8)},\mathbf{p}^{(1)}), \quad \text{Path} = \sum_{t=1}^{7} d(\mathbf{p}^{(t+1)},\mathbf{p}^{(t)})$$
-        $$\text{Tort.} = \frac{\text{Path}}{\text{NetDrift}}, \quad \text{PeakVel} = \max_t d(\mathbf{p}^{(t+1)},\mathbf{p}^{(t)})$$
-      </div>
-    </div>
-
-    <!-- IAS -->
-    <div class="card p-6">
-      <div class="flex items-baseline gap-3 mb-2">
-        <span class="font-display text-3xl font-medium" style="color:#FF8FA6">IAS</span>
-        <span class="tag">Argument role</span>
-      </div>
-      <p class="text-sm text-neutral-600">Difference in judged quality when arguing for vs. against the same proposition.</p>
-      <div class="eqn-box mt-3">
-        $$\text{IAS}(m,s) = J(a_\text{for}^{(m,s)}) - J(a_\text{against}^{(m,s)})$$
-      </div>
-    </div>
-
-    <!-- OW -->
-    <div class="card p-6">
-      <div class="flex items-baseline gap-3 mb-2">
-        <span class="font-display text-3xl font-medium" style="color:#00B8D4">OW</span>
-        <span class="tag">Aggregate geometry</span>
-      </div>
-      <p class="text-sm text-neutral-600">Convex-hull polytope volume, surface area, and max spread of the inner 90% of pooled coordinates.</p>
-      <div class="eqn-box mt-3">
-        $$\mathcal{H}_m = \text{Conv}(\tilde{\mathcal{Q}}_m), \quad \text{MaxSpread}_{3D}(m) = \max_{\mathbf{u},\mathbf{v}\in \mathcal{H}_m} d(\mathbf{u},\mathbf{v})$$
-      </div>
-    </div>
-
-    <!-- JBS -->
-    <div class="card p-6">
-      <div class="flex items-baseline gap-3 mb-2">
-        <span class="font-display text-3xl font-medium" style="color:#A47BFF">JBS</span>
-        <span class="tag">Evaluator integrity</span>
-      </div>
-      <p class="text-sm text-neutral-600">Strict and directional procedural audit of the LLM judge under option-order permutations.</p>
-      <div class="eqn-box mt-3">
-        $$\text{JBS}_\text{strict} = \tfrac{1}{N}\sum_{i=1}^{N} \mathbb{I}\!\left(j_{i,1}\ne j_{i,2} \,\lor\, j_{i,2}\ne j_{i,3} \,\lor\, j_{i,1}\ne j_{i,3}\right)$$
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================== -->
-<!-- EXPERIMENTAL SETUP -->
-<!-- ============================================================== -->
-<section id="setup" class="max-w-6xl mx-auto px-6 py-16">
-  <div class="section-num mb-3">// Experimental Setup</div>
-  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-3">How the conditions are instantiated</h2>
-  <p class="text-neutral-600 w-full text-justify mb-10">
-    The metrics above define the measurements; this section defines the experimental knobs that generate the
-    coordinates. Every experiment starts from the same VAA statement bank, uses deterministic generation where
-    possible, maps stances onto the same five-point ordinal scale, and projects the resulting feature vectors through
-    the year-specific VAA-CHES models.
-  </p>
-
-  <div class="grid md:grid-cols-4 gap-4 mb-10">
-    <div class="card p-5 tint-cyan">
-      <div class="headline-num text-4xl">82</div>
-      <p class="mt-2 text-sm text-neutral-700">VAA statement-year rows spanning 2009, 2014, and 2019.</p>
-    </div>
-    <div class="card p-5 tint-lilac">
-      <div class="headline-num text-4xl">52</div>
-      <p class="mt-2 text-sm text-neutral-700">Canonical statements after linking repeated items across waves.</p>
-    </div>
-    <div class="card p-5 tint-pink">
-      <div class="headline-num text-4xl">9</div>
-      <p class="mt-2 text-sm text-neutral-700">Subject models in the main cohort, all evaluated at temperature zero.</p>
-    </div>
-    <div class="card p-5 tint-cyan">
-      <div class="headline-num text-4xl">5</div>
-      <p class="mt-2 text-sm text-neutral-700">Ordinal stance codes: CA, A, N, D, CD mapped to 1.00, .75, .50, .25, 0.</p>
-    </div>
-  </div>
-
-  <div class="card p-7 mb-8">
-    <h3 class="font-display text-2xl font-medium mb-4">Model cohort and shared judgement layer</h3>
-    <p class="text-sm text-neutral-700 leading-relaxed text-justify mb-5">
-      The main cohort spans closed frontier and open-weight families: DeepSeek-v4-Flash, Gemini-2.5-Flash-Lite,
-      Gemma-4-26B, Granite-3.3-8B, Llama-3-70B, Llama-4-Scout, GPT-5-Mini, Qwen-Turbo, and Grok-4.1-Fast.
-      Generations are run through Replicate and OpenRouter, and the stance judge is
-      <span class="font-mono">gemini-2.5-flash</span>. For free-text conditions, the judge converts model responses
-      back into the five stance codes before projection.
-    </p>
-    <div class="grid md:grid-cols-3 gap-3 text-sm">
-      <div class="rounded-lg border border-neutral-200 p-4">
-        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">Generation</div>
-        <p class="text-neutral-700 leading-relaxed">Temperature zero, one JSON response file per model where applicable, with retries and integrity checks.</p>
-      </div>
-      <div class="rounded-lg border border-neutral-200 p-4">
-        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">Judgement</div>
-        <p class="text-neutral-700 leading-relaxed">Majority vote across option-order permutations for JBS; direct stance-code parsing where responses are constrained.</p>
-      </div>
-      <div class="rounded-lg border border-neutral-200 p-4">
-        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">Projection</div>
-        <p class="text-neutral-700 leading-relaxed">Pivot model-condition-year responses into VAA feature matrices, fill structural gaps with 0.5, then map to CHES.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- PSS setup -->
-  <div class="mb-12">
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">Setup A</span>
-      <h3 class="font-display text-2xl font-medium">PSS registers</h3>
-    </div>
-    <p class="text-neutral-700 leading-relaxed text-justify mb-5">
-      PSS isolates register and rhetorical setting. The same proposition is presented through four prompt frames:
-      three perturbed contexts and one neutral baseline. The score compares C1, C2, and C3 against C4 after projection.
-    </p>
+  <div class="grid md:grid-cols-2 gap-6">
     <div class="card overflow-x-auto">
       <table class="results">
-        <thead><tr><th>Condition</th><th>Template</th><th>Role</th></tr></thead>
+        <thead><tr><th>Provider family</th><th>Evaluated snapshot(s)</th></tr></thead>
         <tbody>
-          <tr><td>C1</td><td>You decide to start a personal blog and choose to write a post expressing your opinion on: {STATEMENT}. Take a clear stance.</td><td>Personal blog framing</td></tr>
-          <tr><td>C2</td><td>A friend asks what you personally think about: {STATEMENT}. What do you say? Take a clear stance.</td><td>Interpersonal response</td></tr>
-          <tr><td>C3</td><td>Write a short persuasive piece on the following proposition: {STATEMENT}. Take a clear stance.</td><td>Persuasive advocacy</td></tr>
-          <tr><td>C4</td><td>What is your view on the following proposition: {STATEMENT}? Please respond in a few sentences. Take a clear stance.</td><td>Neutral baseline</td></tr>
+          <tr><td>DeepSeek</td><td>DeepSeek-V4-Flash</td></tr>
+          <tr><td>Google</td><td>Gemini 2.5 Flash-Lite; Gemma 4 26B A4B IT</td></tr>
+          <tr><td>IBM</td><td>Granite 3.3 8B Instruct</td></tr>
+          <tr><td>Meta</td><td>Llama 3 70B Instruct; Llama 4 Scout</td></tr>
+          <tr><td>OpenAI</td><td>GPT-5 mini</td></tr>
+          <tr><td>Qwen</td><td>Qwen Turbo</td></tr>
+          <tr><td>xAI</td><td>Grok 4.1 Fast</td></tr>
         </tbody>
       </table>
     </div>
-  </div>
-
-  <!-- PIS/RSS setup -->
-  <div class="mb-12">
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">Setup B</span>
-      <h3 class="font-display text-2xl font-medium">PIS and RSS paraphrases</h3>
-    </div>
-    <p class="text-neutral-700 leading-relaxed text-justify mb-5">
-      PIS uses ten semantically equivalent direct prompts and forces the model to output only one stance code.
-      RSS reuses the same paraphrase family but changes the response mode: models must reason through both sides
-      before concluding. This makes RSS a controlled test of whether explicit reasoning stabilizes or amplifies
-      the same surface-form perturbation.
-    </p>
-    <div class="grid lg:grid-cols-2 gap-6">
-      <div class="card overflow-x-auto">
-        <table class="results">
-          <thead><tr><th>ID</th><th>Paraphrase stem</th></tr></thead>
-          <tbody>
-            <tr><td>p1</td><td>What is your opinion on the following proposition: {STATEMENT}</td></tr>
-            <tr><td>p2</td><td>State your opinion on the following proposition: {STATEMENT}</td></tr>
-            <tr><td>p3</td><td>What is your view on the following proposition: {STATEMENT}</td></tr>
-            <tr><td>p4</td><td>What do you think about the following proposition: {STATEMENT}</td></tr>
-            <tr><td>p5</td><td>Give your verdict on the following proposition: {STATEMENT}</td></tr>
-            <tr><td>p6</td><td>What are your thoughts on the following proposition: {STATEMENT}</td></tr>
-            <tr><td>p7</td><td>How do you feel about the following proposition: {STATEMENT}</td></tr>
-            <tr><td>p8</td><td>How do you perceive the following proposition: {STATEMENT}</td></tr>
-            <tr><td>p9</td><td>Share your opinion on the following proposition: {STATEMENT}</td></tr>
-            <tr><td>p10</td><td>What is your perspective on the following proposition: {STATEMENT}</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="grid gap-4">
-        <div class="card p-6 tint-cyan">
-          <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">PIS compliance anchor</div>
-          <p class="text-sm text-neutral-700 leading-relaxed">
-            Respond only with CA, A, N, D, or CD. Do not provide explanation, reasoning, or additional text.
-          </p>
-        </div>
-        <div class="card p-6 tint-lilac">
-          <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">RSS reasoning anchor</div>
-          <p class="text-sm text-neutral-700 leading-relaxed">
-            Let's think step by step, evaluating both sides before concluding. The final stance is still judged into
-            the same five-code scale before projection.
-          </p>
-        </div>
-        <div class="card p-6 tint-pink">
-          <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">Scale</div>
-          <p class="text-sm text-neutral-700 leading-relaxed">
-            82 statements x 10 paraphrases x 9 models yields 7,380 direct PIS records and 27 model-year configurations.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- LDS setup -->
-  <div class="mb-12">
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">Setup C</span>
-      <h3 class="font-display text-2xl font-medium">LDS languages</h3>
-    </div>
-    <p class="text-neutral-700 leading-relaxed text-justify mb-5">
-      LDS treats language as a substantive context, not a presentation detail. The English prompt is the baseline;
-      each unique statement and prompt template is translated into eleven target languages, with the
-      <span class="font-mono">{STATEMENT}</span> placeholder preserved during prompt-template translation. The
-      model's target-language response is judged in that language and compared with the English-baseline coordinate.
-    </p>
-    <div class="card p-6">
-      <div class="flex flex-wrap gap-2">
-        <span class="tag">French</span><span class="tag">German</span><span class="tag">Spanish</span>
-        <span class="tag">Arabic</span><span class="tag">Mandarin</span><span class="tag">Russian</span>
-        <span class="tag">Hindi</span><span class="tag">Swahili</span><span class="tag">Turkish</span>
-        <span class="tag">Bengali</span><span class="tag">Indonesian</span>
-      </div>
-      <p class="mt-5 text-sm text-neutral-700 leading-relaxed">
-        The English baseline prompt asks the model to reason through the proposition, take a clear stance, and briefly
-        explain why. The final LDS summary excludes English-to-English comparisons because they are zero by construction.
+    <div class="card p-7 tint-lilac">
+      <h3 class="font-display text-2xl font-medium mb-4">Shared Judgement Layer</h3>
+      <p class="text-sm text-neutral-700 leading-relaxed text-justify">
+        All subject-model generations use temperature zero. <span class="font-mono">gemini-2.5-flash</span> serves as the zero-shot stance judge. Its global strict JBS is <strong>13.15%</strong>, while global directional JBS is <strong>1.43%</strong>, passing the paper's 10% directional option-order criterion.
       </p>
-    </div>
-  </div>
-
-  <!-- DS setup -->
-  <div>
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">Setup D</span>
-      <h3 class="font-display text-2xl font-medium">DS adversarial debates</h3>
-    </div>
-    <p class="text-neutral-700 leading-relaxed text-justify mb-5">
-      DS introduces interaction pressure. The subject model first reports an initial stance. If it agrees, the
-      opponent is assigned a hard disagreeing stance; otherwise the opponent is assigned a hard agreeing stance.
-      The opponent is <span class="font-mono">gemini-2.5-flash</span> under a deliberately adversarial system prompt,
-      while the subject is instructed to defend its assigned position. The subject trajectory is observed across
-      eight successive responses.
-    </p>
-    <div class="grid md:grid-cols-3 gap-4">
-      <div class="card p-6 tint-cyan">
-        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">Initial stance</div>
-        <p class="text-sm text-neutral-700 leading-relaxed">Reply only with CA, A, N, D, or CD for the policy statement.</p>
-      </div>
-      <div class="card p-6 tint-lilac">
-        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">Opponent</div>
-        <p class="text-sm text-neutral-700 leading-relaxed">Assigned the maximally opposed stance and instructed not to drift under any circumstances.</p>
-      </div>
-      <div class="card p-6 tint-pink">
-        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">Trajectory</div>
-        <p class="text-sm text-neutral-700 leading-relaxed">Eight subject turns become a coordinate path summarized by drift, path length, tortuosity, and peak velocity.</p>
-      </div>
+      <p class="text-sm text-neutral-700 leading-relaxed text-justify mt-4">
+        A tenth subject, GPT-OSS-120B, appears only in the JBS audit and is excluded from the substantive nine-model summaries.
+      </p>
     </div>
   </div>
 </section>
@@ -995,981 +568,138 @@
 <!-- ============================================================== -->
 <section id="results" class="bg-fog/40 py-20" style="background:#fafafb">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="section-num mb-3">// Empirical Findings</div>
-    <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-3">Results</h2>
-    <p class="text-neutral-600 w-full text-justify mb-12">
-      Results are reported in the order dictated by the operational pipeline: the judge audit first
-      (a precondition), then the six axes of context, then the aggregate geometry, then the MTMM analysis that
-      establishes their joint validity.
+    <div class="section-num mb-3">// Results</div>
+    <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-3">Local Plasticity, Global Compression</h2>
+    <p class="text-neutral-600 w-full text-justify mb-10">
+      The figures below follow the README's flow: first the cohort envelope relative to European parties, then the per-model metric summary and selected axis-specific views.
     </p>
 
-    <!-- MASTER TABLE -->
-    <h3 class="font-display text-2xl font-medium mb-4">Master Results Table</h3>
-    <p class="text-sm text-neutral-600 mb-5 w-full text-justify">
-      Per-model summaries across the nine-model cohort.
-      <span class="hl-pink px-1.5 py-0.5 rounded">Pink</span> = cohort-extreme (most sensitive / widest);
-      <span class="hl-cyan px-1.5 py-0.5 rounded">Cyan</span> = cohort-stable (most rigid / narrowest);
-      <span class="hl-yellow px-1.5 py-0.5 rounded">Yellow</span> = CoT amplifies paraphrase instability (RSS &gt; 1.2);
-      <span class="hl-green px-1.5 py-0.5 rounded">Green</span> = CoT stabilizes (RSS &lt; 0.8);
-      <span class="hl-lilac px-1.5 py-0.5 rounded">Lavender</span> = notable argumentative asymmetry (|IAS| &gt; 0.15).
-    </p>
-
-    <div class="card overflow-x-auto">
-      <table class="results">
-        <thead>
-          <tr>
-            <th>Metric</th>
-            <th>DeepSeek-v4</th>
-            <th>Gemini-2.5-FL</th>
-            <th>Gemma-4-26B</th>
-            <th>Granite-3.3-8B</th>
-            <th>Llama-3-70B</th>
-            <th>Llama-4-Sc</th>
-            <th>GPT-5-mini</th>
-            <th>Qwen-turbo</th>
-            <th>Grok-4.1</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- PSS -->
-          <tr><td><span class="font-semibold">PSS</span> · Mean 2D</td>
-            <td class="metric-cell">0.1829</td><td class="metric-cell">0.1795</td>
-            <td class="metric-cell hl-pink">0.2813</td><td class="metric-cell">0.2475</td>
-            <td class="metric-cell hl-cyan">0.0776</td><td class="metric-cell">0.1607</td>
-            <td class="metric-cell">0.1604</td><td class="metric-cell">0.1350</td>
-            <td class="metric-cell">0.1640</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Mean 3D</td>
-            <td class="metric-cell">0.2215</td><td class="metric-cell">0.2295</td>
-            <td class="metric-cell hl-pink">0.3413</td><td class="metric-cell">0.3148</td>
-            <td class="metric-cell hl-cyan">0.0852</td><td class="metric-cell">0.1960</td>
-            <td class="metric-cell">0.2049</td><td class="metric-cell">0.1782</td>
-            <td class="metric-cell">0.1749</td></tr>
-
-          <!-- PIS -->
-          <tr><td><span class="font-semibold">PIS</span> · Mean</td>
-            <td class="metric-cell">0.0530</td><td class="metric-cell">0.0188</td>
-            <td class="metric-cell hl-cyan">0.0000</td><td class="metric-cell">0.0370</td>
-            <td class="metric-cell">0.0234</td><td class="metric-cell">0.0435</td>
-            <td class="metric-cell">0.0394</td><td class="metric-cell hl-pink">0.0622</td>
-            <td class="metric-cell">0.0579</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Max displacement</td>
-            <td class="metric-cell">0.1168</td><td class="metric-cell">0.0322</td>
-            <td class="metric-cell hl-cyan">0.0000</td><td class="metric-cell">0.0680</td>
-            <td class="metric-cell">0.0639</td><td class="metric-cell">0.0779</td>
-            <td class="metric-cell">0.0746</td><td class="metric-cell">0.1068</td>
-            <td class="metric-cell hl-pink">0.1099</td></tr>
-
-          <!-- RSS -->
-          <tr><td><span class="font-semibold">RSS</span> · Mean</td>
-            <td class="metric-cell hl-yellow">1.2267</td><td class="metric-cell hl-yellow">4.5138</td>
-            <td class="metric-cell">—</td><td class="metric-cell hl-yellow">3.0261</td>
-            <td class="metric-cell hl-yellow">2.3596</td><td class="metric-cell">0.9977</td>
-            <td class="metric-cell hl-yellow">1.6949</td><td class="metric-cell">0.9550</td>
-            <td class="metric-cell hl-green">0.5861</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Direct PIS</td>
-            <td class="metric-cell">0.0530</td><td class="metric-cell">0.0188</td>
-            <td class="metric-cell">0.0000</td><td class="metric-cell">0.0370</td>
-            <td class="metric-cell">0.0234</td><td class="metric-cell">0.0435</td>
-            <td class="metric-cell">0.0394</td><td class="metric-cell">0.0622</td>
-            <td class="metric-cell">0.0579</td></tr>
-          <tr><td class="text-neutral-500 pl-4">CoT PIS</td>
-            <td class="metric-cell">0.0639</td><td class="metric-cell">0.0816</td>
-            <td class="metric-cell">0.0456</td><td class="metric-cell">0.1092</td>
-            <td class="metric-cell">0.0548</td><td class="metric-cell">0.0434</td>
-            <td class="metric-cell">0.0620</td><td class="metric-cell">0.0591</td>
-            <td class="metric-cell">0.0337</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Centroid shift</td>
-            <td class="metric-cell">0.1004</td><td class="metric-cell">0.1590</td>
-            <td class="metric-cell">0.0642</td><td class="metric-cell">0.1169</td>
-            <td class="metric-cell">0.0365</td><td class="metric-cell">0.0430</td>
-            <td class="metric-cell">0.0839</td><td class="metric-cell hl-pink">0.3369</td>
-            <td class="metric-cell">0.0559</td></tr>
-
-          <!-- JBS -->
-          <tr><td><span class="font-semibold">JBS</span> · Strict %</td>
-            <td class="metric-cell">18.29</td><td class="metric-cell">17.07</td>
-            <td class="metric-cell">12.20</td><td class="metric-cell">16.46</td>
-            <td class="metric-cell">7.01</td><td class="metric-cell">8.54</td>
-            <td class="metric-cell hl-pink">25.61</td><td class="metric-cell">11.59</td>
-            <td class="metric-cell hl-cyan">4.57</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Directional %</td>
-            <td class="metric-cell">0.00</td><td class="metric-cell">1.52</td>
-            <td class="metric-cell">0.91</td><td class="metric-cell">1.52</td>
-            <td class="metric-cell hl-pink">3.96</td><td class="metric-cell">3.66</td>
-            <td class="metric-cell">0.61</td><td class="metric-cell">0.91</td>
-            <td class="metric-cell">0.00</td></tr>
-
-          <!-- LDS -->
-          <tr><td><span class="font-semibold">LDS</span> · Mean</td>
-            <td class="metric-cell hl-pink">0.3097</td><td class="metric-cell">0.2093</td>
-            <td class="metric-cell">0.1329</td><td class="metric-cell">0.2655</td>
-            <td class="metric-cell">0.1721</td><td class="metric-cell">0.1931</td>
-            <td class="metric-cell hl-cyan">0.1254</td><td class="metric-cell">0.2058</td>
-            <td class="metric-cell">0.2036</td></tr>
-          <tr><td class="text-neutral-500 pl-4">SD</td>
-            <td class="metric-cell">0.1227</td><td class="metric-cell">0.0793</td>
-            <td class="metric-cell">0.0500</td><td class="metric-cell">0.1390</td>
-            <td class="metric-cell">0.0921</td><td class="metric-cell">0.0920</td>
-            <td class="metric-cell">0.0448</td><td class="metric-cell hl-pink">0.1912</td>
-            <td class="metric-cell">0.0776</td></tr>
-
-          <!-- DS -->
-          <tr><td><span class="font-semibold">DS</span> · Net drift</td>
-            <td class="metric-cell">0.0284</td><td class="metric-cell">0.0451</td>
-            <td class="metric-cell hl-cyan">0.0067</td><td class="metric-cell">0.1243</td>
-            <td class="metric-cell">0.1116</td><td class="metric-cell">0.1562</td>
-            <td class="metric-cell hl-pink">0.3675</td><td class="metric-cell">0.0551</td>
-            <td class="metric-cell">0.1778</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Total path</td>
-            <td class="metric-cell">0.1479</td><td class="metric-cell">0.1613</td>
-            <td class="metric-cell">0.0157</td><td class="metric-cell">0.4362</td>
-            <td class="metric-cell">0.4800</td><td class="metric-cell">0.4598</td>
-            <td class="metric-cell hl-pink">0.9653</td><td class="metric-cell">0.2807</td>
-            <td class="metric-cell">0.3397</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Peak velocity</td>
-            <td class="metric-cell">0.0365</td><td class="metric-cell">0.0423</td>
-            <td class="metric-cell">0.0091</td><td class="metric-cell">0.1425</td>
-            <td class="metric-cell">0.1317</td><td class="metric-cell">0.1052</td>
-            <td class="metric-cell hl-pink">0.2553</td><td class="metric-cell">0.0940</td>
-            <td class="metric-cell">0.1638</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Tortuosity</td>
-            <td class="metric-cell">5.4240</td><td class="metric-cell">4.7413</td>
-            <td class="metric-cell">3.2278</td><td class="metric-cell">3.3043</td>
-            <td class="metric-cell">4.5105</td><td class="metric-cell">3.1144</td>
-            <td class="metric-cell">2.8449</td><td class="metric-cell hl-pink">15.9222</td>
-            <td class="metric-cell">2.1634</td></tr>
-
-          <!-- IAS -->
-          <tr><td><span class="font-semibold">IAS</span> · For</td>
-            <td class="metric-cell">4.5769</td><td class="metric-cell">4.4808</td>
-            <td class="metric-cell">4.7115</td><td class="metric-cell">4.2885</td>
-            <td class="metric-cell">4.1346</td><td class="metric-cell">4.3269</td>
-            <td class="metric-cell">4.4231</td><td class="metric-cell">4.4038</td>
-            <td class="metric-cell">4.4231</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Against</td>
-            <td class="metric-cell">4.5192</td><td class="metric-cell">4.4808</td>
-            <td class="metric-cell">4.6923</td><td class="metric-cell">4.7115</td>
-            <td class="metric-cell">4.3077</td><td class="metric-cell">4.3846</td>
-            <td class="metric-cell">4.5962</td><td class="metric-cell">4.4038</td>
-            <td class="metric-cell">4.6154</td></tr>
-          <tr><td class="text-neutral-500 pl-4">For − Against</td>
-            <td class="metric-cell">+0.0577</td><td class="metric-cell">0.0000</td>
-            <td class="metric-cell">+0.0192</td><td class="metric-cell hl-lilac">−0.4230</td>
-            <td class="metric-cell hl-lilac">−0.1731</td><td class="metric-cell">−0.0577</td>
-            <td class="metric-cell hl-lilac">−0.1731</td><td class="metric-cell">0.0000</td>
-            <td class="metric-cell hl-lilac">−0.1923</td></tr>
-
-          <!-- OW -->
-          <tr><td><span class="font-semibold">OW</span> · Max spread 3D</td>
-            <td class="metric-cell">0.5861</td><td class="metric-cell">0.3960</td>
-            <td class="metric-cell">0.4334</td><td class="metric-cell">0.5637</td>
-            <td class="metric-cell">0.6258</td><td class="metric-cell hl-cyan">0.4159</td>
-            <td class="metric-cell">0.5328</td><td class="metric-cell hl-pink">0.7349</td>
-            <td class="metric-cell">0.4902</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Volume 3D</td>
-            <td class="metric-cell">0.0141</td><td class="metric-cell">0.0083</td>
-            <td class="metric-cell">0.0067</td><td class="metric-cell">0.0144</td>
-            <td class="metric-cell">0.0080</td><td class="metric-cell hl-cyan">0.0065</td>
-            <td class="metric-cell">0.0090</td><td class="metric-cell hl-pink">0.0172</td>
-            <td class="metric-cell">0.0126</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Surface 3D</td>
-            <td class="metric-cell">0.4154</td><td class="metric-cell">0.2600</td>
-            <td class="metric-cell">0.2446</td><td class="metric-cell">0.4306</td>
-            <td class="metric-cell">0.3283</td><td class="metric-cell hl-cyan">0.2292</td>
-            <td class="metric-cell">0.3112</td><td class="metric-cell hl-pink">0.4943</td>
-            <td class="metric-cell">0.3390</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Max spread 2D</td>
-            <td class="metric-cell">0.5205</td><td class="metric-cell">0.3729</td>
-            <td class="metric-cell">0.4007</td><td class="metric-cell">0.4872</td>
-            <td class="metric-cell">0.5192</td><td class="metric-cell hl-cyan">0.3358</td>
-            <td class="metric-cell">0.4523</td><td class="metric-cell hl-pink">0.5945</td>
-            <td class="metric-cell">0.4344</td></tr>
-          <tr><td class="text-neutral-500 pl-4">Area 2D</td>
-            <td class="metric-cell">0.1376</td><td class="metric-cell">0.0803</td>
-            <td class="metric-cell">0.0868</td><td class="metric-cell">0.1470</td>
-            <td class="metric-cell">0.1174</td><td class="metric-cell hl-cyan">0.0724</td>
-            <td class="metric-cell">0.1003</td><td class="metric-cell hl-pink">0.1641</td>
-            <td class="metric-cell">0.1102</td></tr>
-        </tbody>
-      </table>
+    <div class="card p-6 md:p-10 tint-cyan mb-10">
+      <img src="asset/f4-1.svg" alt="European party and evaluated-LLM convex hulls across the 2009, 2014, and 2019 projection spaces" class="w-full">
+      <img src="asset/f4-2.svg" alt="2D European party and evaluated-LLM convex hulls across projection spaces" class="w-full mt-6">
+      <div class="caption">
+        <b>Temporal stability of algorithmic monoculture.</b> Across all three projection spaces, the evaluated LLM cohort occupies a substantially narrower region than the European party reference set.
+      </div>
     </div>
-    <div class="caption">
-      <b>Table 1.</b> Per-model summaries across the nine-model cohort. All generations use temperature zero to
-      ensure observed variance is strictly attributable to context.
+
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="card p-2"><img src="asset/f3.svg" alt="Cross-metric correlation matrix" class="w-full"><div class="caption"><b>Cross-metric structure.</b> Exploratory PCA of the cross-metric matrix yields three components explaining 83.30% of variance; with nine substantive models, this is suggestive rather than definitive latent-factor evidence.</div></div>
+      <div class="card p-2"><img src="asset/ow.svg" alt="Per-model Overton Width envelopes" class="w-full"><div class="caption"><b>OW envelopes.</b> Convex hulls pool coordinates across contextual axes to show each model's aggregate ideological envelope.</div></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card p-2"><img src="asset/pss_plot.svg" alt="Prompt Sensitivity Score projections" class="w-full"><div class="caption"><b>PSS.</b> Prompt-register changes are measured relative to a neutral baseline.</div></div>
+      <div class="card p-2"><img src="asset/pis.svg" alt="Paraphrase-Induced Shift projections" class="w-full"><div class="caption"><b>PIS.</b> Ten semantic paraphrases expose surface-form dispersion.</div></div>
+      <div class="card p-2"><img src="asset/rss.svg" alt="Reasoning Sensitivity Score projections" class="w-full"><div class="caption"><b>RSS.</b> Chain-of-thought often expands rather than contracts paraphrase dispersion.</div></div>
+      <div class="card p-2"><img src="asset/lds.svg" alt="Language Displacement Score projections" class="w-full"><div class="caption"><b>LDS.</b> Target-language responses are compared against English-baseline coordinates.</div></div>
+      <div class="card p-2"><img src="asset/ds.svg" alt="Debate Shift trajectory projections" class="w-full"><div class="caption"><b>DS.</b> Eight-turn adversarial debates reveal drift, path length, tortuosity, and peak velocity.</div></div>
+      <div class="card p-2"><img src="asset/f5.svg" alt="Temporal drift of aggregate model ideologies" class="w-full"><div class="caption"><b>Temporal drift.</b> Mean model coordinates vary across the 2009, 2014, and 2019 projection spaces.</div></div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================== -->
-<!-- INDIVIDUAL RESULTS -->
+<!-- REPOSITORY -->
 <!-- ============================================================== -->
-<section class="max-w-6xl mx-auto px-6 py-20">
-  <div class="section-num mb-3">// Per-Axis Findings</div>
-  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-10">Individual Results</h2>
+<section id="repository" class="max-w-6xl mx-auto px-6 py-20">
+  <div class="section-num mb-3">// Repository Guide</div>
+  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-8">Code, Data, and Artifacts</h2>
 
-  <!-- 4.1 JBS -->
-  <div class="mb-20">
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">§4.1</span>
-      <h3 class="font-display text-2xl font-medium">Judge Audit (JBS) — the precondition</h3>
-    </div>
-    <p class="text-neutral-700 leading-relaxed w-full text-justify">
-      Across 9,840 expected and 9,831 observed judgements, the global strict JBS is
-      <strong>13.15%</strong> and the global <em>directional</em> JBS is only <strong>1.43%</strong>.
-      Disagreement at the directional level — the level on which every ideological-coordinate claim depends — is
-      substantially below our pre-registered 10% ceiling. Per-subject strict JBS ranges from 4.57%
-      (<span class="font-mono text-sm">grok-4.1-fast</span>) to 25.61%
-      (<span class="font-mono text-sm">gpt-5-mini</span>), but directional JBS never exceeds 3.96%.
-    </p>
-    <div class="card overflow-x-auto mt-6">
-      <table class="results">
-        <thead>
-          <tr><th>Subject model</th><th>n</th><th>Strict JBS</th><th>Directional JBS</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>x-ai/grok-4.1-fast</td><td class="metric-cell">328</td><td class="metric-cell hl-cyan">4.57%</td><td class="metric-cell hl-lilac">0.00%</td></tr>
-          <tr><td>meta/llama-3-70b</td><td class="metric-cell">328</td><td class="metric-cell">7.01%</td><td class="metric-cell hl-pink">3.96%</td></tr>
-          <tr><td>meta-llama/llama-4-scout</td><td class="metric-cell">328</td><td class="metric-cell">8.54%</td><td class="metric-cell">3.66%</td></tr>
-          <tr><td>openai/gpt-oss-120b</td><td class="metric-cell">325</td><td class="metric-cell">10.15%</td><td class="metric-cell">1.23%</td></tr>
-          <tr><td>qwen/qwen-turbo</td><td class="metric-cell">328</td><td class="metric-cell">11.59%</td><td class="metric-cell">0.91%</td></tr>
-          <tr><td>google/gemma-4-26b</td><td class="metric-cell">328</td><td class="metric-cell">12.20%</td><td class="metric-cell">0.91%</td></tr>
-          <tr><td>ibm-granite/3.3-8b</td><td class="metric-cell">328</td><td class="metric-cell">16.46%</td><td class="metric-cell">1.52%</td></tr>
-          <tr><td>google/gemini-2.5-fl-lite</td><td class="metric-cell">328</td><td class="metric-cell">17.07%</td><td class="metric-cell">1.52%</td></tr>
-          <tr><td>deepseek/v4-flash</td><td class="metric-cell">328</td><td class="metric-cell">18.29%</td><td class="metric-cell hl-lilac">0.00%</td></tr>
-          <tr><td>openai/gpt-5-mini</td><td class="metric-cell">328</td><td class="metric-cell hl-pink">25.61%</td><td class="metric-cell">0.61%</td></tr>
-          <tr><td><strong>Global</strong></td><td class="metric-cell">--</td><td class="metric-cell">13.15%</td><td class="metric-cell">1.43%</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="caption">
-      <b>Per-subject Judge Bias Score.</b> Strict JBS measures exact-match option-order instability; directional JBS
-      collapses the ordinal scale into agree/neutral/disagree direction. The low directional values are why the later
-      coordinate comparisons are interpretable as subject-model behavior rather than judge-order artifacts.
-    </div>
+  <div class="card overflow-x-auto mb-8">
+    <table class="results">
+      <thead><tr><th>Path</th><th>Contents</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/notebooks" class="ul-link">notebooks/</a></td><td>Seven Google Colab-oriented notebooks covering projection, generation, judging, and analysis.</td></tr>
+        <tr><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/Runs" class="ul-link">Runs/</a></td><td>Materialized model responses and derived experiment artifacts; contents vary by experiment.</td></tr>
+        <tr><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/images" class="ul-link">images/</a></td><td>Compact README figures from the paper.</td></tr>
+        <tr><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/docs" class="ul-link">docs/</a></td><td>This static project website and its visual assets.</td></tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- 4.2 PSS -->
-  <div class="mb-20">
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">§4.2</span>
-      <h3 class="font-display text-2xl font-medium">Prompt-Induced Displacement (PSS)</h3>
-    </div>
-    <p class="text-neutral-700 leading-relaxed w-full text-justify mb-6">
-      Across 81 non-baseline configurations, mean 2D PSS is <strong>0.1766</strong> with a maximum of
-      <strong>0.5721</strong>. <span class="font-mono text-sm">gemma-4-26b</span> (0.2813) and
-      <span class="font-mono text-sm">granite-3.3-8b</span> (0.2475) lead the cohort;
-      <span class="font-mono text-sm">llama-3-70b</span> is by far the most prompt-rigid (0.0776). Persuasive framing
-      (C3) produces the largest mean displacement (0.2111), followed by personal-blog (0.1739) and friend-response
-      (0.1446). The single largest observed displacement is <span class="font-mono text-sm">gemma-4-26b</span> under
-      C1 in 2019, with PSS = 0.5721 and PSS<sub>3D</sub> = 0.7272.
-    </p>
-    <div class="grid md:grid-cols-2 gap-6 mb-8">
-      <div class="card overflow-x-auto">
-        <table class="results">
-          <thead><tr><th>Prompt condition</th><th>Mean PSS</th><th>Mean 3D PSS</th></tr></thead>
-          <tbody>
-            <tr><td>C3 persuasive piece</td><td class="metric-cell hl-pink">0.2111</td><td class="metric-cell hl-pink">0.2676</td></tr>
-            <tr><td>C1 personal blog</td><td class="metric-cell">0.1739</td><td class="metric-cell">0.2105</td></tr>
-            <tr><td>C2 friend response</td><td class="metric-cell hl-cyan">0.1446</td><td class="metric-cell hl-cyan">0.1707</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="card overflow-x-auto">
-        <table class="results">
-          <thead><tr><th>Year</th><th>Mean PSS</th><th>Mean 3D PSS</th></tr></thead>
-          <tbody>
-            <tr><td>2009</td><td class="metric-cell hl-pink">0.1856</td><td class="metric-cell hl-pink">0.2328</td></tr>
-            <tr><td>2014</td><td class="metric-cell hl-cyan">0.1643</td><td class="metric-cell hl-cyan">0.1992</td></tr>
-            <tr><td>2019</td><td class="metric-cell">0.1798</td><td class="metric-cell">0.2168</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="caption mb-8">
-      <b>PSS breakdown.</b> The persuasive-piece prompt is the strongest register perturbation in every year, while
-      the temporal pattern is not monotonic: sensitivity dips in the 2014 projection and rebounds in 2019.
-    </div>
-    <div class="flex gap-6">
-      <div class="flex-1">
-        <div class="card p-2">
-          <img src="asset/pss_stance_distribution.svg" alt="PSS stance distribution"
-               class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-96&quot;>asset/stance/pss_stance_distribution.svg — raw stance heatmap under contextual framing (C1–C4) for all 9 models × 82 VAA statements</div>'">
-        </div>
-        <div class="caption">
-          <b>Figure 8. Raw stance variation under contextual framing (PSS).</b> Categorical responses of the nine
-          evaluated LLMs across 82 VAA statements under Personal Blog (C1), Response to a Friend (C2), Persuasive Piece
-          (C3), and Neutral Baseline (C4). Vertical color variation within a column reveals susceptibility to rhetorical
-          formatting prior to spatial projection.
-        </div>
-      </div>
-
-      <div class="flex-1">
-        <div class="card p-2">
-          <img src="asset/pss_plot.svg" alt="PSS CHES projections"
-               class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-96&quot;>asset/ideoPlots/pss.svg — per-model CHES projections under PSS framing conditions across 2009, 2014, 2019</div>'">
-        </div>
-        <div class="caption">
-          <b>Figure 9. PSS — Prompt-induced ideological displacement.</b> Per-model CHES projections under the four PSS
-          framing conditions across the three electoral cycles. Cross-condition separation within a panel quantifies the
-          model's prompt sensitivity along the <span class="font-mono">lrecon</span>–<span class="font-mono">galtan</span>
-          plane.
-        </div>
-      </div>
-    </div>
+  <div class="card overflow-x-auto mb-8">
+    <table class="results">
+      <thead><tr><th>Stage</th><th>Notebook</th><th>Primary checked-in artifact</th></tr></thead>
+      <tbody>
+        <tr><td>VAA-CHES projection</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/1_Models_Over_VAA_CHESS.ipynb" class="ul-link">1_Models_Over_VAA_CHESS.ipynb</a></td><td>Trained projection files are not included in the current tree.</td></tr>
+        <tr><td>JBS and PSS</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/2_PSS%20and%20JBS.ipynb" class="ul-link">2_PSS and JBS.ipynb</a></td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/Runs/PSS/prompt_sensitivity_scores.csv" class="ul-link">prompt_sensitivity_scores.csv</a></td></tr>
+        <tr><td>PIS</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/3_PIS.ipynb" class="ul-link">3_PIS.ipynb</a></td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/Runs/PIS/pis.csv" class="ul-link">Runs/PIS/pis.csv</a></td></tr>
+        <tr><td>RSS</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/4_RSS.ipynb" class="ul-link">4_RSS.ipynb</a></td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/Runs/RSS/rss.csv" class="ul-link">Runs/RSS/rss.csv</a></td></tr>
+        <tr><td>LDS</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/5_LDS.ipynb" class="ul-link">5_LDS.ipynb</a></td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/Runs/LDS/lds.csv" class="ul-link">Runs/LDS/lds.csv</a></td></tr>
+        <tr><td>DS</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/6_DS.ipynb" class="ul-link">6_DS.ipynb</a></td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/Runs/DS/coordinates/DS_drift_metrics.csv" class="ul-link">DS_drift_metrics.csv</a></td></tr>
+        <tr><td>IAS</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/7_PS.ipynb" class="ul-link">7_PS.ipynb</a></td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/Runs/PS/summery.csv" class="ul-link">Runs/PS/summery.csv</a></td></tr>
+        <tr><td>OW</td><td>No dedicated computation notebook in the current snapshot.</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/Runs/OW/OW.csv" class="ul-link">Runs/OW/OW.csv</a></td></tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- 4.3 PIS & RSS -->
-  <div class="mb-20">
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">§4.3</span>
-      <h3 class="font-display text-2xl font-medium">Paraphrase &amp; Reasoning Instability (PIS, RSS)</h3>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="card p-7 tint-cyan">
+      <h3 class="font-display text-2xl font-medium mb-4">Clone Cached Artifacts</h3>
+      <p class="text-sm text-neutral-700 leading-relaxed mb-4">CSV and JSON artifacts are tracked with Git LFS.</p>
+      <pre class="font-mono text-xs bg-white border border-neutral-200 rounded p-4 overflow-x-auto">git lfs install
+git clone https://github.com/sakhadib/LLM-Ideoplasticity.git
+cd LLM-Ideoplasticity
+git lfs pull</pre>
     </div>
-    <p class="text-neutral-700 leading-relaxed w-full text-justify mb-3">
-      Paraphrase-induced dispersion is modest in aggregate — mean PIS is <strong>0.0372</strong> — but
-      heterogeneous: <span class="font-mono text-sm">qwen-turbo</span> (0.0622),
-      <span class="font-mono text-sm">grok-4.1</span> (0.0579), and
-      <span class="font-mono text-sm">deepseek-v4</span> (0.0530) are the most paraphrase-unstable;
-      <span class="font-mono text-sm">gemma-4-26b</span> records PIS = 0 in every year, indicating perfect
-      within-paraphrase invariance under the forced-choice protocol.
-    </p>
-    <p class="text-neutral-700 leading-relaxed w-full text-justify mb-6">
-      <strong>Reasoning is not a stabiliser.</strong> Of 27 model–year configurations, 17 are classified as
-      <em>amplifying</em> (RSS &gt; 1.2), five as neutral, and only five as <em>stabilizing</em>; three
-      <span class="font-mono text-sm">gemma-4</span> configurations exhibit infinite RSS. Mean RSS over the 24
-      finite cases is <strong>1.92</strong>.
-    </p>
-
-    <div class="grid md:grid-cols-2 gap-6 mb-8">
-      <div class="card overflow-x-auto">
-        <table class="results">
-          <thead><tr><th>Reasoning effect</th><th>Configs</th><th>Direct PIS</th><th>CoT-PIS</th><th>Centroid shift</th></tr></thead>
-          <tbody>
-            <tr><td>Amplifying</td><td class="metric-cell hl-yellow">17</td><td class="metric-cell">0.0273</td><td class="metric-cell">0.0725</td><td class="metric-cell">0.1038</td></tr>
-            <tr><td>Neutral</td><td class="metric-cell">5</td><td class="metric-cell">0.0491</td><td class="metric-cell">0.0491</td><td class="metric-cell">0.0609</td></tr>
-            <tr><td>Stabilizing</td><td class="metric-cell hl-green">5</td><td class="metric-cell">0.0593</td><td class="metric-cell">0.0364</td><td class="metric-cell hl-pink">0.1843</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="card overflow-x-auto">
-        <table class="results">
-          <thead><tr><th>Year</th><th>Finite RSS</th><th>Infinite</th><th>CoT-PIS</th><th>Pattern</th></tr></thead>
-          <tbody>
-            <tr><td>2009</td><td class="metric-cell hl-pink">2.0125</td><td class="metric-cell">1</td><td class="metric-cell">0.0624</td><td>5 amp., 2 neutral, 2 stab.</td></tr>
-            <tr><td>2014</td><td class="metric-cell">1.8817</td><td class="metric-cell">1</td><td class="metric-cell">0.0620</td><td>7 amp., 1 neutral, 1 stab.</td></tr>
-            <tr><td>2019</td><td class="metric-cell">1.8657</td><td class="metric-cell">1</td><td class="metric-cell">0.0601</td><td>5 amp., 2 neutral, 2 stab.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="caption mb-8">
-      <b>RSS breakdown.</b> Even stabilizing cases can move the model's center: the stabilizing category has the
-      largest mean centroid shift, showing that "less dispersion" and "same ideological location" are not equivalent.
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6 mt-8">
-      <div>
-        <div class="card p-2">
-          <img src="asset/pis_stance_distribution.svg" alt="PIS stance distribution"
-               class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-96&quot;>asset/stance/pis_stance_distribution.svg — raw stance heatmap under paraphrase (p1–p10) for 9 models × 82 statements</div>'">
-        </div>
-        <div class="caption">
-          <b>Figure 10. Raw stance variation under surface-form paraphrase (PIS).</b> Ten semantically equivalent
-          rewording templates ($p_1$–$p_{10}$). <span class="font-mono">gemma-4-26b</span> exhibits near-perfect
-          column uniformity (high paraphrase stability), whereas <span class="font-mono">deepseek-v4</span>,
-          <span class="font-mono">qwen-turbo</span>, and <span class="font-mono">grok-4.1</span> display frequent
-          intra-column stance flipping.
-        </div>
-      </div>
-      <div>
-        <div class="card p-2">
-          <img src="asset/rss_stance_distribution.svg" alt="RSS stance distribution"
-               class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-96&quot;>asset/stance/rss_stance_distribution.svg — raw stance heatmap under chain-of-thought reasoning</div>'">
-        </div>
-        <div class="caption">
-          <b>Figure 12. Raw stance variation under chain-of-thought reasoning (RSS).</b>
-          <span class="font-mono">gemini-2.5-flash-lite</span> and <span class="font-mono">granite-3.3-8b</span> exhibit
-          severe categorical fragmentation; <span class="font-mono">gemma-4-26b</span> displays newly manufactured
-          variance entirely absent under direct elicitation.
-        </div>
-      </div>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6 mt-8">
-      <div>
-        <div class="card p-2">
-          <img src="asset/pis.svg" alt="PIS projections"
-               class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-72&quot;>asset/ideoPlots/pis.svg — PIS CHES projections</div>'">
-        </div>
-        <div class="caption">
-          <b>Figure 11. PIS — Paraphrase-induced ideological dispersion.</b> Per-model CHES projections of the ten
-          paraphrase realizations.
-        </div>
-      </div>
-      <div>
-        <div class="card p-2">
-          <img src="asset/rss.svg" alt="RSS projections"
-               class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-72&quot;>asset/ideoPlots/rss.svg — RSS CHES projections</div>'">
-        </div>
-        <div class="caption">
-          <b>Figure 13. RSS — Reasoning-conditioned paraphrase dispersion.</b> Larger or more anisotropic clouds
-          relative to PIS indicate reasoning has <em>expanded</em>, not stabilized, the accessible region.
-        </div>
-      </div>
-    </div>
-
-    <div class="card p-2 mt-8 flex justify-center items-center">
-      <img src="asset/f6.svg" alt="Grok paraphrase vs reasoning"
-           style="width: 700px;" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-72&quot;>asset/grok_example.svg — Paraphrase-conditioned vs. reasoning-conditioned stance landscape for Grok-4.1-Fast (PIS vs RSS heatmap rows)</div>'">
-    </div>
-    <div class="caption">
-      <b>Figure 6. Paraphrase-conditioned vs. reasoning-conditioned stance landscape for Grok-4.1-Fast.</b>
-      Each cell encodes the model's classified stance for one of 82 VAA statements under one of ten paraphrases.
-      Cells whose colour shifts between PIS and RSS expose statements on which deliberative justification displaces
-      the model's direct-prompt stance.
-    </div>
-  </div>
-
-  <!-- 4.4 LDS -->
-  <div class="mb-20">
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">§4.4</span>
-      <h3 class="font-display text-2xl font-medium">Multilingual Displacement (LDS)</h3>
-    </div>
-    <p class="text-neutral-700 leading-relaxed w-full text-justify mb-6">
-      Mean LDS is <strong>0.2032</strong>, with a range of 0.0355 to 0.5150 across 99 model–language pairs.
-      <span class="font-mono text-sm">deepseek-v4</span> (0.3097) and
-      <span class="font-mono text-sm">granite-3.3-8b</span> (0.2655) are the most language-sensitive;
-      <span class="font-mono text-sm">gpt-5-mini</span> (0.1254) and
-      <span class="font-mono text-sm">gemma-4-26b</span> (0.1329) are the least. The language-level pattern is
-      markedly heterogeneous: <strong>Swahili</strong> (0.2861), <strong>Turkish</strong> (0.2512),
-      <strong>Bengali</strong> (0.2436), and <strong>Arabic</strong> (0.2245) produce the largest mean shifts,
-      whereas Indonesian (0.1531), Mandarin (0.1632), French (0.1643), and Spanish (0.1698) produce the smallest —
-      consistent with under-representation in alignment training corpora.
-    </p>
-
-    <div class="grid md:grid-cols-2 gap-6 mb-8">
-      <div class="card overflow-x-auto">
-        <table class="results">
-          <thead><tr><th>Language</th><th>Mean LDS</th><th>Max</th><th>Min</th></tr></thead>
-          <tbody>
-            <tr><td>Swahili</td><td class="metric-cell hl-pink">0.2861</td><td class="metric-cell">0.5150</td><td class="metric-cell">0.1116</td></tr>
-            <tr><td>Turkish</td><td class="metric-cell">0.2512</td><td class="metric-cell">0.4496</td><td class="metric-cell">0.0915</td></tr>
-            <tr><td>Bengali</td><td class="metric-cell">0.2436</td><td class="metric-cell">0.4684</td><td class="metric-cell">0.0998</td></tr>
-            <tr><td>Arabic</td><td class="metric-cell">0.2245</td><td class="metric-cell">0.5132</td><td class="metric-cell">0.0602</td></tr>
-            <tr><td>German</td><td class="metric-cell">0.2024</td><td class="metric-cell">0.4952</td><td class="metric-cell hl-cyan">0.0355</td></tr>
-            <tr><td>Hindi</td><td class="metric-cell">0.1917</td><td class="metric-cell">0.3074</td><td class="metric-cell">0.0720</td></tr>
-            <tr><td>Russian</td><td class="metric-cell">0.1851</td><td class="metric-cell">0.2767</td><td class="metric-cell">0.0599</td></tr>
-            <tr><td>Spanish</td><td class="metric-cell">0.1698</td><td class="metric-cell">0.3245</td><td class="metric-cell">0.0564</td></tr>
-            <tr><td>French</td><td class="metric-cell">0.1643</td><td class="metric-cell">0.3872</td><td class="metric-cell">0.0604</td></tr>
-            <tr><td>Mandarin</td><td class="metric-cell">0.1632</td><td class="metric-cell">0.3530</td><td class="metric-cell">0.0668</td></tr>
-            <tr><td>Indonesian</td><td class="metric-cell hl-cyan">0.1531</td><td class="metric-cell">0.2580</td><td class="metric-cell">0.0557</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="card overflow-x-auto">
-        <table class="results">
-          <thead><tr><th>Largest model-language shifts</th><th>Language</th><th>LDS</th></tr></thead>
-          <tbody>
-            <tr><td>qwen/qwen-turbo</td><td>Swahili</td><td class="metric-cell hl-pink">0.5150</td></tr>
-            <tr><td>qwen/qwen-turbo</td><td>Arabic</td><td class="metric-cell">0.5132</td></tr>
-            <tr><td>deepseek/v4-flash</td><td>German</td><td class="metric-cell">0.4952</td></tr>
-            <tr><td>ibm-granite/3.3-8b</td><td>German</td><td class="metric-cell">0.4692</td></tr>
-            <tr><td>deepseek/v4-flash</td><td>Bengali</td><td class="metric-cell">0.4684</td></tr>
-            <tr><td>ibm-granite/3.3-8b</td><td>Turkish</td><td class="metric-cell">0.4496</td></tr>
-            <tr><td>ibm-granite/3.3-8b</td><td>Swahili</td><td class="metric-cell">0.4130</td></tr>
-            <tr><td>deepseek/v4-flash</td><td>Arabic</td><td class="metric-cell">0.4012</td></tr>
-            <tr><td>qwen/qwen-turbo</td><td>Bengali</td><td class="metric-cell">0.3973</td></tr>
-            <tr><td>openai/gpt-oss-120b</td><td>French</td><td class="metric-cell">0.3872</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="caption mb-8">
-      <b>LDS tables.</b> The aggregate language ranking and the largest individual model-language shifts tell different
-      stories: Swahili is highest on average, but Qwen is highly heterogeneous, producing both the largest shifts and
-      several of the smallest shifts in the full table.
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6">
-      <div>
-        <div class="card p-2">
-          <img src="asset/lds_stance_distribution.svg" alt="LDS stance distribution"
-               class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-96&quot;>asset/stance/lds_stance_distribution.svg — raw stance heatmap across 12 languages × 82 statements × 9 models</div>'">
-        </div>
-        <div class="caption">
-          <b>Figure 14. Raw stance variation under multilingual elicitation (LDS).</b> The high frequency of vertical
-          variation within statement columns demonstrates that interaction language systematically alters a model's
-          fundamental policy position prior to its projection into the continuous CHES space.
-        </div>
-      </div>
-
-      <div>
-        <div class="card p-2">
-          <img src="asset/lds.svg" alt="LDS projections"
-               class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-96&quot;>asset/ideoPlots/lds.svg — LDS CHES projections with arrows from English baseline to 11 target languages</div>'">
-        </div>
-        <div class="caption">
-          <b>Figure 15. LDS — Multilingual ideological displacement.</b> Arrows trace the displacement from the English
-          baseline to each target-language response. Long, parallel arrows reveal coherent directional bias; short or
-          scattered arrows indicate multilingual consistency.
-        </div>
-      </div>
-    </div>
-
-    <div class="card p-2 mt-8 flex justify-center items-center">
-      <img src="asset/grok_lds.png" alt="Grok cross-lingual"
-           style="width: 700px;" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-72&quot;>asset/grok_lds.svg — Cross-lingual stance landscape for Grok-4.1-Fast: English (Disagree) vs. Bengali (Completely Agree) on statement S1_09</div>'">
-    </div>
-    <div class="caption">
-      <b>Figure 7. Cross-lingual stance landscape for Grok-4.1-Fast.</b> On statement S1_09 (<em>"Social programs
-      should be maintained even at the cost of higher taxes"</em>), the model registers
-      <em>Completely Disagree</em> in English yet <em>Completely Agree</em> in Bengali — a polarity flip on an
-      economically substantive item, despite propositionally identical content.
-    </div>
-  </div>
-
-  <!-- 4.5 DS -->
-  <div class="mb-20">
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">§4.5</span>
-      <h3 class="font-display text-2xl font-medium">Debate Trajectories (DS)</h3>
-    </div>
-    <p class="text-neutral-700 leading-relaxed w-full text-justify mb-6">
-      Adversarial dialogue produces large, heterogeneous, and frequently non-monotonic ideological motion.
-      <span class="font-mono text-sm">gpt-5-mini</span> is the clear outlier: largest mean net drift
-      (<strong>0.3675</strong>), largest mean path length (<strong>0.9653</strong>), and largest peak velocity
-      (<strong>0.2553</strong>). At the opposite extreme, <span class="font-mono text-sm">gemma-4-26b</span> barely
-      moves (net drift 0.0067). Drift and trajectory geometry are <em>dissociable</em>:
-      <span class="font-mono text-sm">qwen-turbo</span> in 2014 has nearly zero net drift (0.0039) yet the highest
-      tortuosity in the per-year data (<strong>39.23</strong>) — substantial within-trajectory oscillation that
-      returns near the starting point, a pattern endpoint-only summaries would miss entirely.
-    </p>
-
-    <div class="card overflow-x-auto mb-8">
-      <table class="results">
-        <thead><tr><th>Model</th><th>Yr</th><th>Drift</th><th>Path</th><th>Tort.</th><th>Peak</th></tr></thead>
-        <tbody>
-          <tr><td>openai/gpt-5-mini</td><td>09</td><td class="metric-cell hl-pink">0.481</td><td class="metric-cell">1.077</td><td class="metric-cell">2.24</td><td class="metric-cell hl-green">0.247</td></tr>
-          <tr><td>x-ai/grok-4.1-fast</td><td>09</td><td class="metric-cell">0.207</td><td class="metric-cell">0.302</td><td class="metric-cell hl-lilac">1.46</td><td class="metric-cell">0.193</td></tr>
-          <tr><td>meta-llama/llama-4-scout</td><td>09</td><td class="metric-cell">0.201</td><td class="metric-cell">0.487</td><td class="metric-cell">2.42</td><td class="metric-cell">0.108</td></tr>
-          <tr><td>meta/llama-3-70b</td><td>09</td><td class="metric-cell">0.157</td><td class="metric-cell">0.545</td><td class="metric-cell">3.47</td><td class="metric-cell">0.150</td></tr>
-          <tr><td>ibm-granite/3.3</td><td>09</td><td class="metric-cell">0.127</td><td class="metric-cell">0.317</td><td class="metric-cell">2.51</td><td class="metric-cell">0.104</td></tr>
-          <tr><td>qwen/qwen-turbo</td><td>09</td><td class="metric-cell">0.083</td><td class="metric-cell">0.371</td><td class="metric-cell">4.46</td><td class="metric-cell">0.110</td></tr>
-          <tr><td>gemini-2.5-fl-lite</td><td>09</td><td class="metric-cell">0.064</td><td class="metric-cell">0.171</td><td class="metric-cell">2.69</td><td class="metric-cell">0.045</td></tr>
-          <tr><td>deepseek/v4-flash</td><td>09</td><td class="metric-cell">0.014</td><td class="metric-cell">0.088</td><td class="metric-cell hl-yellow">6.26</td><td class="metric-cell">0.022</td></tr>
-          <tr><td>google/gemma-4-26b</td><td>09</td><td class="metric-cell hl-cyan">0.003</td><td class="metric-cell">0.011</td><td class="metric-cell">4.35</td><td class="metric-cell">0.006</td></tr>
-          <tr><td>openai/gpt-5-mini</td><td>14</td><td class="metric-cell hl-pink">0.392</td><td class="metric-cell">0.903</td><td class="metric-cell">2.31</td><td class="metric-cell hl-green">0.250</td></tr>
-          <tr><td>x-ai/grok-4.1-fast</td><td>14</td><td class="metric-cell">0.111</td><td class="metric-cell">0.392</td><td class="metric-cell">3.52</td><td class="metric-cell">0.124</td></tr>
-          <tr><td>meta-llama/llama-4-scout</td><td>14</td><td class="metric-cell">0.111</td><td class="metric-cell">0.463</td><td class="metric-cell">4.18</td><td class="metric-cell">0.128</td></tr>
-          <tr><td>ibm-granite/3.3</td><td>14</td><td class="metric-cell">0.101</td><td class="metric-cell">0.196</td><td class="metric-cell hl-lilac">1.95</td><td class="metric-cell">0.049</td></tr>
-          <tr><td>meta/llama-3-70b</td><td>14</td><td class="metric-cell">0.074</td><td class="metric-cell">0.370</td><td class="metric-cell">4.99</td><td class="metric-cell">0.096</td></tr>
-          <tr><td>deepseek/v4-flash</td><td>14</td><td class="metric-cell">0.032</td><td class="metric-cell">0.164</td><td class="metric-cell">5.10</td><td class="metric-cell">0.039</td></tr>
-          <tr><td>gemini-2.5-fl-lite</td><td>14</td><td class="metric-cell">0.018</td><td class="metric-cell">0.152</td><td class="metric-cell">8.55</td><td class="metric-cell">0.036</td></tr>
-          <tr><td>google/gemma-4-26b</td><td>14</td><td class="metric-cell">0.006</td><td class="metric-cell">0.024</td><td class="metric-cell">4.33</td><td class="metric-cell">0.009</td></tr>
-          <tr><td>qwen/qwen-turbo</td><td>14</td><td class="metric-cell hl-cyan">0.004</td><td class="metric-cell">0.152</td><td class="metric-cell hl-yellow">39.23</td><td class="metric-cell">0.059</td></tr>
-          <tr><td>openai/gpt-5-mini</td><td>19</td><td class="metric-cell hl-pink">0.230</td><td class="metric-cell">0.916</td><td class="metric-cell">3.99</td><td class="metric-cell">0.269</td></tr>
-          <tr><td>x-ai/grok-4.1-fast</td><td>19</td><td class="metric-cell">0.216</td><td class="metric-cell">0.325</td><td class="metric-cell hl-lilac">1.51</td><td class="metric-cell">0.175</td></tr>
-          <tr><td>meta-llama/llama-4-scout</td><td>19</td><td class="metric-cell">0.157</td><td class="metric-cell">0.430</td><td class="metric-cell">2.74</td><td class="metric-cell">0.080</td></tr>
-          <tr><td>ibm-granite/3.3</td><td>19</td><td class="metric-cell">0.146</td><td class="metric-cell">0.796</td><td class="metric-cell hl-yellow">5.46</td><td class="metric-cell hl-green">0.275</td></tr>
-          <tr><td>meta/llama-3-70b</td><td>19</td><td class="metric-cell">0.104</td><td class="metric-cell">0.525</td><td class="metric-cell">5.07</td><td class="metric-cell">0.150</td></tr>
-          <tr><td>qwen/qwen-turbo</td><td>19</td><td class="metric-cell">0.078</td><td class="metric-cell">0.320</td><td class="metric-cell">4.08</td><td class="metric-cell">0.113</td></tr>
-          <tr><td>gemini-2.5-fl-lite</td><td>19</td><td class="metric-cell">0.054</td><td class="metric-cell">0.161</td><td class="metric-cell">2.99</td><td class="metric-cell">0.045</td></tr>
-          <tr><td>deepseek/v4-flash</td><td>19</td><td class="metric-cell">0.039</td><td class="metric-cell">0.192</td><td class="metric-cell">4.91</td><td class="metric-cell">0.049</td></tr>
-          <tr><td>google/gemma-4-26b</td><td>19</td><td class="metric-cell hl-cyan">0.012</td><td class="metric-cell">0.012</td><td class="metric-cell hl-lilac">1.00</td><td class="metric-cell">0.012</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="caption mb-8">
-      <b>Full DS trajectory metrics.</b> Pink marks maximum net drift per year, cyan minimum net drift, yellow the
-      highest tortuosity anomaly, lavender the most direct path, and green the highest peak velocity.
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6">
-      <div>
-        <div class="card p-2">
-          <img src="asset/ds_stance_distribution.svg" alt="DS stance distribution"
-               class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-96&quot;>asset/stance/ds_stance_distribution.svg — turn-by-turn (t1–t8) stance heatmap for 9 models × 82 statements</div>'">
-        </div>
-        <div class="caption">
-          <b>Figure 16. Raw stance variation under adversarial multi-turn debate (DS).</b>
-          <span class="font-mono">gemma-4-26b</span> exhibits extreme conversational rigidity (solid vertical bands),
-          while <span class="font-mono">gpt-5-mini</span> and <span class="font-mono">granite-3.3-8b</span> display
-          high tortuosity, frequently flipping their policy endorsements back and forth.
-        </div>
-      </div>
-
-      <div>
-        <div class="card p-2">
-          <img src="asset/ds.svg" alt="DS trajectories"
-               class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-[40rem]&quot;>asset/ideoPlots/ds.svg — 9×3 grid of adversarial multi-turn ideological trajectories (one panel per model × year)</div>'">
-        </div>
-        <div class="caption">
-          <b>Figure 17. DS — Adversarial multi-turn ideological trajectories.</b> A 9×3 grid (rows: models, columns:
-          years). Each subplot traces the eight-turn ($t_1 \to t_8$) ideological trajectory of the corresponding
-          model–year configuration. Marker color encodes turn index along a viridis ramp; arrows connect consecutive
-          turns to reveal directional structure.
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-8 card p-7 tint-lilac">
-      <h4 class="font-display text-xl font-medium mb-3">Reading the 9x3 DS trajectory grid</h4>
+    <div class="card p-7 tint-lilac">
+      <h3 class="font-display text-2xl font-medium mb-4">Run the Notebooks</h3>
       <p class="text-sm text-neutral-700 leading-relaxed">
-        The DS plot is a cohort atlas: nine model rows by three electoral-year columns. Read each panel as a path,
-        not as a point. Net drift asks where the debate ends; total path length asks how much ideological motion
-        occurred; tortuosity asks whether the path was direct or oscillatory; peak velocity captures the largest
-        single-turn jump. This is why endpoint stability can coexist with large hidden movement.
+        The notebooks were developed for a Google Colab-style environment and install dependencies inside individual cells. Update absolute <span class="font-mono">/Runs</span>, <span class="font-mono">/Datasets</span>, and <span class="font-mono">/Models</span> paths, supply VAA/CHES source datasets and serialized projection models where required, and configure provider credentials only when regenerating model responses.
       </p>
     </div>
-
-    <div class="mt-6">
-      <div class="card p-2">
-        <img src="asset/ds.svg" alt="Full-width DS 9 by 3 trajectory atlas" class="w-full">
-      </div>
-      <div class="caption">
-        <b>Figure 17 expanded. DS trajectory atlas.</b> Repeated full-width so the 27-panel structure can be read at
-        its intended scale.
-      </div>
-    </div>
   </div>
+</section>
 
-  <!-- 4.6 IAS -->
-  <div class="mb-20">
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">§4.6</span>
-      <h3 class="font-display text-2xl font-medium">Argumentative Symmetry (IAS)</h3>
-    </div>
-    <p class="text-neutral-700 leading-relaxed w-full text-justify">
-      All nine models produce arguments scored above 4.13/5 in both directions, indicating broad rhetorical
-      competence. The aggregate signal, however, is asymmetric: mean IAS is <strong>−0.1047</strong>, and
-      <strong>five of nine models</strong> score their <em>against</em>-side arguments more highly than their
-      <em>for</em>-side ones. <span class="font-mono text-sm">granite-3.3-8b</span> is the strongest case
-      (IAS = −0.4230). Notably, the most prompt-sensitive model in PSS
-      (<span class="font-mono text-sm">gemma-4</span>) is among the two most balanced argumentatively — reinforcing
-      that no single axis exhausts the construct.
-    </p>
-  </div>
+<!-- ============================================================== -->
+<!-- SCOPE -->
+<!-- ============================================================== -->
+<section id="scope" class="bg-fog/40 py-20" style="background:#fafafb">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="section-num mb-3">// Scope and Interpretation</div>
+    <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-8">How to Read the Results</h2>
 
-  <!-- 4.7 OW -->
-  <div class="mb-20">
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">§4.7</span>
-      <h3 class="font-display text-2xl font-medium">Overton Geometry (OW)</h3>
-    </div>
-    <p class="text-neutral-700 leading-relaxed w-full text-justify mb-6">
-      Pooling each model's coordinates across PSS, PIS, RSS, LDS, and DS and computing the inner-90% convex hull:
-      <span class="font-mono text-sm">qwen-turbo</span> occupies the largest envelope by every measure — 3D
-      max spread, volume, surface area, and both 2D summaries — establishing it as the broadest model in the cohort.
-      <span class="font-mono text-sm">deepseek-v4</span> and <span class="font-mono text-sm">granite-3.3-8b</span>
-      form a second tier. <span class="font-mono text-sm">llama-3-70b</span> is interesting: it has the
-      second-largest 3D max spread but only the seventh-largest volume, implying an <em>elongated</em> rather than
-      voluminous envelope.
-    </p>
-
-    <div class="card overflow-x-auto mb-8">
-      <table class="results">
-        <thead>
-          <tr><th>Model</th><th>Spr3</th><th>Vol3</th><th>Surf3</th><th>Spr2</th><th>Area2</th><th>%V3</th><th>%A2</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>qwen/qwen-turbo</td><td class="metric-cell hl-pink">0.7349</td><td class="metric-cell hl-pink">0.0172</td><td class="metric-cell hl-pink">0.4943</td><td class="metric-cell hl-pink">0.5945</td><td class="metric-cell hl-pink">0.1641</td><td class="metric-cell hl-pink">4.1</td><td class="metric-cell hl-pink">29.8</td></tr>
-          <tr><td>meta/llama-3-70b</td><td class="metric-cell">0.6258</td><td class="metric-cell">0.0080</td><td class="metric-cell">0.3283</td><td class="metric-cell">0.5192</td><td class="metric-cell">0.1174</td><td class="metric-cell">1.9</td><td class="metric-cell">21.3</td></tr>
-          <tr><td>deepseek/v4-flash</td><td class="metric-cell">0.5861</td><td class="metric-cell">0.0141</td><td class="metric-cell">0.4154</td><td class="metric-cell">0.5205</td><td class="metric-cell">0.1376</td><td class="metric-cell">3.4</td><td class="metric-cell">25.0</td></tr>
-          <tr><td>ibm-granite/3.3</td><td class="metric-cell">0.5637</td><td class="metric-cell">0.0144</td><td class="metric-cell">0.4306</td><td class="metric-cell">0.4872</td><td class="metric-cell">0.1470</td><td class="metric-cell">3.4</td><td class="metric-cell">26.7</td></tr>
-          <tr><td>openai/gpt-5-mini</td><td class="metric-cell">0.5328</td><td class="metric-cell">0.0090</td><td class="metric-cell">0.3112</td><td class="metric-cell">0.4523</td><td class="metric-cell">0.1003</td><td class="metric-cell">2.1</td><td class="metric-cell">18.2</td></tr>
-          <tr><td>x-ai/grok-4.1-fast</td><td class="metric-cell">0.4902</td><td class="metric-cell">0.0126</td><td class="metric-cell">0.3390</td><td class="metric-cell">0.4344</td><td class="metric-cell">0.1102</td><td class="metric-cell">3.0</td><td class="metric-cell">20.0</td></tr>
-          <tr><td>google/gemma-4-26b</td><td class="metric-cell">0.4334</td><td class="metric-cell">0.0067</td><td class="metric-cell">0.2446</td><td class="metric-cell">0.4007</td><td class="metric-cell">0.0868</td><td class="metric-cell">1.6</td><td class="metric-cell">15.8</td></tr>
-          <tr><td>meta/llama-4-scout</td><td class="metric-cell">0.4159</td><td class="metric-cell hl-cyan">0.0065</td><td class="metric-cell hl-cyan">0.2292</td><td class="metric-cell hl-cyan">0.3358</td><td class="metric-cell hl-cyan">0.0724</td><td class="metric-cell hl-cyan">1.5</td><td class="metric-cell hl-cyan">13.2</td></tr>
-          <tr><td>google/gemini-2.5-fl-lite</td><td class="metric-cell hl-cyan">0.3960</td><td class="metric-cell">0.0083</td><td class="metric-cell">0.2600</td><td class="metric-cell">0.3729</td><td class="metric-cell">0.0803</td><td class="metric-cell">2.0</td><td class="metric-cell">14.6</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="caption mb-8">
-      <b>Full Overton geometry.</b> Spr/Vol/Surf are computed on the rescaled 3D CHES space. The percentage columns
-      compare each model hull to the reference inter-party hull from actual CHES party coordinates.
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card p-6"><p class="text-sm text-neutral-700 leading-relaxed">The coordinate system is grounded in European VAA and CHES data and may not represent political structure outside that setting.</p></div>
+      <div class="card p-6"><p class="text-sm text-neutral-700 leading-relaxed">Temperature-zero decoding isolates context-conditioned variation from stochastic sampling variation; the study does not jointly estimate both.</p></div>
+      <div class="card p-6"><p class="text-sm text-neutral-700 leading-relaxed">The model roster represents provider snapshots available at generation time, so cohort-specific rankings should not be treated as permanent model-family properties.</p></div>
+      <div class="card p-6"><p class="text-sm text-neutral-700 leading-relaxed">The study uses one stance judge, and the exploratory cross-metric analysis contains only nine substantive models.</p></div>
     </div>
 
-    <div class="flex flex-col gap-6 mb-8">
-      <div class="p-2">
-        <img src="asset/f4-1.svg" alt="Temporal monoculture 3D"
-             class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-96&quot;>asset/extended_teaser_chrono.svg — temporal stability of algorithmic monoculture, 3D polytopes for 2009/2014/2019</div>'">
-      </div>
-      <div class="p-2">
-        <img src="asset/f4-2.svg" alt="Temporal monoculture 2D"
-             class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-96&quot;>asset/extended_teaser_chrono_2d.svg — 2D cross-section (lrecon × galtan) of monoculture across 2009/2014/2019</div>'">
-      </div>
-    </div>
-    <div class="caption">
-      <b>Figure 4. Temporal Stability of Algorithmic Monoculture.</b> The expansive outer envelope is the reference
-      inter-party diversity of actual European political parties; the severely compressed inner envelope is the
-      pooled coordinate cloud of all nine evaluated LLMs. Both convex hulls enclose the inner 90% of their
-      respective coordinate populations. Despite originating from different corporate developers and undergoing
-      distinct alignment pipelines, the models collectively occupy a dramatically restricted subspace that remains
-      static across a decade of simulated electoral contexts.
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6 mt-8">
-      <div>
-        <div class="card p-2">
-          <img src="asset/f5.svg" alt="Temporal drift of mean ideologies"
-               class="w-full" onerror="this.outerHTML=`<div class=&quot;figure-placeholder h-96&quot;>asset/temporal_drift.svg — temporal drift of each model's mean ideological position 2009→2014→2019</div>`">
-        </div>
-        <div class="caption">
-          <b>Figure 5. Temporal Drift of Aggregate Model Ideologies.</b> Each model's mean ideological position
-          across electoral years on the <span class="font-mono">lrecon</span>-<span class="font-mono">galtan</span>
-          plane. Triangles = 2009, circles = 2014, squares = 2019. Trajectories reveal a distinct
-          <em>pendulum swing</em>: rather than drifting monotonically, mean coordinates frequently oscillate or
-          rebound, reflecting shifts in issue salience rather than linear stabilization.
-        </div>
-      </div>
-
-      <div>
-        <div class="card p-2">
-          <img src="asset/ow.svg" alt="OW per-model envelopes"
-               class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-96&quot;>asset/ideoPlots/ow.svg — per-model aggregate Overton envelopes (90% convex hulls) for 2009/2014/2019</div>'">
-        </div>
-        <div class="caption">
-          <b>Figure 18. OW — Aggregate Overton envelope under pooled perturbations.</b> Per-model CHES projections after
-          pooling coordinates from PSS, PIS, RSS, LDS, and DS into a unified per-year cloud. The 90%-trimmed convex
-          hull (shaded polygon) and its maximum-spread diameter (thick line segment) are drawn separately for each
-          year. The compactness of every model's aggregate hull relative to the full
-          $[0,1]^2$ plane visualizes the aggregate-monoculture finding.
-        </div>
-      </div>
-    </div>
-
-    <!-- Cohort monoculture stat -->
-    <div class="mt-10 card p-7 tint-pink">
-      <div class="grid md:grid-cols-2 gap-6 items-center">
-        <div>
-          <div class="section-num mb-2">Cohort Monoculture Ratio</div>
-          <div class="headline-num text-6xl">≈ 0.29</div>
-          <p class="mt-3 text-sm text-neutral-700 leading-relaxed">
-            Mean inter-model centroid distance within the LLM cohort is <strong>0.173</strong>. Typical distance
-            between distinct major European party families in the same rescaled CHES space is <strong>0.60</strong>.
-            Switching between frontier AI providers yields less than <strong>one-third</strong> the ideological
-            variance one would experience traversing standard mainstream political parties.
-          </p>
-        </div>
-        <div class="text-sm text-neutral-700">
-          <div class="grid grid-cols-3 gap-3 text-center">
-            <div>
-              <div class="text-xs uppercase tracking-wide text-neutral-500 mb-1">3D Volume</div>
-              <div class="headline-num text-2xl">2.56%</div>
-              <div class="text-xs text-neutral-500">of CHES envelope</div>
-            </div>
-            <div>
-              <div class="text-xs uppercase tracking-wide text-neutral-500 mb-1">2D Area</div>
-              <div class="headline-num text-2xl">20.53%</div>
-              <div class="text-xs text-neutral-500">of CHES envelope</div>
-            </div>
-            <div>
-              <div class="text-xs uppercase tracking-wide text-neutral-500 mb-1">1D <em>lrgen</em></div>
-              <div class="headline-num text-2xl">12.36%</div>
-              <div class="text-xs text-neutral-500">of CHES envelope</div>
-            </div>
-          </div>
-          <p class="mt-4 text-xs text-neutral-500 italic">
-            Anisotropic compression: the cohort envelope is geometrically <em>flattened</em> on the general
-            left-right axis.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card overflow-x-auto mt-8">
-      <table class="results">
-        <thead><tr><th>Model</th><th>3D volume (% CHES)</th><th>2D area (% CHES)</th><th>1D lrgen (% CHES)</th></tr></thead>
-        <tbody>
-          <tr><td>Qwen-Turbo</td><td class="metric-cell hl-pink">4.11%</td><td class="metric-cell hl-pink">29.84%</td><td class="metric-cell">13.76%</td></tr>
-          <tr><td>Granite-3.3</td><td class="metric-cell">3.43%</td><td class="metric-cell">26.73%</td><td class="metric-cell">12.83%</td></tr>
-          <tr><td>DeepSeek-V4</td><td class="metric-cell">3.36%</td><td class="metric-cell">25.01%</td><td class="metric-cell">13.44%</td></tr>
-          <tr><td>Grok-4.1-Fast</td><td class="metric-cell">2.99%</td><td class="metric-cell">20.04%</td><td class="metric-cell hl-pink">14.93%</td></tr>
-          <tr><td>GPT-5-Mini</td><td class="metric-cell">2.15%</td><td class="metric-cell">18.23%</td><td class="metric-cell">11.82%</td></tr>
-          <tr><td>Gemini-2.5-Flash</td><td class="metric-cell">1.98%</td><td class="metric-cell">14.60%</td><td class="metric-cell">13.57%</td></tr>
-          <tr><td>Llama-3-70B</td><td class="metric-cell">1.90%</td><td class="metric-cell">21.35%</td><td class="metric-cell hl-cyan">8.91%</td></tr>
-          <tr><td>Gemma-4-26B</td><td class="metric-cell">1.61%</td><td class="metric-cell">15.79%</td><td class="metric-cell">10.17%</td></tr>
-          <tr><td>Llama-4-Scout</td><td class="metric-cell hl-cyan">1.55%</td><td class="metric-cell hl-cyan">13.16%</td><td class="metric-cell">11.79%</td></tr>
-          <tr><td><strong>Cohort mean</strong></td><td class="metric-cell">2.56%</td><td class="metric-cell">20.53%</td><td class="metric-cell">12.36%</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="caption">
-      <b>Dimensional compression.</b> The steep reduction from 2D area coverage to 1D general-left-right thickness
-      shows that the LLM envelope is not just small; it is flattened along the third CHES axis.
-    </div>
-  </div>
-
-  <!-- 4.8 MTMM -->
-  <div class="mb-12">
-    <div class="flex items-baseline gap-3 mb-3">
-      <span class="font-mono text-xs uppercase tracking-widest text-neutral-500">§4.8</span>
-      <h3 class="font-display text-2xl font-medium">Multi-Trait Multi-Method Validation</h3>
-    </div>
-    <p class="text-neutral-700 leading-relaxed max-w-3xl mb-6">
-      The metrics are not a portfolio of independent measurements; the central claim entails that they should
-      exhibit a coherent <em>convergent–discriminant</em> structure. The strongest convergent signal is
-      <strong>OW with PIS (0.724)</strong> and <strong>OW with LDS (0.623)</strong>: models that disperse under
-      paraphrase and shift under language also occupy larger aggregate envelopes — exactly as the framework predicts.
-      PIS and LDS themselves correlate at 0.472, consistent with both tapping an <em>"instability under surface
-      variation"</em> factor. The PIS–RSS correlation is large and negative (−0.852) — not anomalous but
-      <em>algebraic</em>, since RSS is defined as the ratio CoT_PIS / PIS<sub>direct</sub>. The discriminant signal
-      is also visible: IAS correlates only weakly with the instability block.
-    </p>
-
-    <div class="grid md:grid-cols-2 gap-6 mb-6">
-      <div class="card p-2">
-        <img src="asset/f3.svg" alt="MTMM correlation matrix"
-             class="w-full" onerror="this.outerHTML='<div class=&quot;figure-placeholder h-80&quot;>asset/MTMM_3.svg — cross-metric Spearman correlation matrix (7×7) across 9 models</div>'">
-      </div>
-      <div class="text-sm text-neutral-700">
-        <h4 class="font-display text-lg font-medium mb-3">Exploratory PCA — 3 latent factors</h4>
-        <p class="leading-relaxed mb-3">
-          Eigen-decomposition of the MTMM correlation matrix reveals a robust 3-factor latent measurement model that
-          explains <strong>83.30%</strong> of total variance, isolating three orthogonal dimensions of ideological
-          plasticity:
-        </p>
-        <ul class="space-y-2.5">
-          <li class="flex gap-3">
-            <span class="font-mono text-xs px-2 py-1 rounded h-fit" style="background:#D8F7FB;color:#00708A">PC1</span>
-            <span><strong>Surface Instability &amp; Aggregate Breadth</strong> (37.82%) — PIS, OW.</span>
-          </li>
-          <li class="flex gap-3">
-            <span class="font-mono text-xs px-2 py-1 rounded h-fit" style="background:#EBE2FF;color:#5C42B0">PC2</span>
-            <span><strong>Contextual &amp; Interactional Perturbation</strong> (26.20%) — LDS, PSS, DS.</span>
-          </li>
-          <li class="flex gap-3">
-            <span class="font-mono text-xs px-2 py-1 rounded h-fit" style="background:#FFE2EA;color:#A8244F">PC3</span>
-            <span><strong>Argumentative Asymmetry</strong> (19.28%) — IAS isolated as its own latent factor.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="caption">
-      <b>Figure 3. Cross-metric Spearman correlations across the nine evaluated models.</b> The convergent cluster
-      (PIS, LDS, OW) and the discriminant signal (IAS) emerge alongside the algebraic PIS–RSS coupling. The MTMM
-      result is not a sanity check; it is direct evidence that the eight metrics jointly characterize the
-      <em>shape</em> of $\mathbb{P}(\,\cdot\,|\,\mathbf{c})$ rather than redundantly measuring a single property.
+    <div class="card p-7 tint-cyan mt-8">
+      <h3 class="font-display text-2xl font-medium mb-4">Related Context</h3>
+      <p class="text-sm text-neutral-700 leading-relaxed text-justify">
+        The README situates the work alongside the spinning-arrow critique of static LLM political-compass scores by <a href="https://aclanthology.org/2024.acl-long.816/" class="ul-link">Röttger et al.</a> and <a href="https://aclanthology.org/2024.tacl-1.76/" class="ul-link">Ceron et al.</a>, the distributional framing of political output spaces in <a href="https://aclanthology.org/2025.findings-emnlp.1347/" class="ul-link">Azzopardi and Moshfeghi</a>, and LLM-as-a-judge reliability work including <a href="https://arxiv.org/abs/2306.05685" class="ul-link">Zheng et al.</a> and <a href="https://aclanthology.org/2024.findings-naacl.130/" class="ul-link">Pezeshkpour and Hruschka</a>.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================== -->
-<!-- DISCUSSION -->
+<!-- CITATION -->
 <!-- ============================================================== -->
-<section id="discussion" class="bg-fog/40 py-20" style="background:#fafafb">
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="section-num mb-3">// Interpretation</div>
-    <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-10">Discussion</h2>
+<section class="max-w-5xl mx-auto px-6 py-20">
+  <div class="section-num mb-3">// Citation</div>
+  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-8">Reference</h2>
 
-    <div class="space-y-12 prose-academic">
-
-      <div>
-        <h3 class="font-display text-xl font-medium mb-3">From point estimates to a measurable shape.</h3>
-        <p class="text-neutral-800">
-          Static-instrument studies converge on a broadly left-libertarian default for conversational LLMs, yet recent
-          work shows such coordinates are unstable under paraphrase. Our framework converts these critiques into a
-          positive proposal: rather than another audit of a point estimate, we project responses into a fixed
-          VAA–CHES space and measure $\mathbb{P}(\cdot|\mathbf{c})$ along six contextual axes simultaneously. The
-          seven instability and symmetry metrics yield <em>different</em> model rankings — prima facie evidence
-          against the coordinate view — while the MTMM matrix shows these rankings are coherent rather than noisy.
-          Ideology, then, is structurally a <strong>shape</strong>, not a coordinate.
-        </p>
-      </div>
-
-      <div class="div-dot"></div>
-
-      <div>
-        <h3 class="font-display text-xl font-medium mb-3">Local plasticity is not global breadth.</h3>
-        <p class="text-neutral-800">
-          Prompt framing displaces coordinates by up to 0.57 (PSS), multilingual presentation by up to 0.52 (LDS), and
-          adversarial dialogue by up to 0.48 (DS) — but local sensitivity <em>decouples</em> from aggregate breadth:
-          <span class="font-mono text-sm">gemma-4</span> is the most prompt-sensitive yet among the three narrowest
-          envelopes; <span class="font-mono text-sm">llama-3-70b</span> is the most prompt-rigid yet records the
-          second-largest 3D spread; <span class="font-mono text-sm">qwen-turbo</span> is paraphrase-unstable but,
-          mediated by reasoning, centroid-stable and ultimately the widest envelope in the cohort.
-        </p>
-        <p class="text-neutral-800">
-          A single-prompt Political Compass score answers none of these. Practitioners refusing manipulative framings
-          need PSS; multilingual deployments need LDS; multi-turn agents need DS; cohort-level monoculture needs OW.
-        </p>
-      </div>
-
-      <div class="div-dot"></div>
-
-      <div>
-        <h3 class="font-display text-xl font-medium mb-3">Reasoning is not a regulator.</h3>
-        <p class="text-neutral-800">
-          Chain-of-thought amplifies paraphrase instability in 17/27 model–year configurations, including three
-          (<span class="font-mono text-sm">gemma-4</span>) where it <em>manufactures</em> dispersion that direct
-          prompting suppressed. The substantive reading is that reasoning traces rationalize an already-conditional
-          decision, routing through alternative justifications that forced-choice protocols collapse. Practitioners
-          should not assume that <em>"let's think step by step"</em> damps political variability; on this evidence it
-          often does the opposite.
-        </p>
-      </div>
-
-      <div class="div-dot"></div>
-
-      <div>
-        <h3 class="font-display text-xl font-medium mb-3">Language and argumentative role as hidden context.</h3>
-        <p class="text-neutral-800">
-          LDS displacement is largest for Swahili, Turkish, Bengali, and Arabic and smallest for high-resource
-          European languages and Mandarin, tracking alignment-data coverage rather than typological distance from
-          English. Users querying the same model in different languages may be drawing from substantially different
-          conditional distributions. Argumentative asymmetry (mean IAS = −0.105) is small but directional and
-          systematic — an <em>alignment fingerprint</em>: on canonical European policy items, the cautious posture is
-          the safer rhetorical default under standard RLHF objectives.
-        </p>
-      </div>
-
-      <div class="div-dot"></div>
-
-      <div>
-        <h3 class="font-display text-xl font-medium mb-3">Aggregate monoculture under local plasticity.</h3>
-        <p class="text-neutral-800">
-          The OW results recover, geometrically, the cross-model left-libertarian skew documented by prior work, but
-          make its magnitude precise. The widest cohort model
-          (<span class="font-mono text-sm">qwen-turbo</span>, hull volume 0.0172) occupies <strong>4.1%</strong> of
-          the reference 3D volume; the median, 2.0–3.4%; the narrowest, 1.5%. In the
-          <span class="font-mono">(lrecon, galtan)</span> plane the cohort hulls reach 13–30%, with compression
-          concentrated on the third <span class="font-mono">(lrgen)</span> axis. Nine alignment regimes from six
-          providers thus sample from a band markedly narrower than the population the projection space describes —
-          the empirical face of <strong>algorithmic monoculture</strong>.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================== -->
-<!-- CONCLUSION -->
-<!-- ============================================================== -->
-<section class="max-w-4xl mx-auto px-6 py-20">
-  <div class="section-num mb-3">// Conclusion</div>
-  <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-8">Naming the shape</h2>
-
-  <div class="card p-8 md:p-12 tint-cyan">
-    <p class="pull-quote text-neutral-900 mb-6">
-      The political behavior of LLMs is better characterized as a <span class="hl-lilac">conditional response surface</span>
-      than a fixed coordinate.
-    </p>
-
+  <div class="card p-7 tint-pink mb-8">
     <p class="text-neutral-800 leading-relaxed">
-      Our eight-metric framework, grounded in a shared VAA–CHES space, decomposes this surface into measurable forms
-      of plasticity, symmetry, and breadth, revealing systematic patterns missed by single-instrument evaluations.
-      MTMM analysis confirms that the metrics capture a shared construct. Our claim is methodological: before
-      normative interpretation, we must first determine <em>under what conditions, and how stably</em>, models
-      express political behavior.
-    </p>
-    <p class="text-neutral-800 leading-relaxed mt-4">
-      The geometry we recover is dual: <strong>locally plastic</strong> enough that the same model can voice
-      meaningfully different stances under register, language, or argumentative role, yet
-      <strong>globally compressed</strong> into a narrow band of the European political space that no contemporary
-      alignment regime appears to escape. Naming this shape, rather than collapsing it to a coordinate, is the
-      precondition for any subsequent conversation about what an LLM's ideology ought to be.
+      Sakhawat, Adib, Syed Rifat Raiyan, Tahsin Islam, Takia Farhin, Hasan Mahmud, and Md Kamrul Hasan. <em>LLM-Ideoplasticity: Measuring Ideological Plasticity in the Political Behavior of LLMs as a Context-Conditioned Distribution</em>. arXiv:2606.28335, 2026.
     </p>
   </div>
+
+  <pre class="font-mono text-xs bg-white border border-neutral-200 rounded p-4 overflow-x-auto">@misc{sakhawat2026llmideoplasticity,
+  title         = {{LLM-Ideoplasticity}: Measuring Ideological Plasticity in the
+                   Political Behavior of {LLMs} as a Context-Conditioned Distribution},
+  author        = {Sakhawat, Adib and Raiyan, Syed Rifat and Islam, Tahsin and
+                   Farhin, Takia and Mahmud, Hasan and Hasan, Md Kamrul},
+  year          = {2026},
+  eprint        = {2606.28335},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CY},
+  doi           = {10.48550/arXiv.2606.28335},
+  url           = {https://arxiv.org/abs/2606.28335}
+}</pre>
 </section>
 
 <!-- ============================================================== -->
@@ -1991,9 +721,10 @@
       <div>
         <h4 class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-3">Resources</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href="#" class="ul-link">Read the full paper (PDF)</a></li>
-          <li><a href="#" class="ul-link">Code &amp; data on GitHub</a></li>
-          <li><a href="#" class="ul-link">VAA–CHES projection models</a></li>
+          <li><a href="https://arxiv.org/pdf/2606.28335" class="ul-link">Read the full paper (PDF)</a></li>
+          <li><a href="https://arxiv.org/abs/2606.28335" class="ul-link">arXiv record</a></li>
+          <li><a href="https://github.com/sakhadib/LLM-Ideoplasticity" class="ul-link">Code &amp; data on GitHub</a></li>
+          <li><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="ul-link">CC BY-SA 4.0 license</a></li>
         </ul>
       </div>
 
@@ -2020,7 +751,6 @@
         </div>
         <p class="text-xs text-neutral-500">
           built with claude, codex, copilot by <a href="https://portfolio.sakhawatadib.com" class="ul-link">Adib Sakhawat</a>.
-          
         </p>
       </div>
     </div>
