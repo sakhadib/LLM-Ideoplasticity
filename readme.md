@@ -28,16 +28,15 @@ $$
 rather than as a single, fixed ideological coordinate. The framework projects model responses into a shared European political space and measures how those coordinates change with prompt register, paraphrase, reasoning, language, conversational pressure, and argumentative role.
 
 <p align="center">
+  <img alt="European Parliament parties: Cyan" src="https://img.shields.io/badge/European_Parties-Cyan-06b6d4?style=flat">
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <img alt="Evaluated LLMs: Magenta" src="https://img.shields.io/badge/Evaluated_LLMs-Magenta-d946ef?style=flat">
+  <br>
   <a href="images/algo_monoculture_teaser_animated.gif">
     <img src="images/algo_monoculture_teaser_animated.gif" alt="Rotating three-dimensional contour comparison of cyan European Parliament party positions and magenta evaluated-LLM positions in VAA–CHES space" width="900">
   </a>
   <br>
-  <sub><strong>Figure 1 — Evidence of Algorithmic Monoculture.</strong> Rotating three-dimensional contour plots in VAA–CHES space.</sub>
-  <br>
-  <img alt="Evaluated LLMs: Magenta" src="https://img.shields.io/badge/Evaluated_LLMs-Magenta-d946ef?style=flat">
-  <img alt="European Parliament parties: Cyan" src="https://img.shields.io/badge/European_Parties-Cyan-06b6d4?style=flat">
-  <br>
-  <sub>The volumetric disparity visualizes the severe compression of the models’ ideological space relative to human political diversity.</sub>
+  <sub><strong>Figure 1 — Evidence of Algorithmic Monoculture.</strong> Rotating three-dimensional contour plots in VAA–CHES space compare the ideological distributions of European Parliament parties (<strong>Cyan</strong>, left) with those of the evaluated LLM cohort (<strong>Magenta</strong>, right). The pronounced volumetric disparity visualizes the severe compression of the models’ ideological space relative to the breadth of human political diversity.</sub>
 </p>
 
 ## Key findings
