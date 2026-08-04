@@ -73,14 +73,14 @@ All input features are standardized using Scikit-learn's `StandardScaler`.
 
 For each feature
 
-[
+$$
 x'=\frac{x-\mu}{\sigma}
-]
+$$
 
 where
 
-* μ = feature mean
-* σ = feature standard deviation
+* $\mu$ = feature mean
+* $\sigma$ = feature standard deviation
 
 The fitted scaler is stored inside the exported pipeline, meaning users **should not standardize input data manually**.
 
@@ -92,7 +92,7 @@ The base estimator is an **ElasticNet** regression model.
 
 ElasticNet combines both L1 (Lasso) and L2 (Ridge) regularization:
 
-[
+$$
 \min_{\beta}
 \frac{1}{2n}
 ||y-X\beta||^2
@@ -104,11 +104,11 @@ l_1||\beta||_1
 \frac{1-l_1}{2}
 ||\beta||_2^2
 \right)
-]
+$$
 
 where
 
-* **α** controls regularization strength.
+* **$\alpha$** controls regularization strength.
 * **l1_ratio** controls the balance between L1 and L2 penalties.
 
 ElasticNet was selected because it
