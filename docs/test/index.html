@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CHES Position Test | LLM-Ideoplasticity</title>
+<meta name="description" content="Answer VAA statements and project your responses into the CHES lrgen, lrecon, and galtan coordinate space using the released LLM-Ideoplasticity transformation models." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cyan: { electric: '#00E5FF', soft: '#7DE7F0' },
+          lilac: { DEFAULT: '#C9B6FF', soft: '#E3D9FF' },
+          pink: { baby: '#FFD6E0', faded: '#FFE9EF' },
+          ink: '#0A0A0A',
+          fog: '#F7F7F8',
+        },
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          serif: ['Fraunces', 'Georgia', 'serif'],
+          mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #0A0A0A;
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .font-display { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; letter-spacing: -0.02em; }
+  .font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #444;
+    background: #fff;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: #00B8D4;
+    font-weight: 500;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 14px;
+    min-width: 0;
+  }
+  .ul-link {
+    background-image: linear-gradient(to right, #00E5FF 0%, #C9B6FF 100%);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    padding-bottom: 1px;
+  }
+  .ul-link:hover { background-size: 100% 6px; transition: background-size 200ms ease; }
+  .choice input { position: absolute; opacity: 0; pointer-events: none; }
+  .choice span {
+    display: flex;
+    min-height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e4e4e7;
+    background: #fff;
+    padding: 0.55rem 0.45rem;
+    text-align: center;
+    font-size: 0.76rem;
+    line-height: 1.2;
+    color: #525252;
+    transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+  }
+  .choice:first-child span { border-radius: 8px 0 0 8px; }
+  .choice:last-child span { border-radius: 0 8px 8px 0; }
+  .choice input:checked + span {
+    border-color: #0A0A0A;
+    background: #0A0A0A;
+    color: #fff;
+  }
+  .choice input:focus-visible + span {
+    outline: 2px solid #00B8D4;
+    outline-offset: 2px;
+  }
+  #chesPlot {
+    width: 100%;
+    height: min(64vh, 34rem);
+    min-height: 24rem;
+  }
+  @media (max-width: 640px) {
+    .choice span {
+      min-height: 2.35rem;
+      font-size: 0.68rem;
+      padding: 0.45rem 0.25rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header class="border-b border-neutral-200 bg-white/80 backdrop-blur sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+    <a href="../index.html" class="flex items-center gap-3 min-w-0">
+      <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background: linear-gradient(135deg, #00E5FF 0%, #C9B6FF 60%, #FFD6E0 100%);"></span>
+      <span class="font-mono text-xs tracking-widest text-neutral-700 uppercase truncate">LLM-Ideoplasticity</span>
+    </a>
+    <nav class="flex items-center gap-3 text-xs font-medium text-neutral-600">
+      <a href="../index.html#repository" class="hidden sm:inline hover:text-black">Repository</a>
+      <a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/models" class="tag hover:border-neutral-400">Models</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="max-w-7xl mx-auto px-6 pt-14 pb-10">
+    <div class="grid lg:grid-cols-[0.42fr_0.58fr] gap-10 lg:gap-16 items-end border-b border-neutral-900 pb-10">
+      <div>
+        <div class="section-num mb-4">// Public CHES Test</div>
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-medium leading-tight tracking-tight">
+          Project your answers into CHES space
+        </h1>
+      </div>
+      <div>
+        <p class="font-display text-2xl md:text-3xl leading-snug text-neutral-900">
+          Answer one VAA wave and the released transformation model estimates your position on
+          <span class="font-mono text-[0.82em]">lrgen</span>, <span class="font-mono text-[0.82em]">lrecon</span>, and <span class="font-mono text-[0.82em]">galtan</span>.
+        </p>
+        <p class="mt-5 text-sm leading-relaxed text-neutral-600">
+          This is an instrument output, not a ground-truth political label. The model expects the same five-point stance coding used in the paper: completely disagree to completely agree.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 pb-8">
+    <div class="grid lg:grid-cols-[18rem_1fr] gap-8 items-start">
+      <aside class="lg:sticky lg:top-24 space-y-5">
+        <div class="card p-5">
+          <div class="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-neutral-500 mb-3">VAA wave</div>
+          <div id="yearTabs" class="grid grid-cols-3 gap-2"></div>
+        </div>
+
+        <div class="card p-5">
+          <div class="flex items-center justify-between gap-4 mb-3">
+            <div class="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-neutral-500">Progress</div>
+            <div id="progressText" class="font-mono text-xs text-neutral-700">0/0</div>
+          </div>
+          <div class="h-2 rounded-full bg-neutral-100 overflow-hidden">
+            <div id="progressBar" class="h-full bg-neutral-950 rounded-full" style="width:0%"></div>
+          </div>
+          <button id="neutralButton" type="button" class="mt-4 w-full border border-neutral-300 px-3 py-2 text-xs font-medium hover:border-neutral-900 transition-colors">Set unanswered to Neutral</button>
+          <button id="resetButton" type="button" class="mt-2 w-full border border-neutral-300 px-3 py-2 text-xs font-medium hover:border-neutral-900 transition-colors">Clear this wave</button>
+        </div>
+
+        <div id="resultPanel" class="card p-5 hidden">
+          <div class="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-neutral-500 mb-3">Estimated CHES point</div>
+          <p class="text-xs leading-relaxed text-neutral-500">
+            Drag, pan, and zoom the plot. The point is generated locally in your browser from the released model weights.
+          </p>
+        </div>
+      </aside>
+
+      <section>
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-5">
+          <div>
+            <h2 id="questionHeading" class="font-display text-3xl font-medium tracking-tight">Statements</h2>
+            <p id="questionMeta" class="mt-1 text-sm text-neutral-500"></p>
+          </div>
+          <button id="calculateButton" type="button" class="border border-neutral-900 bg-neutral-950 text-white px-5 py-3 text-sm font-medium hover:bg-neutral-800 transition-colors disabled:cursor-not-allowed disabled:border-neutral-300 disabled:bg-neutral-200 disabled:text-neutral-500">
+            Calculate position
+          </button>
+        </div>
+
+        <div id="status" class="hidden card p-4 mb-5 text-sm text-neutral-700"></div>
+        <div id="plotCard" class="card p-3 md:p-5 mb-5 hidden">
+          <div id="chesPlot"></div>
+        </div>
+        <form id="questionForm" class="space-y-4"></form>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-neutral-200 mt-12">
+  <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between gap-4 text-xs text-neutral-500">
+    <p>Released VAA-CHES transformation models are used under the repository CC BY-SA 4.0 license.</p>
+    <p><a href="../index.html" class="ul-link">Project website</a></p>
+  </div>
+</footer>
+
+<script type="module" src="test.js"></script>
+</body>
+</html>
