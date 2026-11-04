@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VAA-CHES Study Guide | LLM-Ideoplasticity</title>
+<meta name="description" content="A study guide to political space, Voting Advice Applications, CHES, the VAA-CHES projection models, and their role in LLM-Ideoplasticity." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cyan: { electric: '#00E5FF', soft: '#7DE7F0' },
+          lilac: { DEFAULT: '#C9B6FF', soft: '#E3D9FF' },
+          pink: { baby: '#FFD6E0', faded: '#FFE9EF' },
+          ink: '#0A0A0A',
+          fog: '#F7F7F8',
+        },
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          serif: ['Fraunces', 'Georgia', 'serif'],
+          mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  :root {
+    --cyan: #00E5FF;
+    --cyan-deep: #00A5BF;
+    --lilac: #C9B6FF;
+    --pink: #FFD6E0;
+    --ink: #0A0A0A;
+    --line: #ececef;
+    --muted: #5c5c66;
+  }
+
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: clip; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: #d8f7fd; }
+  :focus-visible { outline: 2px solid var(--cyan-deep); outline-offset: 3px; border-radius: 3px; }
+
+  .font-display { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; letter-spacing: -0.02em; }
+  .font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: #00B8D4;
+    font-weight: 500;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #444;
+    background: #fff;
+    white-space: nowrap;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    min-width: 0;
+  }
+  .ul-link {
+    background-image: linear-gradient(to right, #00E5FF 0%, #C9B6FF 100%);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    padding-bottom: 1px;
+  }
+  .ul-link:hover { background-size: 100% 6px; transition: background-size 200ms ease; }
+
+  .plot { width: 100%; }
+  #spacePlot { height: clamp(20rem, 62vh, 34rem); }
+  #wavePlot { height: clamp(19rem, 42vh, 25rem); }
+
+  .reading p { color: #303030; line-height: 1.82; }
+  .reading p + p { margin-top: 1rem; }
+  .reading ul { margin-top: 1rem; color: #3f3f46; line-height: 1.75; }
+  .reading li + li { margin-top: 0.4rem; }
+
+  table.study {
+    width: 100%;
+    min-width: 34rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.86rem;
+  }
+  table.study th, table.study td {
+    border-bottom: 1px solid #eeeeee;
+    padding: 0.78rem 0.75rem;
+    vertical-align: top;
+  }
+  table.study tr:last-child td { border-bottom: 0; }
+  table.study th {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666;
+    text-align: left;
+    background: #fafafa;
+  }
+  pre { max-width: 100%; overflow-x: auto; white-space: pre; }
+
+  .spec > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #f2f2f4;
+  }
+  .spec > div:last-child { border-bottom: 0; padding-bottom: 0; }
+  .spec dt {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.74rem;
+    color: var(--ink);
+  }
+  .spec dd { font-size: 0.82rem; color: var(--muted); text-align: right; }
+  .spec dd.hi { color: var(--ink); font-weight: 600; }
+
+  .equation-strip {
+    border: 1px solid #eeeeee;
+    border-left: 3px solid #00B8D4;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+  .equation-strip mjx-container[display="true"] { margin: 0 !important; }
+
+  /* keep any wide child (MathJax, tables, plots, code) inside its column
+     instead of stretching the grid track */
+  main .grid > * { min-width: 0; }
+  .card, .reading, .process { min-width: 0; }
+  .spec dd, .spec dt { overflow-wrap: break-word; min-width: 0; }
+  mjx-container { max-width: 100%; }
+  mjx-container[display="true"] { max-width: none; }
+
+  @media (max-width: 640px) {
+    .equation-strip { padding: 0.8rem 0.85rem; }
+    .equation-strip mjx-container[display="true"] { font-size: 90% !important; }
+    table.study { font-size: 0.82rem; }
+  }
+
+  /* ============================================================
+     Process diagrams
+     One layout system, two states:
+       >= 1100px  horizontal rail with connectors
+       <  1100px  vertical timeline on a gradient spine
+     ============================================================ */
+  .process {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background:
+      radial-gradient(110% 130% at 0% 0%, rgba(0, 229, 255, 0.07), transparent 55%),
+      radial-gradient(110% 130% at 100% 0%, rgba(201, 182, 255, 0.10), transparent 55%),
+      radial-gradient(120% 150% at 100% 100%, rgba(255, 214, 224, 0.16), transparent 60%),
+      #ffffff;
+    padding: 1.6rem 1.5rem 1.5rem;
+  }
+  .process__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 1rem;
+    margin-bottom: 1.6rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(10, 10, 10, 0.07);
+  }
+  .process__label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan-deep);
+  }
+  .process__title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.08rem;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .process__note {
+    margin-top: 1.4rem;
+    font-size: 0.74rem;
+    line-height: 1.6;
+    color: #78787f;
+  }
+
+  .track {
+    --gap: 1.9rem;
+    --cols: 5;
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    align-items: stretch;
+  }
+  .track--fan { --cols: 4; align-items: center; }
+  .track--fan .p-group { align-self: stretch; }
+  .track--six { --cols: 6; --gap: 1.5rem; }
+
+  .p-node {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border: 1px solid #e8e8ec;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 12px;
+    padding: 0.95rem 0.95rem 1rem;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: none;
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .p-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.55rem;
+  }
+  .p-kicker {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.56rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8b8b93;
+    white-space: nowrap;
+  }
+  .p-num {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    color: var(--cyan-deep);
+  }
+  .p-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.02rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+  }
+  .track--six .p-title { font-size: 0.97rem; }
+  .p-text {
+    font-size: 0.745rem;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+  .p-text .font-mono { font-size: 0.7rem; }
+
+  .p-group { display: grid; gap: 0.55rem; min-width: 0; position: relative; }
+  .p-mini { padding: 0.75rem 0.8rem 0.8rem; }
+  .p-mini .p-title { font-size: 0.9rem; }
+  .p-mini .p-text { font-size: 0.7rem; }
+
+  .dots {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.24rem;
+    margin-top: 0.7rem;
+    max-width: 5.6rem;
+  }
+  .dots span {
+    height: 0.44rem;
+    border-radius: 999px;
+    background: var(--lilac);
+    opacity: 0.32;
+  }
+  .dots[data-sample="a"] span:nth-child(odd),
+  .dots[data-sample="b"] span:nth-child(3n),
+  .dots[data-sample="c"] span:nth-child(even) { opacity: 1; background: #00B8D4; }
+
+  /* ---- horizontal rail ---- */
+  @media (min-width: 1100px) {
+    .p-node:hover { border-color: #cfd0d6; box-shadow: 0 10px 26px -20px rgba(10, 10, 10, 0.45); }
+    .p-connect::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: calc(var(--gap) - 0.15rem);
+      height: 1.5px;
+      background: linear-gradient(90deg, #d7d7dd, var(--ink));
+      transform: translateY(-50%);
+    }
+    .p-connect::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: calc(100% + var(--gap) - 0.55rem);
+      width: 0.42rem;
+      height: 0.42rem;
+      border-top: 1.5px solid var(--ink);
+      border-right: 1.5px solid var(--ink);
+      transform: translateY(-50%) rotate(45deg);
+    }
+    .p-group.p-connect::before,
+    .p-group.p-connect::after { top: 50%; }
+  }
+
+  /* ---- vertical timeline ---- */
+  @media (max-width: 1099px) {
+    .process { padding: 1.35rem 1.25rem 1.25rem; }
+    .track { grid-template-columns: 1fr; gap: 0; }
+    .p-group { display: contents; }
+    .p-node {
+      border: 0;
+      border-radius: 0;
+      background: none;
+      padding: 0 0 1.6rem 3rem;
+      animation: none;
+    }
+    .p-node.p-end { padding-bottom: 0; }
+    .p-node::before {
+      content: "";
+      position: absolute;
+      left: 0.875rem;
+      top: 2rem;
+      bottom: 0;
+      width: 1.5px;
+      background: linear-gradient(180deg, #9fe9f6, var(--lilac));
+    }
+    .p-node.p-end::before { display: none; }
+    .p-meta {
+      display: block;
+      margin-bottom: 0.3rem;
+      min-height: 0.9rem;
+    }
+    .p-num {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.75rem;
+      height: 1.75rem;
+      display: grid;
+      place-items: center;
+      border: 1px solid #e4e4e7;
+      border-radius: 999px;
+      background: #fff;
+      font-size: 0.58rem;
+      color: var(--cyan-deep);
+    }
+    .p-title, .p-mini .p-title { font-size: 1.05rem; margin-bottom: 0.3rem; }
+    .p-text, .p-mini .p-text { font-size: 0.83rem; line-height: 1.65; }
+    .p-mini { padding: 0 0 1.6rem 3rem; }
+  }
+
+  @keyframes nodePulse {
+    0%, 100% { border-color: #e8e8ec; box-shadow: 0 0 0 0 rgba(0, 184, 212, 0); }
+    6%       { border-color: #8fe3f1; box-shadow: 0 10px 24px -18px rgba(0, 165, 191, 0.85); }
+    18%      { border-color: #e8e8ec; box-shadow: 0 0 0 0 rgba(0, 184, 212, 0); }
+  }
+  @media (min-width: 1100px) {
+    .p-node {
+      animation: nodePulse 9s ease-in-out infinite;
+      animation-delay: calc(var(--i, 0) * 700ms);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .p-node { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<header class="border-b border-neutral-200 bg-white/85 backdrop-blur sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+    <a href="../index.html" class="flex items-center gap-3 min-w-0">
+      <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background: linear-gradient(135deg, #00E5FF 0%, #C9B6FF 60%, #FFD6E0 100%);"></span>
+      <span class="hidden sm:inline font-mono text-xs tracking-widest text-neutral-700 uppercase truncate">LLM-Ideoplasticity</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-1 rounded-full border border-neutral-200 bg-neutral-50/80 p-1 text-xs font-medium text-neutral-600">
+      <a href="../index.html" class="rounded-full px-3 py-1.5 hover:bg-white hover:text-neutral-950">Home</a>
+      <a href="index.html" class="rounded-full bg-neutral-950 px-3 py-1.5 text-white">VAA-CHES Guide</a>
+      <a href="../test/" class="rounded-full px-3 py-1.5 hover:bg-white hover:text-neutral-950">Take Test</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="https://arxiv.org/pdf/2606.28335" class="tag hover:border-neutral-400">Paper</a>
+      <a href="https://github.com/sakhadib/LLM-Ideoplasticity" class="tag hover:border-neutral-400">Code</a>
+      <a href="../test/" class="tag lg:hidden hover:border-neutral-400">Test</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="max-w-7xl mx-auto px-6 pt-14 pb-12">
+    <div class="grid lg:grid-cols-[0.42fr_0.58fr] gap-10 lg:gap-16 items-end border-b border-neutral-900 pb-10">
+      <div>
+        <div class="section-num mb-4">// Study Guide</div>
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-medium leading-tight tracking-tight">
+          Political space, VAA-CHES, and LLM ideology
+        </h1>
+      </div>
+      <div>
+        <p class="font-display text-xl md:text-2xl leading-snug text-neutral-900">
+          A compact guide to the data, coordinates, and transformation models behind the project.
+        </p>
+        <p class="mt-4 text-sm leading-relaxed text-neutral-600 max-w-2xl">
+          Learn how issue responses become a three-dimensional European political-space estimate.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 pb-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="card p-5">
+        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">Political Space</div>
+        <p class="text-sm leading-relaxed text-neutral-700">A coordinate system for comparing actors by issue positions rather than party names or slogans.</p>
+      </div>
+      <div class="card p-5">
+        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">VAA</div>
+        <p class="text-sm leading-relaxed text-neutral-700">A questionnaire infrastructure where citizens, parties, or models answer policy statements.</p>
+      </div>
+      <div class="card p-5">
+        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">CHES</div>
+        <p class="text-sm leading-relaxed text-neutral-700">An expert-survey infrastructure that places European parties on comparable ideological dimensions.</p>
+      </div>
+      <div class="card p-5">
+        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">LLM Bridge</div>
+        <p class="text-sm leading-relaxed text-neutral-700">Language models can answer VAA statements, letting their expressed positions be projected into CHES space.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="political-space" class="max-w-7xl mx-auto px-6 py-14 border-t border-neutral-200">
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-10 lg:gap-16 items-start">
+      <div>
+        <div class="section-num mb-3">// Political Space</div>
+        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">Why politics can be represented as coordinates</h2>
+      </div>
+      <div class="reading text-sm">
+        <p>
+          Political competition is often described using words such as left, right, liberal, conservative, green, nationalist, pro-EU, or Eurosceptic. Those labels are useful, but they compress many issue positions into a few categories. A political coordinate system makes the compression explicit. Each actor receives numeric positions on dimensions that summarize recurring patterns in policy conflict.
+        </p>
+        <p>
+          In European party politics, three dimensions are especially useful for this project. <span class="font-mono">lrgen</span> captures general left-right orientation. <span class="font-mono">lrecon</span> captures economic left-right conflict, such as redistribution, public spending, market regulation, and welfare. <span class="font-mono">galtan</span> captures the cultural dimension between Green/Alternative/Libertarian and Traditional/Authoritarian/Nationalist politics.
+        </p>
+        <p>
+          A coordinate is not a moral judgment and not an essence. It is an instrument reading. If two actors land near each other, they are similar with respect to the instrument's dimensions and data sources. If they are far apart, they differ in the patterns the instrument has learned to represent.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 pb-14">
+    <div class="card p-3 md:p-5">
+      <div id="spacePlot" class="plot"></div>
+      <p class="mt-3 text-xs leading-relaxed text-neutral-500 px-1">
+        The three CHES dimensions as one cube. The coloured axes cross at 0.5, the midpoint of the rescaled coordinate system. Drag to rotate.
+      </p>
+    </div>
+  </section>
+
+  <section id="vaa" class="max-w-7xl mx-auto px-6 py-14 border-t border-neutral-200">
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-10 lg:gap-16 items-start">
+      <div>
+        <div class="section-num mb-3">// Voting Advice Applications</div>
+        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">The citizen-facing side of the instrument</h2>
+      </div>
+      <div class="reading text-sm">
+        <p>
+          A Voting Advice Application, or VAA, is an online tool that asks users to respond to political issue statements. The application compares those answers with party or candidate positions on the same statements, then presents proximity scores, rankings, or spatial maps. VAAs became widespread in Europe because multiparty systems and coalition politics make party choice harder to reduce to a binary left-right decision.
+        </p>
+        <p>
+          EU Profiler and euandi are flagship transnational VAAs for European Parliament elections. They use policy statements that are meant to be salient, divisive, and comparable across countries. Users usually answer on a Likert-style agreement scale: completely disagree, disagree, neutral, agree, completely agree, often with a no-opinion option in the public application.
+        </p>
+        <p>
+          For this project, the VAA side matters because it gives a structured prompt interface. A human, a party, or an LLM can answer the same statements. Those answers become numeric features, using a five-point coding:
+        </p>
+        <ul class="list-disc pl-5">
+          <li><span class="font-mono">CD</span> = 0.00, completely disagree</li>
+          <li><span class="font-mono">D</span> = 0.25, disagree</li>
+          <li><span class="font-mono">N</span> = 0.50, neutral</li>
+          <li><span class="font-mono">A</span> = 0.75, agree</li>
+          <li><span class="font-mono">CA</span> = 1.00, completely agree</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 pb-14">
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-10 lg:gap-16 items-start">
+      <div class="reading text-sm">
+        <p>
+          The project uses three European Parliament VAA waves. The feature space is not identical in every year: 2009 and 2014 use 30 statement features, while 2019 uses 22. That is why the repository releases separate transformation models for each year.
+        </p>
+      </div>
+      <div class="card p-3 md:p-5">
+        <div id="wavePlot" class="plot"></div>
+        <p class="mt-3 text-xs leading-relaxed text-neutral-500 px-1">
+          Reference parties and statement features per wave. The shorter 2019 questionnaire is one reason each wave keeps its own model.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ches" class="max-w-7xl mx-auto px-6 py-14 border-t border-neutral-200">
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-10 lg:gap-16 items-start">
+      <div>
+        <div class="section-num mb-3">// Chapel Hill Expert Survey</div>
+        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">The expert-coded side of the instrument</h2>
+      </div>
+      <div class="reading text-sm">
+        <p>
+          The Chapel Hill Expert Surveys estimate party positions in Europe using expert judgments. Across repeated waves, CHES supplies comparable measurements for party families, countries, and policy dimensions. This makes it a research infrastructure: it is not a one-off poll, but a repeated map of elite-level party positioning.
+        </p>
+        <p>
+          CHES matters here because it provides the target coordinate system. The transformation models learn how VAA statement answers correspond to CHES party coordinates. The output coordinates are rescaled to the unit interval <span class="font-mono">[0,1]</span> for visual and computational consistency.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4 mt-8">
+      <div class="card p-5">
+        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">lrgen</div>
+        <h3 class="font-display text-2xl font-medium mb-2">General left-right</h3>
+        <p class="text-sm leading-relaxed text-neutral-700">A broad ideological summary dimension. It combines many political cues and should be read as an aggregate placement, not a single issue stance.</p>
+      </div>
+      <div class="card p-5">
+        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">lrecon</div>
+        <h3 class="font-display text-2xl font-medium mb-2">Economic left-right</h3>
+        <p class="text-sm leading-relaxed text-neutral-700">A dimension for market regulation, redistribution, welfare, austerity, taxation, labor protection, and public spending.</p>
+      </div>
+      <div class="card p-5">
+        <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">galtan</div>
+        <h3 class="font-display text-2xl font-medium mb-2">GAL-TAN</h3>
+        <p class="text-sm leading-relaxed text-neutral-700">A cultural dimension contrasting Green/Alternative/Libertarian politics with Traditional/Authoritarian/Nationalist politics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="paper" class="max-w-7xl mx-auto px-6 py-14 border-t border-neutral-200">
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-10 lg:gap-16 items-start">
+      <div>
+        <div class="section-num mb-3">// In This Paper</div>
+        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">Why this matters for LLM-Ideoplasticity</h2>
+      </div>
+      <div class="reading text-sm">
+        <p>
+          The paper's central claim is that an LLM's political position should be modeled as a context-conditioned distribution, not as one fixed point. The VAA-CHES instrument makes that claim measurable. A model can answer VAA statements under different prompt registers, paraphrases, languages, reasoning conditions, debates, or argumentative roles. Each answer set becomes a coordinate.
+        </p>
+        <p>
+          Once many coordinates are collected, the question changes. Instead of asking "where is this model politically?", the study asks: how far does it move under context, how stable is its projection, and how large is its aggregate envelope compared with European party diversity?
+        </p>
+        <p>
+          This is why the project can report both local plasticity and global compression. Local context can move model coordinates substantially. Yet the pooled model cohort can still occupy a small ideological volume relative to the European party reference set.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="models" class="max-w-7xl mx-auto px-6 py-14 border-t border-neutral-200">
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-10 lg:gap-16 items-start">
+      <div>
+        <div class="section-num mb-3">// Transformation Models</div>
+        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">How the released models are built</h2>
+      </div>
+      <div class="reading text-sm">
+        <p>
+          The repository releases three serialized transformation models: <span class="font-mono">ideology_model_2009.pkl</span>, <span class="font-mono">ideology_model_2014.pkl</span>, and <span class="font-mono">ideology_model_2019.pkl</span>. Each is a complete scikit-learn pipeline: preprocessing and prediction are stored together, so users should not manually normalize inputs before inference.
+        </p>
+        <p>
+          The training data are cleaned by dropping observations where any of the three CHES targets are missing. The feature matrix contains the remaining numeric VAA features after removing identifiers such as <span class="font-mono">CHESS</span>, <span class="font-mono">YEAR</span>, and the target variables. The target vector is three-dimensional: <span class="font-mono">lrgen</span>, <span class="font-mono">lrecon</span>, and <span class="font-mono">galtan</span>.
+        </p>
+      </div>
+    </div>
+
+    <div class="process mt-10">
+      <div class="process__head">
+        <span class="process__label">Pipeline</span>
+        <span class="process__title">From a stance vector to a CHES coordinate</span>
+      </div>
+      <div class="track">
+        <article class="p-node p-connect" style="--i:0">
+          <div class="p-meta"><span class="p-kicker">Input</span><span class="p-num">01</span></div>
+          <h4 class="p-title">VAA stance vector</h4>
+          <p class="p-text">Each answer is encoded from 0.00 to 1.00 in the statement order of the selected wave.</p>
+        </article>
+        <article class="p-node p-connect" style="--i:1">
+          <div class="p-meta"><span class="p-kicker">Preprocess</span><span class="p-num">02</span></div>
+          <h4 class="p-title">StandardScaler</h4>
+          <p class="p-text">Stored feature means and scales turn raw stance values into standardized inputs.</p>
+        </article>
+        <article class="p-node p-connect" style="--i:2">
+          <div class="p-meta"><span class="p-kicker">Resample</span><span class="p-num">03</span></div>
+          <h4 class="p-title">Bagging</h4>
+          <p class="p-text">Bootstrap samples train separate regressors, which reduces estimator variance.</p>
+        </article>
+        <article class="p-node p-connect" style="--i:3">
+          <div class="p-meta"><span class="p-kicker">Regress</span><span class="p-num">04</span></div>
+          <h4 class="p-title">ElasticNet &times;3</h4>
+          <p class="p-text">One regularized linear model is fitted for each CHES target coordinate.</p>
+        </article>
+        <article class="p-node p-end" style="--i:4">
+          <div class="p-meta"><span class="p-kicker">Output</span><span class="p-num">05</span></div>
+          <h4 class="p-title">CHES point</h4>
+          <p class="p-text">The ensemble average returns <span class="font-mono">lrgen</span>, <span class="font-mono">lrecon</span>, <span class="font-mono">galtan</span>.</p>
+        </article>
+      </div>
+      <p class="process__note">
+        Preprocessing and prediction ship inside the same serialized object, so inference is a single call on unscaled features.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 pb-14">
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-10 lg:gap-16 items-start">
+      <div>
+        <div class="section-num mb-3">// Fitting</div>
+        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">Scaling, regularization, and search</h2>
+        <div class="card p-5">
+          <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-3">Search space</div>
+          <dl class="spec">
+            <div><dt>alpha</dt><dd>0.0001 &rarr; 10, log-uniform</dd></div>
+            <div><dt>l1_ratio</dt><dd>0 &rarr; 1</dd></div>
+            <div><dt>n_estimators</dt><dd>10 &rarr; 50</dd></div>
+            <div><dt>random_state</dt><dd>42, fixed</dd></div>
+          </dl>
+          <p class="mt-4 text-sm leading-relaxed text-neutral-600">
+            Each trial is scored by negative mean squared error over 50 validation fits, and the winning configuration is refitted on the full cleaned dataset.
+          </p>
+        </div>
+      </div>
+      <div class="reading text-sm">
+        <p>
+          Standardization converts each feature from a raw stance value to a z-like scaled input. This is necessary because VAA features can have different empirical means and variances across parties. The fitted means and scales are stored inside the exported model and were also extracted into the browser-side model files used by the public test.
+        </p>
+        <div class="equation-strip my-5">
+          $$x'_j=\frac{x_j-\mu_j}{\sigma_j}$$
+        </div>
+        <p>
+          ElasticNet is used because political indicators are often correlated. It combines L1 and L2 regularization, allowing the model to reduce overfitting, keep coefficients stable on small datasets, and shrink less useful features toward zero. Multi-output regression then exposes three predictions at once: one for each CHES dimension.
+        </p>
+        <div class="equation-strip my-5">
+          $$\min_{\beta}\frac{1}{2n}\lVert y-X\beta\rVert_2^2+\alpha\left(l_1\lVert\beta\rVert_1+\frac{1-l_1}{2}\lVert\beta\rVert_2^2\right)$$
+        </div>
+        <p>
+          Bagging adds robustness. Multiple bootstrap samples are drawn from the training data. Each sample trains a full multi-output ElasticNet model. The final prediction is the average of the ensemble. Hyperparameters are optimized independently for each CHES release using 100 Optuna trials and repeated 5-fold cross-validation with 10 repetitions.
+        </p>
+      </div>
+    </div>
+
+    <div class="process mt-10">
+      <div class="process__head">
+        <span class="process__label">Ensemble</span>
+        <span class="process__title">Bootstrap aggregation of the multi-output regressor</span>
+      </div>
+      <div class="track track--fan">
+        <article class="p-node p-connect" style="--i:0">
+          <div class="p-meta"><span class="p-kicker">Training set</span><span class="p-num">01</span></div>
+          <h4 class="p-title">Clean party rows</h4>
+          <p class="p-text">Rows missing any CHES target are dropped before training.</p>
+          <div class="dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </article>
+
+        <div class="p-group p-connect">
+          <article class="p-node p-mini" style="--i:1">
+            <div class="p-meta"><span class="p-kicker">Bootstrap A</span><span class="p-num">02</span></div>
+            <h4 class="p-title">ElasticNet &times;3</h4>
+            <p class="p-text">Sampled with replacement, then fitted on all three targets.</p>
+            <div class="dots" data-sample="a" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </article>
+          <article class="p-node p-mini" style="--i:2">
+            <div class="p-meta"><span class="p-kicker">Bootstrap B</span><span class="p-num">03</span></div>
+            <h4 class="p-title">ElasticNet &times;3</h4>
+            <p class="p-text">A different draw produces a slightly different estimate.</p>
+            <div class="dots" data-sample="b" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </article>
+          <article class="p-node p-mini" style="--i:3">
+            <div class="p-meta"><span class="p-kicker">Bootstrap N</span><span class="p-num">04</span></div>
+            <h4 class="p-title">ElasticNet &times;3</h4>
+            <p class="p-text">Repetition removes the dependence on any single sample.</p>
+            <div class="dots" data-sample="c" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </article>
+        </div>
+
+        <article class="p-node p-connect" style="--i:4">
+          <div class="p-meta"><span class="p-kicker">Average</span><span class="p-num">05</span></div>
+          <h4 class="p-title">Bagged prediction</h4>
+          <p class="p-text">The final coordinate is the mean of the bootstrap estimators.</p>
+        </article>
+        <article class="p-node p-end" style="--i:5">
+          <div class="p-meta"><span class="p-kicker">Release</span><span class="p-num">06</span></div>
+          <h4 class="p-title">Serialized pipeline</h4>
+          <p class="p-text">Fitted scaler and ensemble are saved together for reuse.</p>
+        </article>
+      </div>
+      <p class="process__note">
+        The ensemble size is itself a tuned hyperparameter: 38 members for 2009, 30 for 2014, and 50 for 2019.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-10 lg:gap-16 items-start mt-14">
+      <div>
+        <div class="section-num mb-3">// Fitted Models</div>
+        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">What each wave actually learned</h2>
+        <p class="text-sm leading-relaxed text-neutral-600">
+          Every wave was tuned separately over 100 Optuna trials. The tuned settings differ, but all three land in the same regime: light regularization, a near-even L1/L2 mix, and a few dozen ensemble members.
+        </p>
+        <p class="mt-4 text-sm leading-relaxed text-neutral-600">
+          Errors are reported on the rescaled <span class="font-mono">[0,1]</span> coordinate scale, so an RMSE near 0.12 means a typical miss of roughly a tenth of the full width of a CHES dimension.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="card p-5">
+          <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-3">2009</div>
+          <dl class="spec">
+            <div><dt>parties</dt><dd>153</dd></div>
+            <div><dt>features</dt><dd>30</dd></div>
+            <div><dt>alpha</dt><dd>0.0219</dd></div>
+            <div><dt>l1_ratio</dt><dd>0.446</dd></div>
+            <div><dt>estimators</dt><dd>38</dd></div>
+            <div><dt>CV MSE</dt><dd>0.0216</dd></div>
+            <div><dt>RMSE</dt><dd>0.1284</dd></div>
+            <div><dt>MAE</dt><dd>0.1006</dd></div>
+            <div><dt>R&sup2;</dt><dd class="hi">0.751</dd></div>
+          </dl>
+        </div>
+        <div class="card p-5">
+          <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-3">2014</div>
+          <dl class="spec">
+            <div><dt>parties</dt><dd>141</dd></div>
+            <div><dt>features</dt><dd>30</dd></div>
+            <div><dt>alpha</dt><dd>0.0202</dd></div>
+            <div><dt>l1_ratio</dt><dd>0.558</dd></div>
+            <div><dt>estimators</dt><dd>30</dd></div>
+            <div><dt>CV MSE</dt><dd>0.0195</dd></div>
+            <div><dt>RMSE</dt><dd>0.1225</dd></div>
+            <div><dt>MAE</dt><dd>0.0973</dd></div>
+            <div><dt>R&sup2;</dt><dd class="hi">0.755</dd></div>
+          </dl>
+        </div>
+        <div class="card p-5">
+          <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-3">2019</div>
+          <dl class="spec">
+            <div><dt>parties</dt><dd>122</dd></div>
+            <div><dt>features</dt><dd>22</dd></div>
+            <div><dt>alpha</dt><dd>0.0340</dd></div>
+            <div><dt>l1_ratio</dt><dd>0.270</dd></div>
+            <div><dt>estimators</dt><dd>50</dd></div>
+            <div><dt>CV MSE</dt><dd>0.0174</dd></div>
+            <div><dt>RMSE</dt><dd>0.1167</dd></div>
+            <div><dt>MAE</dt><dd>0.0934</dd></div>
+            <div><dt>R&sup2;</dt><dd class="hi">0.803</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-6 text-xs leading-relaxed text-neutral-500 max-w-3xl">
+      Cross-validated MSE comes from repeated 5-fold validation during tuning; RMSE, MAE, and R&sup2; are measured on the full cleaned dataset after the final refit, so they describe fit rather than out-of-sample accuracy.
+    </p>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 py-14 border-t border-neutral-200">
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-10 lg:gap-16 items-start">
+      <div>
+        <div class="section-num mb-3">// Practical Interpretation</div>
+        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">What the coordinates can and cannot say</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="card p-5">
+          <h3 class="font-display text-2xl font-medium mb-3">Coordinates are comparative</h3>
+          <p class="text-sm leading-relaxed text-neutral-700">The values locate an answer pattern relative to a European party-position instrument. They are most useful when comparing actors, prompts, years, or conditions.</p>
+        </div>
+        <div class="card p-5">
+          <h3 class="font-display text-2xl font-medium mb-3">They are not universal labels</h3>
+          <p class="text-sm leading-relaxed text-neutral-700">The coordinate system is grounded in European VAA and CHES data. It should not be read as a universal map of politics everywhere.</p>
+        </div>
+        <div class="card p-5">
+          <h3 class="font-display text-2xl font-medium mb-3">Instrument choices matter</h3>
+          <p class="text-sm leading-relaxed text-neutral-700">Statement selection, party coding, expert judgment, scaling, and model choice all shape the final projection.</p>
+        </div>
+        <div class="card p-5">
+          <h3 class="font-display text-2xl font-medium mb-3">Movement is the object</h3>
+          <p class="text-sm leading-relaxed text-neutral-700">For LLM-Ideoplasticity, the primary measurement is not only where a model lands, but how its position moves under context.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="llm-bridge" class="max-w-7xl mx-auto px-6 py-14 border-t border-neutral-200">
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-10 lg:gap-16 items-start">
+      <div>
+        <div class="section-num mb-3">// Computer Science Bridge</div>
+        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">How LLMs connect language, measurement, and political space</h2>
+      </div>
+      <div class="reading text-sm">
+        <p>
+          From a computer-science perspective, the VAA-CHES instrument is a representation pipeline. Natural-language political statements are converted into categorical stances. Categorical stances become numeric features. Numeric features are transformed by a learned model into coordinates. Coordinates are then used to study geometry: displacement, dispersion, hull volume, centroid distance, and temporal drift.
+        </p>
+        <p>
+          LLMs sit at the unusual middle of this pipeline. They are language systems, so they can produce natural-language justifications. But they can also be forced into structured stance choices, making their outputs comparable to survey responses. This means political behavior can be measured as a distribution over elicitation contexts rather than as a single static survey answer.
+        </p>
+        <p>
+          The bridge is therefore bidirectional. Political science supplies theory, dimensions, and reference data. Computer science supplies model instrumentation, prompt perturbation, representation learning, and geometric analysis. LLMs become both subjects of measurement and interfaces for translating language into structured political signals.
+        </p>
+      </div>
+    </div>
+
+    <div class="process mt-10">
+      <div class="process__head">
+        <span class="process__label">Bridge</span>
+        <span class="process__title">From prompt context to political geometry</span>
+      </div>
+      <div class="track track--six">
+        <article class="p-node p-connect" style="--i:0">
+          <div class="p-meta"><span class="p-kicker">Context</span><span class="p-num">01</span></div>
+          <h4 class="p-title">Prompt context</h4>
+          <p class="p-text">Register, paraphrase, language, debate, reasoning, role.</p>
+        </article>
+        <article class="p-node p-connect" style="--i:1">
+          <div class="p-meta"><span class="p-kicker">Language</span><span class="p-num">02</span></div>
+          <h4 class="p-title">LLM response</h4>
+          <p class="p-text">A natural-language stance with its justification.</p>
+        </article>
+        <article class="p-node p-connect" style="--i:2">
+          <div class="p-meta"><span class="p-kicker">Coding</span><span class="p-num">03</span></div>
+          <h4 class="p-title">Stance code</h4>
+          <p class="p-text">Judged as CD, D, N, A, or CA.</p>
+        </article>
+        <article class="p-node p-connect" style="--i:3">
+          <div class="p-meta"><span class="p-kicker">Features</span><span class="p-num">04</span></div>
+          <h4 class="p-title">VAA vector</h4>
+          <p class="p-text">A structured feature vector in the selected wave.</p>
+        </article>
+        <article class="p-node p-connect" style="--i:4">
+          <div class="p-meta"><span class="p-kicker">Model</span><span class="p-num">05</span></div>
+          <h4 class="p-title">CHES projection</h4>
+          <p class="p-text">The regression instrument maps answers to coordinates.</p>
+        </article>
+        <article class="p-node p-end" style="--i:5">
+          <div class="p-meta"><span class="p-kicker">Analysis</span><span class="p-num">06</span></div>
+          <h4 class="p-title">Geometry</h4>
+          <p class="p-text">Displacement, dispersion, hull volume, drift.</p>
+        </article>
+      </div>
+      <p class="process__note">
+        Repeating the path under controlled changes of context is what turns a single reading into a distribution.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 py-14 border-t border-neutral-200">
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-10 lg:gap-16 items-start">
+      <div>
+        <div class="section-num mb-3">// References</div>
+        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">Sources for deeper study</h2>
+        <p class="text-sm leading-relaxed text-neutral-600">These links point to the data infrastructures, survey documentation, and readings behind the method.</p>
+      </div>
+      <div class="card overflow-x-auto">
+        <table class="study">
+          <thead><tr><th>Topic</th><th>Reference</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td>CHES</td><td><a class="ul-link" href="https://www.chesdata.eu/ches-europe">CHES Europe data infrastructure</a></td><td>Party-position data and expert-survey context.</td></tr>
+            <tr><td>EU&I / euandi</td><td><a class="ul-link" href="https://euandi.eu/en/about/overview.html">EU&I overview</a></td><td>Transnational VAA background and public questionnaire framing.</td></tr>
+            <tr><td>EUI VAA project</td><td><a class="ul-link" href="https://europeangovernanceandpolitics.eui.eu/project/research-and-impact-through-european-wide-and-national-voting-advice-applications-euandi/">Research and impact through VAAs</a></td><td>How VAAs produce scientific data for European political research.</td></tr>
+            <tr><td>CHES trend file</td><td><a class="ul-link" href="https://hooghe.web.unc.edu/wp-content/uploads/sites/11492/2021/11/2021_Jolly-et-al_-Chapel-Hill-Expert-Survey-trend-file-1999-2019.pdf">Jolly et al., 1999-2019 trend file</a></td><td>Longitudinal party-position infrastructure.</td></tr>
+            <tr><td>CHES 2024</td><td><a class="ul-link" href="https://www.maxwell.syr.edu/research/article/the-2024-chapel-hill-expert-survey-on-political-party-positioning-in-europe">2024 CHES survey note</a></td><td>Recent wave and expanded country/party coverage.</td></tr>
+            <tr><td>VAA ethics</td><td><a class="ul-link" href="https://pubmed.ncbi.nlm.nih.gov/39308758/">Trustworthy-AI assessment of European VAAs</a></td><td>Normative and transparency concerns around advice systems.</td></tr>
+            <tr><td>Project models</td><td><a class="ul-link" href="../../models/readme.md">Released transformation model README</a></td><td>Architecture, training, inference, and software details.</td></tr>
+            <tr><td>Project paper</td><td><a class="ul-link" href="https://arxiv.org/abs/2606.28335">LLM-Ideoplasticity on arXiv</a></td><td>Full empirical framework and results.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 pb-20">
+    <div class="border-y border-neutral-900 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <div class="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-neutral-500 mb-2">Apply the instrument</div>
+        <p class="font-display text-2xl text-neutral-950 leading-snug">Ready to see a projected coordinate?</p>
+      </div>
+      <a href="../test/" class="inline-flex shrink-0 items-center justify-center border border-neutral-950 bg-neutral-950 px-5 py-3 text-sm font-medium text-white hover:bg-neutral-800 transition-colors">Take your test</a>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-neutral-200">
+  <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between gap-4 text-xs text-neutral-500">
+    <p>LLM-Ideoplasticity VAA-CHES study guide.</p>
+    <p><a href="../index.html" class="ul-link">Project website</a></p>
+  </div>
+</footer>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const plotConfig = {
+    responsive: true,
+    displaylogo: false,
+    displayModeBar: false,
+  };
+
+  function drawSpace() {
+    const axes = [
+      axisTrace([0, 1], [0.5, 0.5], [0.5, 0.5], '#00B8D4'),
+      axisTrace([0.5, 0.5], [0, 1], [0.5, 0.5], '#8B5CF6'),
+      axisTrace([0.5, 0.5], [0.5, 0.5], [0, 1], '#F472B6'),
+    ];
+
+    const anchors = {
+      x: [0, 1, 0.5, 0.5, 0.5, 0.5],
+      y: [0.5, 0.5, 0, 1, 0.5, 0.5],
+      z: [0.5, 0.5, 0.5, 0.5, 0, 1],
+      text: ['Left', 'Right', 'Economic left', 'Economic right', 'GAL', 'TAN'],
+      mode: 'markers+text',
+      type: 'scatter3d',
+      marker: { size: 4, color: '#0A0A0A' },
+      textfont: { family: 'Inter, sans-serif', size: 11, color: '#3f3f46' },
+      textposition: 'top center',
+      hoverinfo: 'skip',
+      showlegend: false,
+    };
+
+    const midpoint = {
+      x: [0.5], y: [0.5], z: [0.5],
+      mode: 'markers',
+      type: 'scatter3d',
+      marker: { size: 5, color: '#ffffff', line: { color: '#0A0A0A', width: 1.5 } },
+      hoverinfo: 'skip',
+      showlegend: false,
+    };
+
+    const layout = {
+      margin: { l: 0, r: 0, t: 8, b: 0 },
+      paper_bgcolor: '#ffffff',
+      plot_bgcolor: '#ffffff',
+      scene: {
+        bgcolor: '#ffffff',
+        xaxis: axisLayout('lrgen', 'Left', 'Right'),
+        yaxis: axisLayout('lrecon', 'Econ left', 'Econ right'),
+        zaxis: axisLayout('galtan', 'GAL', 'TAN'),
+        camera: { eye: { x: 1.6, y: 1.45, z: 1.05 } },
+        aspectmode: 'cube',
+      },
+      showlegend: false,
+    };
+
+    Plotly.newPlot('spacePlot', [...axes, anchors, midpoint], layout, plotConfig);
+    if (!reduceMotion) rotateScene('spacePlot', 1.75, 0.0075);
+  }
+
+  function axisTrace(x, y, z, color) {
+    return {
+      x, y, z,
+      mode: 'lines',
+      type: 'scatter3d',
+      line: { color, width: 6 },
+      hoverinfo: 'skip',
+      showlegend: false,
+    };
+  }
+
+  function axisLayout(title, lowLabel, highLabel) {
+    return {
+      title: { text: title, font: { family: 'JetBrains Mono, monospace', size: 11, color: '#0A0A0A' } },
+      range: [0, 1],
+      tickmode: 'array',
+      tickvals: [0, 0.5, 1],
+      ticktext: [lowLabel, '0.5', highLabel],
+      gridcolor: '#ededf0',
+      zeroline: false,
+      linecolor: '#d4d4d8',
+      tickfont: { family: 'Inter, sans-serif', size: 10, color: '#71717a' },
+    };
+  }
+
+  function rotateScene(plotId, radius, speed) {
+    const el = document.getElementById(plotId);
+    let angle = 0.6;
+    let paused = false;
+    el.addEventListener('pointerdown', () => { paused = true; });
+    el.addEventListener('mouseenter', () => { paused = true; });
+    el.addEventListener('mouseleave', () => { paused = false; });
+
+    window.setInterval(() => {
+      if (paused || document.hidden) return;
+      Plotly.relayout(plotId, {
+        'scene.camera.eye': {
+          x: radius * Math.cos(angle),
+          y: radius * Math.sin(angle),
+          z: 1.05,
+        },
+      });
+      angle += speed;
+    }, 90);
+  }
+
+  function drawWaves() {
+    const years = ['2009', '2014', '2019'];
+    const parties = [153, 141, 122];
+    const features = [30, 30, 22];
+    const narrow = window.innerWidth < 640;
+
+    Plotly.newPlot('wavePlot', [
+      {
+        x: years,
+        y: parties,
+        type: 'bar',
+        name: 'Reference parties',
+        width: 0.46,
+        marker: { color: 'rgba(0,184,212,0.85)', line: { color: '#00A5BF', width: 1 } },
+        hovertemplate: '%{x} wave<br>%{y} reference parties<extra></extra>',
+      },
+      {
+        x: years,
+        y: features,
+        type: 'scatter',
+        mode: 'lines+markers',
+        name: 'Statement features',
+        yaxis: 'y2',
+        marker: { color: '#F472B6', size: 9, line: { color: '#ffffff', width: 2 } },
+        line: { color: '#F472B6', width: 2.5 },
+        hovertemplate: '%{x} wave<br>%{y} statement features<extra></extra>',
+      },
+    ], {
+      margin: { l: narrow ? 44 : 58, r: narrow ? 40 : 54, t: 46, b: 44 },
+      paper_bgcolor: '#ffffff',
+      plot_bgcolor: '#ffffff',
+      font: { family: 'Inter, sans-serif', color: '#0A0A0A', size: 11 },
+      bargap: 0.5,
+      hovermode: 'x unified',
+      xaxis: {
+        categoryorder: 'array',
+        categoryarray: years,
+        showgrid: false,
+        linecolor: '#e4e4e7',
+        ticks: 'outside',
+        tickcolor: '#e4e4e7',
+        tickfont: { family: 'JetBrains Mono, monospace', size: 11, color: '#3f3f46' },
+        automargin: true,
+      },
+      yaxis: {
+        range: [0, 180],
+        dtick: 60,
+        gridcolor: '#f0f0f2',
+        zeroline: false,
+        tickfont: { size: 10, color: '#71717a' },
+        automargin: true,
+      },
+      yaxis2: {
+        overlaying: 'y',
+        side: 'right',
+        range: [0, 36],
+        dtick: 12,
+        showgrid: false,
+        zeroline: false,
+        tickfont: { size: 10, color: '#71717a' },
+        automargin: true,
+      },
+      legend: {
+        orientation: 'h',
+        y: 1.16,
+        x: 0,
+        font: { size: 11, color: '#3f3f46' },
+      },
+    }, plotConfig);
+  }
+
+  if (window.Plotly) {
+    drawSpace();
+    drawWaves();
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(drawWaves, 250);
+    });
+  }
+</script>
+</body>
+</html>

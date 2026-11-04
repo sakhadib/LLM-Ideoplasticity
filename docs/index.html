@@ -128,6 +128,7 @@
     background: #fff;
     border: 1px solid #ececec;
     border-radius: 14px;
+    min-width: 0;
     transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
   }
   .card:hover {
@@ -198,6 +199,14 @@
     overflow-x: auto;
   }
 
+  pre {
+    box-sizing: border-box;
+    display: block;
+    max-width: 100%;
+    min-width: 0;
+    white-space: pre;
+  }
+
   /* Caption */
   .caption {
     font-size: 0.82rem;
@@ -266,24 +275,21 @@
 <!-- ============================================================== -->
 <!-- TOP BAR -->
 <!-- ============================================================== -->
-<header class="border-b border-neutral-200 bg-white/70 backdrop-blur sticky top-0 z-40">
-  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="w-2.5 h-2.5 rounded-full" style="background: linear-gradient(135deg, #00E5FF 0%, #C9B6FF 60%, #FFD6E0 100%);"></div>
-      <span class="font-mono text-xs tracking-widest text-neutral-700 uppercase">LLM-Ideoplasticity</span>
-    </div>
-    <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-neutral-600">
-      <a href="#overview" class="hover:text-black">Overview</a>
-      <a href="#framework" class="hover:text-black">Framework</a>
-      <a href="#coordinate-system" class="hover:text-black">VAA-CHES</a>
-      <a href="#cohort" class="hover:text-black">Models</a>
-      <a href="#results" class="hover:text-black">Results</a>
-      <a href="#repository" class="hover:text-black">Repository</a>
-      <a href="#scope" class="hover:text-black">Scope</a>
+<header class="border-b border-neutral-200 bg-white/85 backdrop-blur sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-3 min-w-0">
+      <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background: linear-gradient(135deg, #00E5FF 0%, #C9B6FF 60%, #FFD6E0 100%);"></span>
+      <span class="hidden sm:inline font-mono text-xs tracking-widest text-neutral-700 uppercase truncate">LLM-Ideoplasticity</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-1 rounded-full border border-neutral-200 bg-neutral-50/80 p-1 text-xs font-medium text-neutral-600">
+      <a href="index.html" class="rounded-full bg-neutral-950 px-3 py-1.5 text-white">Home</a>
+      <a href="vaa-ches/" class="rounded-full px-3 py-1.5 hover:bg-white hover:text-neutral-950">VAA-CHES Guide</a>
+      <a href="test/" class="rounded-full px-3 py-1.5 hover:bg-white hover:text-neutral-950">Take Test</a>
     </nav>
     <div class="flex items-center gap-2">
-      <a href="https://arxiv.org/pdf/2606.28335" class="tag hover:border-neutral-400">PDF</a>
+      <a href="https://arxiv.org/pdf/2606.28335" class="tag hover:border-neutral-400">Paper</a>
       <a href="https://github.com/sakhadib/LLM-Ideoplasticity" class="tag hover:border-neutral-400">Code</a>
+      <a href="test/" class="tag lg:hidden hover:border-neutral-400">Test</a>
     </div>
   </div>
 </header>
@@ -371,35 +377,73 @@
 <!-- ============================================================== -->
 <!-- OVERVIEW -->
 <!-- ============================================================== -->
-<section id="overview" class="max-w-6xl mx-auto px-6 pb-20">
-  <div class="card p-6 md:p-10 tint-cyan">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
+<section id="overview" class="max-w-7xl mx-auto px-6 pb-24">
+  <div class="border-t border-neutral-900 pt-10 md:pt-12">
+    <div class="grid lg:grid-cols-[0.36fr_0.64fr] gap-8 lg:gap-16 items-start">
       <div>
-        <div class="section-num mb-3">// Overview</div>
-        <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight mb-5">From a point to a distribution</h2>
-        <div class="prose-academic text-neutral-800 text-[1.02rem] leading-[1.8] text-justify">
-          <p>
-            The paper argues that an LLM's expressed political position is better modeled as a context-conditioned
-            distribution rather than a single, fixed ideological coordinate. The framework projects model responses
-            into a shared European political space and measures how those coordinates move with prompt register,
-            paraphrase, reasoning, language, conversational pressure, and argumentative role.
-          </p>
-          <div class="eqn-box my-4">
-            $$\mathbb{P}(\text{position}\mid\text{context})$$
-          </div>
-          <p>
-            The result is a geometry of political behavior: local context can move models substantially, yet the pooled
-            model cohort remains compressed relative to European party diversity.
-          </p>
-        </div>
+        <div class="section-num mb-4">// Overview</div>
+        <h2 class="font-display text-4xl md:text-5xl font-medium leading-tight tracking-tight">
+          Ideology as a conditional output space
+        </h2>
       </div>
       <div>
-        <img src="asset/f1.svg" alt="Comparison of European political-party and evaluated-LLM ideological contours in VAA-CHES space" class="w-full">
-        <img src="asset/f1-2.svg" alt="Evaluated LLM ideological contours in VAA-CHES space" class="w-full mt-4">
+        <p class="font-display text-2xl md:text-3xl leading-snug text-neutral-900">
+          The paper replaces the static political-coordinate view of language models with a distributional account:
+          what a model expresses depends on the context used to elicit it.
+        </p>
+        <div class="mt-8 grid md:grid-cols-3 gap-0 border-y border-neutral-200">
+          <div class="py-5 md:pr-6 md:border-r border-neutral-200">
+            <div class="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-neutral-500 mb-2">Estimand</div>
+            <div class="font-display text-xl text-neutral-950">$\mathbb{P}(\text{position}\mid\text{context})$</div>
+          </div>
+          <div class="py-5 md:px-6 md:border-r border-neutral-200">
+            <div class="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-neutral-500 mb-2">Instrument</div>
+            <div class="text-sm leading-relaxed text-neutral-700">A shared VAA-CHES projection onto <span class="font-mono">lrgen</span>, <span class="font-mono">lrecon</span>, and <span class="font-mono">galtan</span>.</div>
+          </div>
+          <div class="py-5 md:pl-6">
+            <div class="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-neutral-500 mb-2">Finding</div>
+            <div class="text-sm leading-relaxed text-neutral-700">Substantial local movement inside a globally compressed model envelope.</div>
+          </div>
+        </div>
+        <p class="mt-7 text-[1.02rem] leading-[1.85] text-neutral-700 text-justify">
+          Responses are measured across prompt register, paraphrase, reasoning, language, conversational pressure,
+          and argumentative role. The resulting geometry separates two facts that static audits often collapse:
+          context can move projected positions, and the pooled cohort can still occupy a much narrower region than
+          European party diversity.
+        </p>
       </div>
     </div>
-    <div class="caption">
-      <b>Algorithmic monoculture teaser.</b> Cyan contours show European Parliament parties; magenta contours show the evaluated LLM cohort.
+
+    <figure class="mt-10 md:mt-12">
+      <div class="border border-neutral-300 bg-white p-3 md:p-5">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-neutral-200 pb-4 mb-5">
+          <div class="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-neutral-500">Figure 1 / VAA-CHES contour comparison</div>
+          <div class="flex flex-wrap items-center gap-4 text-xs text-neutral-600">
+            <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-cyan-electric"></span>European Parliament parties</span>
+            <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-full" style="background:#d946ef"></span>Evaluated LLM cohort</span>
+          </div>
+        </div>
+        <img src="asset/algo_monoculture_teaser_animated.gif" alt="Rotating three-dimensional contour comparison of European Parliament party positions and evaluated-LLM positions in VAA-CHES space" class="block w-full" style="aspect-ratio: 1100 / 329; object-fit: contain;">
+      </div>
+      <figcaption class="mt-5 grid md:grid-cols-[0.26fr_0.74fr] gap-3 md:gap-8 text-sm leading-relaxed text-neutral-600">
+        <div class="font-semibold text-neutral-900">Evidence of algorithmic monoculture.</div>
+        <div>
+          Rotating three-dimensional contour plots compare European Parliament party positions with the evaluated
+          LLM cohort in the same political space. The volumetric disparity visualizes the paper's central result:
+          local ideological plasticity coexists with severe compression relative to human political diversity.
+        </div>
+      </figcaption>
+    </figure>
+    <div class="mt-8 border-y border-neutral-900 py-5">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <div class="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-neutral-500 mb-2">Interactive CHES projection</div>
+          <p class="font-display text-2xl text-neutral-950 leading-snug">Take your test and plot your position in the paper's coordinate space.</p>
+        </div>
+        <a href="test/" class="inline-flex shrink-0 items-center justify-center border border-neutral-950 bg-neutral-950 px-5 py-3 text-sm font-medium text-white hover:bg-neutral-800 transition-colors">
+          Take your test
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -521,6 +565,18 @@
     Three year-specific bagged multi-output ElasticNet regressors provide the shared projection instrument. Keeping projection fixed makes relative displacement and dispersion the primary quantities of interest; absolute coordinates are instrument outputs, not ground-truth ideological labels. See <a href="https://arxiv.org/pdf/2606.28335" class="ul-link">Section 3.1 and Appendix B</a> for design and diagnostics.
   </p>
 
+  <div class="mt-8 border-y border-neutral-900 py-5">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <div class="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-neutral-500 mb-2">Study the instrument</div>
+        <p class="font-display text-2xl text-neutral-950 leading-snug">Learn how VAAs and CHES define the coordinate system used throughout this project.</p>
+      </div>
+      <a href="vaa-ches/" class="inline-flex shrink-0 items-center justify-center border border-neutral-950 bg-neutral-950 px-5 py-3 text-sm font-medium text-white hover:bg-neutral-800 transition-colors">
+        Read the guide
+      </a>
+    </div>
+  </div>
+
   <div class="card p-7 tint-lilac mt-8">
     <h3 class="font-display text-2xl font-medium mb-4">Data Foundation</h3>
     <p class="text-sm text-neutral-700 leading-relaxed text-justify">
@@ -575,7 +631,7 @@
     </p>
 
     <div class="card p-6 md:p-10 tint-cyan mb-10">
-      <img src="asset/f4-1.svg" alt="European party and evaluated-LLM convex hulls across the 2009, 2014, and 2019 projection spaces" class="w-full">
+      <img src="asset/polytope_separate_compressed.gif" alt="Rotating year-specific convex hulls comparing European political parties with the pooled nine-model LLM cohort in the 2009, 2014, and 2019 VAA-CHES projection spaces" class="w-full">
       <img src="asset/f4-2.svg" alt="2D European party and evaluated-LLM convex hulls across projection spaces" class="w-full mt-6">
       <div class="caption">
         <b>Temporal stability of algorithmic monoculture.</b> Across all three projection spaces, the evaluated LLM cohort occupies a substantially narrower region than the European party reference set.
@@ -610,6 +666,7 @@
       <thead><tr><th>Path</th><th>Contents</th></tr></thead>
       <tbody>
         <tr><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/notebooks" class="ul-link">notebooks/</a></td><td>Seven Google Colab-oriented notebooks covering projection, generation, judging, and analysis.</td></tr>
+        <tr><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/models" class="ul-link">models/</a></td><td>Released VAA-CHES transformation models for 2009, 2014, and 2019; free to use under the repository <a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/LICENSE" class="ul-link">CC BY-SA 4.0 license</a>.</td></tr>
         <tr><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/Runs" class="ul-link">Runs/</a></td><td>Materialized model responses and derived experiment artifacts; contents vary by experiment.</td></tr>
         <tr><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/images" class="ul-link">images/</a></td><td>Compact README figures from the paper.</td></tr>
         <tr><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/docs" class="ul-link">docs/</a></td><td>This static project website and its visual assets.</td></tr>
@@ -621,7 +678,7 @@
     <table class="results">
       <thead><tr><th>Stage</th><th>Notebook</th><th>Primary checked-in artifact</th></tr></thead>
       <tbody>
-        <tr><td>VAA-CHES projection</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/1_Models_Over_VAA_CHESS.ipynb" class="ul-link">1_Models_Over_VAA_CHESS.ipynb</a></td><td>Trained projection files are not included in the current tree.</td></tr>
+        <tr><td>VAA-CHES projection</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/1_Models_Over_VAA_CHESS.ipynb" class="ul-link">1_Models_Over_VAA_CHESS.ipynb</a></td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/tree/main/models" class="ul-link">models/</a> transformation artifacts.</td></tr>
         <tr><td>JBS and PSS</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/2_PSS%20and%20JBS.ipynb" class="ul-link">2_PSS and JBS.ipynb</a></td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/Runs/PSS/prompt_sensitivity_scores.csv" class="ul-link">prompt_sensitivity_scores.csv</a></td></tr>
         <tr><td>PIS</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/3_PIS.ipynb" class="ul-link">3_PIS.ipynb</a></td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/Runs/PIS/pis.csv" class="ul-link">Runs/PIS/pis.csv</a></td></tr>
         <tr><td>RSS</td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/notebooks/4_RSS.ipynb" class="ul-link">4_RSS.ipynb</a></td><td><a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/Runs/RSS/rss.csv" class="ul-link">Runs/RSS/rss.csv</a></td></tr>
@@ -636,7 +693,7 @@
   <div class="grid md:grid-cols-2 gap-6">
     <div class="card p-7 tint-cyan">
       <h3 class="font-display text-2xl font-medium mb-4">Clone Cached Artifacts</h3>
-      <p class="text-sm text-neutral-700 leading-relaxed mb-4">CSV and JSON artifacts are tracked with Git LFS.</p>
+      <p class="text-sm text-neutral-700 leading-relaxed mb-4">CSV, JSON, and serialized transformation artifacts are tracked with Git LFS. The released files in <span class="font-mono">models/</span> are free to use under the repository <a href="https://github.com/sakhadib/LLM-Ideoplasticity/blob/main/LICENSE" class="ul-link">CC BY-SA 4.0 license</a>.</p>
       <pre class="font-mono text-xs bg-white border border-neutral-200 rounded p-4 overflow-x-auto">git lfs install
 git clone https://github.com/sakhadib/LLM-Ideoplasticity.git
 cd LLM-Ideoplasticity
@@ -645,7 +702,7 @@ git lfs pull</pre>
     <div class="card p-7 tint-lilac">
       <h3 class="font-display text-2xl font-medium mb-4">Run the Notebooks</h3>
       <p class="text-sm text-neutral-700 leading-relaxed">
-        The notebooks were developed for a Google Colab-style environment and install dependencies inside individual cells. Update absolute <span class="font-mono">/Runs</span>, <span class="font-mono">/Datasets</span>, and <span class="font-mono">/Models</span> paths, supply VAA/CHES source datasets and serialized projection models where required, and configure provider credentials only when regenerating model responses.
+        The notebooks were developed for a Google Colab-style environment and install dependencies inside individual cells. Update absolute <span class="font-mono">/Runs</span>, <span class="font-mono">/Datasets</span>, and <span class="font-mono">/Models</span> paths, supply VAA/CHES source datasets where required, use the released projection models in <span class="font-mono">models/</span>, and configure provider credentials only when regenerating model responses.
       </p>
     </div>
   </div>

@@ -143,6 +143,7 @@ The per-model summary below consolidates PSS, PIS, RSS, JBS, LDS, DS, IAS, and O
 | Path | Contents |
 |:---|:---|
 | [`notebooks/`](notebooks/) | Seven Google Colab-oriented notebooks covering projection, generation, judging, and analysis |
+| [`models/`](models/) | Released VAA–CHES transformation models for 2009, 2014, and 2019; free to use under the repository [CC BY-SA 4.0 license](LICENSE) |
 | [`Runs/`](Runs/) | Materialized model responses and derived experiment artifacts; contents vary by experiment |
 | [`images/`](images/) | Compact README figures from the paper |
 | [`docs/`](docs/) | Static project website and its visual assets |
@@ -151,7 +152,7 @@ The per-model summary below consolidates PSS, PIS, RSS, JBS, LDS, DS, IAS, and O
 
 | Stage | Notebook | Primary checked-in artifact |
 |:---|:---|:---|
-| VAA–CHES projection | [`1_Models_Over_VAA_CHESS.ipynb`](notebooks/1_Models_Over_VAA_CHESS.ipynb) | Trained projection files are not included in the current tree |
+| VAA–CHES projection | [`1_Models_Over_VAA_CHESS.ipynb`](notebooks/1_Models_Over_VAA_CHESS.ipynb) | [`models/ideology_model_2009.pkl`](models/ideology_model_2009.pkl), [`models/ideology_model_2014.pkl`](models/ideology_model_2014.pkl), [`models/ideology_model_2019.pkl`](models/ideology_model_2019.pkl) |
 | JBS and PSS | [`2_PSS and JBS.ipynb`](notebooks/2_PSS%20and%20JBS.ipynb) | [`Runs/PSS/compiled_master_results.csv`](Runs/PSS/compiled_master_results.csv), [`prompt_sensitivity_scores.csv`](Runs/PSS/prompt_sensitivity_scores.csv) |
 | PIS | [`3_PIS.ipynb`](notebooks/3_PIS.ipynb) | [`Runs/PIS/pis.csv`](Runs/PIS/pis.csv) |
 | RSS | [`4_RSS.ipynb`](notebooks/4_RSS.ipynb) | [`Runs/RSS/rss.csv`](Runs/RSS/rss.csv) |
@@ -175,7 +176,7 @@ cd LLM-Ideoplasticity
 git lfs pull
 ```
 
-The checked-in files under `Runs/` can be inspected without model-provider credentials.
+The checked-in files under `Runs/` and the released transformation models under `models/` can be inspected without model-provider credentials. The `models/` artifacts are free to use under the repository [CC BY-SA 4.0 license](LICENSE).
 
 ### Run the notebooks
 
@@ -184,7 +185,7 @@ The notebooks were developed for a Google Colab-style environment and install th
 Before executing a notebook:
 
 1. Update its absolute `/Runs`, `/Datasets`, and `/Models` paths for your environment.
-2. Supply the referenced VAA/CHES source datasets and serialized projection models where required; `Datasets/` and `Models/` are not included in the current tree.
+2. Supply the referenced VAA/CHES source datasets where required. Serialized projection models are released under [`models/`](models/); external source datasets are not included in the current tree.
 3. To regenerate model responses, configure the relevant Replicate, OpenRouter, or Google Vertex/GenAI credentials in Colab Secrets.
 4. Skip API-backed generation cells when working only with cached outputs. Regeneration may incur provider charges.
 
@@ -235,4 +236,4 @@ We thank the Systems and Software Lab (SSL) at the Islamic University of Technol
 
 ## License
 
-The contents of this repository are released under the [Creative Commons Attribution-ShareAlike 4.0 International License](LICENSE). The arXiv manuscript’s deposit license is listed separately on its [arXiv record](https://arxiv.org/abs/2606.28335).
+The contents of this repository, including the released VAA–CHES transformation models under [`models/`](models/), are free to use under the [Creative Commons Attribution-ShareAlike 4.0 International License](LICENSE). The arXiv manuscript’s deposit license is listed separately on its [arXiv record](https://arxiv.org/abs/2606.28335).
