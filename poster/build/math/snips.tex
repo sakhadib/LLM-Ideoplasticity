@@ -1,0 +1,33 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage[active,tightpage]{preview}
+\setlength\PreviewBorder{0pt}
+\pagestyle{empty}
+\newsavebox\mb
+\newcommand\snip[1]{\sbox\mb{#1}\typeout{SNIP:\the\wd\mb,\the\ht\mb,\the\dp\mb}\begin{preview}\usebox\mb\end{preview}}
+\begin{document}
+\snip{$\mathcal{I}\subset\mathbb{R}^d$}
+\snip{$\displaystyle \mathbf{p}\sim\mathbb{P}(\cdot\mid\mathbf{c}),$}
+\snip{$\displaystyle \mathcal{C}=\mathcal{C}_1\times\cdots\times\mathcal{C}_k.$}
+\snip{$R^2$}
+\snip{$P_1$}
+\snip{$P_2$}
+\snip{$x$}
+\snip{$y$}
+\snip{$\displaystyle \mathrm{PSS}(m,c,s)=d(\mathbf{p}_{m,c,s},\,\mathbf{p}_{m,c_0,s})$}
+\snip{$\displaystyle \mathrm{PIS}(m,s)=\tfrac{1}{|\mathcal{V}|}\textstyle\sum_{v\in\mathcal{V}}d(\mathbf{p}_{m,s,v},\boldsymbol{\mu}_{m,s})$}
+\snip{$\displaystyle \mathrm{RSS}(m,s)=\text{CoT\_PIS}(m,s)\,/\,\mathrm{PIS}_{\text{direct}}(m,s)$}
+\snip{$\displaystyle \mathrm{LDS}(m,l,s)=d(\mathbf{p}_{m,l,s},\,\mathbf{p}_{m,l_0,s})$}
+\snip{$\displaystyle \text{NetDrift}=d(\mathbf{p}^{(8)},\mathbf{p}^{(1)}),\quad\text{Tort}=\text{Path}/\text{NetDrift}$}
+\snip{$\displaystyle \mathrm{IAS}(m,s)=J(a_{\text{for}})-J(a_{\text{against}})$}
+\snip{$|r|\le 0.21$}
+\snip{$r=0.41$}
+\snip{$r=-0.005$}
+\snip{$n=9$}
+\snip{$\mathrm{RSS}>1.2$}
+\snip{$\mathrm{RSS}<0.8$}
+\snip{$|\mathrm{IAS}|>0.15$}
+\end{document}

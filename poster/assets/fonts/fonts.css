@@ -1,0 +1,39 @@
+/* Poster fonts. Paths are relative to this file. Families match poster/src/tokens.css. */
+
+/* Fraunces, opsz 144, for large display: title, big numbers. */
+@font-face { font-family: 'Fraunces Poster'; font-weight: 400; font-style: normal; src: url('FrauncesPoster-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces Poster'; font-weight: 500; font-style: normal; src: url('FrauncesPoster-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces Poster'; font-weight: 600; font-style: normal; src: url('FrauncesPoster-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces Poster'; font-weight: 400; font-style: italic; src: url('FrauncesPoster-Italic.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces Poster'; font-weight: 500; font-style: italic; src: url('FrauncesPoster-MediumItalic.ttf') format('truetype'); }
+
+/* Fraunces, opsz 72, a middle ground: big stats, subtitle, thesis sentence. */
+@font-face { font-family: 'Fraunces Poster Mid'; font-weight: 500; font-style: normal; src: url('FrauncesPosterMid-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces Poster Mid'; font-weight: 600; font-style: normal; src: url('FrauncesPosterMid-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces Poster Mid'; font-weight: 500; font-style: italic; src: url('FrauncesPosterMid-MediumItalic.ttf') format('truetype'); }
+
+/* Fraunces, opsz 36, sturdier thin strokes for sizes below about 60 pt: section heads, card names. */
+@font-face { font-family: 'Fraunces Poster Text'; font-weight: 500; font-style: normal; src: url('FrauncesPosterText-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces Poster Text'; font-weight: 600; font-style: normal; src: url('FrauncesPosterText-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces Poster Text'; font-weight: 500; font-style: italic; src: url('FrauncesPosterText-MediumItalic.ttf') format('truetype'); }
+
+/* TeX Gyre Pagella (Palatino), converted to TrueType outlines so Chrome embeds it as TrueType, not Type 3. */
+@font-face { font-family: 'Pagella Poster'; font-weight: 400; font-style: normal; src: url('PagellaPoster-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Pagella Poster'; font-weight: 700; font-style: normal; src: url('PagellaPoster-Bold.ttf') format('truetype'); }
+@font-face { font-family: 'Pagella Poster'; font-weight: 400; font-style: italic; src: url('PagellaPoster-Italic.ttf') format('truetype'); }
+@font-face { font-family: 'Pagella Poster'; font-weight: 700; font-style: italic; src: url('PagellaPoster-BoldItalic.ttf') format('truetype'); }
+
+/* JetBrains Mono, for table numbers and chart numerals. */
+@font-face { font-family: 'JetBrains Mono Poster'; font-weight: 400; font-style: normal; src: url('JetBrainsMonoPoster-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'JetBrains Mono Poster'; font-weight: 500; font-style: normal; src: url('JetBrainsMonoPoster-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'JetBrains Mono Poster'; font-weight: 600; font-style: normal; src: url('JetBrainsMonoPoster-SemiBold.ttf') format('truetype'); }
+
+/* Noto Serif Bengali, for the Bangla example. */
+@font-face { font-family: 'Bangla Poster'; font-weight: 400; font-style: normal; src: url('BanglaPoster-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Bangla Poster'; font-weight: 600; font-style: normal; src: url('BanglaPoster-SemiBold.ttf') format('truetype'); }
+
+/* Latin Modern (LaTeX's default font), converted to TrueType outlines like Pagella: table and chart numerals, 	exttt lines. */
+@font-face { font-family: 'LM Roman Poster'; font-weight: 400; font-style: normal; src: url('LMRomanPoster-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'LM Roman Poster'; font-weight: 700; font-style: normal; src: url('LMRomanPoster-Bold.ttf') format('truetype'); }
+@font-face { font-family: 'LM Roman Poster'; font-weight: 400; font-style: italic; src: url('LMRomanPoster-Italic.ttf') format('truetype'); }
+@font-face { font-family: 'LM Mono Poster'; font-weight: 400; font-style: normal; src: url('LMMonoPoster-Regular.ttf') format('truetype'); }

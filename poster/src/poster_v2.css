@@ -1,0 +1,53 @@
+/* v2: an editorial refinement of the approved poster. Copy and data are unchanged. */
+:root {
+  --h-rule: 2mm;
+  --h-thesis: 43.2mm;
+  --h-fine: 26.5mm;
+}
+
+/* Let the central lockup breathe; retain the approved title scale. */
+.band { grid-template-columns: 160mm 1fr 90mm; column-gap: 14mm; }
+.iut { width: 162.23mm; margin-left: -1.70mm; }
+.qr { width: 90mm; }
+.band-left { gap: 9mm; }
+.plate { border-radius: 1.5mm; padding: 5.5mm 6mm; }
+.band-mid { gap: 7.5mm; }
+.tlink { gap: 3.4mm; }
+.who { gap: 2.3mm; }
+.thesis { gap: 3mm; }
+
+/* Consistent, quieter rules; the heading and its number remain the landmarks. */
+.sec { border-bottom-color: #CFD0E4; border-bottom-width: .28mm; }
+.sec .n { color: #8180DE; margin-right: .48em; }
+.box { border-radius: 1mm; border-width: .28mm; }
+.box-t { background: #6E65CE; }
+.box-b { padding-top: 3.2mm; padding-bottom: 3.6mm; }
+.s1 > p, .coord { line-height: 30pt; }
+.sidebar > .sec-block { margin-top: 1.5mm; }
+
+/* The six instruments read as paired editorial panels, with open sides. */
+.cards { column-gap: 16mm; row-gap: 10mm; }
+.card {
+  border: 0;
+  border-top: .45mm solid #A7A8F0;
+  border-bottom: .22mm solid #D9DAEC;
+  border-radius: 0;
+  padding: 3.4mm 0 2.8mm;
+}
+.c-head { margin-top: -.4mm; margin-bottom: 2.4mm; padding-left: 7mm; column-gap: 3mm; }
+.c-name { font-size: 31pt; }
+.c-axis { padding-right: 1mm; }
+.c-main { column-gap: 6mm; }
+.c-find { line-height: 30pt; }
+.c-formula { color: #374151; }
+.card > .bulb-c { left: -3.9mm; top: -4.7mm; }
+.dek-h .gh { font-size: 31pt; }
+.dek-rule::before { width: .22mm; margin-left: -.11mm; }
+
+/* Clean table rules and optically balanced fine print. */
+.t-first th, .t-first td { border-top-color: #CFD0DE; }
+.t-names th { border-bottom-color: #5445B5; }
+.fingerprints tr:last-child td, .fingerprints tr:last-child th { border-bottom-color: #5445B5; }
+.sw { border-radius: .3mm; border-width: .12mm; }
+.limits { color: #374151; }
+.closing { letter-spacing: -.002em; }

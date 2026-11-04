@@ -1,0 +1,24 @@
+math: 21 expressions, 22 placements, pdflatex cached (9dce7f4f9549aa33); TeX fonts ['LMMathExtension10-Regular', 'LMMathItalic10-Bold', 'LMMathItalic10-Regular', 'LMMathItalic7-Regular', 'LMMathSymbols10-Regular', 'LMMathSymbols7-Regular', 'LMRoman10-Bold', 'LMRoman10-Regular', 'LMRoman5-Regular', 'LMRoman7-Regular', 'MSBM10']
+stacks (mm of free height):
+  sidebar      h=591.6   free=44.5    | s1:53 bulbed:68 p2s:59 flips:125 s2 sec-block:130 coord:62 box jbs-box:50
+      gaps: bulbed=7.4 p2s=7.4 flips=7.4 s2 sec-block=7.6 coord=7.4 box jbs-box=7.4
+  stage        h=591.6   free=20.3    | hero:146 dek:69 local sec-bl:356
+      gaps: dek=9 local sec-bl=11.3
+spacing (mm of clear space between inks):
+  1From a Point to a Distribution    clear above  11.3   rule to content  4.9
+  2Measurement Framework             clear above  10.3   rule to content  4.4
+  3Local Plasticity                  clear above  13.4   rule to content  4.3
+  4Global Compression                clear above  10.7   rule to content  4.4
+  5Do the Metrics Cohere?            clear above  10.7   rule to content  4.4
+  6Per-Model Fingerprints            clear above  20.2   rule to content  4.1
+  7Why It Matters                    clear above  10.3   rule to content  4.1
+  closing line                       clear above  11.0   clear below   8.0
+  fine print to footer rule            5.1
+  dek: clear above  10.0   height  69.3 (ink)
+  thesis line: rule to ink  8.1; epigraph ink to next ink  8.0
+links: ['https://arxiv.org/abs/2606.28335', 'https://sakhadib.github.io/LLM-Ideoplasticity/', 'https://x.com/realRifatRaiyan', 'mailto:adibsakhawat@iut-dhaka.edu,rifatraiyan@iut-dhaka.edu,tahsinislam@iut-dhaka.edu,takiafarhin@iut-dhaka.edu,hasan@iut-dhaka.edu,hasank@iut-dhaka.edu', 'mailto:rifatraiyan@iut-dhaka.edu']
+flattened: 6622 x 9362 px, JPEG quality 92, 10.02 MB
+pages 1 | 2383.92 x 3370.08 pt | 3.10 MB | images 12 | font types ['Type0'] | TeX svgs 22
+fonts: ['AAAAAA+FrauncesPosterMid-MediumItalic', 'BAAAAA+PagellaPoster-Italic', 'CAAAAA+PagellaPoster-Regular', 'DAAAAA+FrauncesPosterText-Medium', 'EAAAAA+FrauncesPosterText-SemiBold', 'FAAAAA+FrauncesPosterText-MediumItalic', 'GAAAAA+BanglaPoster-Regular', 'HAAAAA+PagellaPoster-Bold', 'IAAAAA+FrauncesPosterMid-SemiBold', 'JAAAAA+LMRomanPoster-Regular', 'KAAAAA+LMRomanPoster-Bold', 'LAAAAA+FrauncesPosterMid-Medium', 'MAAAAA+FrauncesPoster-SemiBold', 'NAAAAA+TimesNewRomanPSMT', 'OAAAAA+LMMonoPoster-Regular']
+135 copy fields used; 10 table rows
+OK

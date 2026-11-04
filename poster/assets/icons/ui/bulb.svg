@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 34"><!-- Insight bulb for the LLM-Ideoplasticity poster: amber glass, lavender screw base, flat glow (no filters). A white keyline keeps it clear on coloured title bars. -->
+<g fill="none" stroke="#F2B33D" stroke-width="1.5" stroke-linecap="round"><path d="M12 .9V3.6"/><path d="M3.3 4.2L5.3 6.2"/><path d="M20.7 4.2L18.7 6.2"/></g>
+<circle cx="12" cy="14.6" r="11.2" fill="#FFD86B" opacity=".22"/>
+<circle cx="12" cy="14.6" r="10.2" fill="#FFD86B" opacity=".32"/>
+<path d="M12 6.2C7.2 6.2 3.5 9.8 3.5 14.5c0 2.9 1.3 5 3.1 6.8 1.1 1.1 1.6 2.2 1.7 3.6h-.2v5.5h.3v.3h1.7l.6 1.4c.2.4.6.7 1.1.7h.4c.5 0 .9-.3 1.1-.7l.6-1.4h1.7v-.3h.3v-5.5h-.2c.1-1.4.6-2.5 1.7-3.6 1.8-1.8 3.1-3.9 3.1-6.8 0-4.7-3.7-8.3-8.5-8.3z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M12 6.2C7.2 6.2 3.5 9.8 3.5 14.5c0 2.9 1.3 5 3.1 6.8 1.1 1.1 1.6 2.2 1.7 3.6h7.4c.1-1.4.6-2.5 1.7-3.6 1.8-1.8 3.1-3.9 3.1-6.8 0-4.7-3.7-8.3-8.5-8.3z" fill="#FFE7A8" stroke="#5445B5" stroke-width=".9" stroke-linejoin="round"/>
+<path d="M12 8.1c-3.8 0-6.6 2.8-6.6 6.4 0 1.4.4 2.6 1.1 3.6" fill="none" stroke="#FFF6D9" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M10.4 24.8l.3-5.3m2.9 5.3l-.3-5.3M10.7 19.5c.3-1.5 1.1-1.5 1.3-.1.2-1.4 1-1.4 1.3.1" fill="none" stroke="#C98A1B" stroke-width=".6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="8.1" y="24.8" width="7.8" height="2.7" rx="1.2" fill="#9194E4" stroke="#5445B5" stroke-width=".7"/>
+<rect x="8.4" y="27.4" width="7.2" height="2.7" rx="1.2" fill="#6E65CE" stroke="#5445B5" stroke-width=".7"/>
+<path d="M10.1 30.1h3.8l-.7 1.6c-.2.4-.6.7-1.1.7h-.2c-.5 0-.9-.3-1.1-.7z" fill="#5445B5"/>
+</svg>

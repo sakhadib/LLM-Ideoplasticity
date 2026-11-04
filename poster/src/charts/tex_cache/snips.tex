@@ -1,0 +1,26 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage[active,tightpage]{preview}
+\setlength\PreviewBorder{0pt}
+\pagestyle{empty}
+\newsavebox\snipbox
+
+\begin{document}
+\sbox\snipbox{$\mathbb{P}(\textit{position}\mid\textit{context})$}\typeout{SNIP:0:\the\wd\snipbox:\the\ht\snipbox:\the\dp\snipbox}
+\begin{preview}\usebox\snipbox\end{preview}
+\sbox\snipbox{$\langle \textit{lrgen},\ \textit{lrecon},\ \textit{galtan}\rangle$}\typeout{SNIP:1:\the\wd\snipbox:\the\ht\snipbox:\the\dp\snipbox}
+\begin{preview}\usebox\snipbox\end{preview}
+\sbox\snipbox{$\text{RSS}>1.2$}\typeout{SNIP:2:\the\wd\snipbox:\the\ht\snipbox:\the\dp\snipbox}
+\begin{preview}\usebox\snipbox\end{preview}
+\sbox\snipbox{$0.8\text{--}1.2$}\typeout{SNIP:3:\the\wd\snipbox:\the\ht\snipbox:\the\dp\snipbox}
+\begin{preview}\usebox\snipbox\end{preview}
+\sbox\snipbox{$\text{RSS}<0.8$}\typeout{SNIP:4:\the\wd\snipbox:\the\ht\snipbox:\the\dp\snipbox}
+\begin{preview}\usebox\snipbox\end{preview}
+\sbox\snipbox{$\text{PIS}_{\text{direct}}=0$}\typeout{SNIP:5:\the\wd\snipbox:\the\ht\snipbox:\the\dp\snipbox}
+\begin{preview}\usebox\snipbox\end{preview}
+\sbox\snipbox{$|\text{IAS}|>0.15$}\typeout{SNIP:6:\the\wd\snipbox:\the\ht\snipbox:\the\dp\snipbox}
+\begin{preview}\usebox\snipbox\end{preview}
+\end{document}

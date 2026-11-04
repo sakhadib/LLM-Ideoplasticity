@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LLM-Ideoplasticity poster, AACL-IJCNLP 2026</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../src/tokens.css">
+<link rel="stylesheet" href="../src/poster.css">
+</head>
+<body>
+<div class="page">
+
+<!-- ======================================== BAND ======================================== -->
+<header class="band" data-fit="band">
+  <div class="contours">{{chart:band_contours}}</div>
+  <div class="band-left">
+    <img class="iut" src="../assets/logos/iut_lockup_white.svg" alt="Islamic University of Technology">
+    <div class="plate"><img src="../assets/logos/aacl_2026_logo.svg" alt="AACL-IJCNLP 2026, Hengqin, China"></div>
+  </div>
+  <div class="band-mid" data-fit="band-mid">
+    <a class="tlink" href="https://arxiv.org/abs/2606.28335">
+      <h1 class="t1"><img class="plogo" src="../assets/logos/project_logo_band.png" alt="">{{c:band.title_main}}</h1>
+      <div class="t2">{{c:band.title_sub_1}}<br>{{c:band.title_sub_2}}</div>
+    </a>
+    <div class="who">
+      <div class="auth">{{c:band.authors}}</div>
+      <div class="aff">{{c:band.affiliation.0}}, {{c:band.affiliation.1}}</div>
+      <div class="mail"><a href="mailto:adibsakhawat@iut-dhaka.edu,rifatraiyan@iut-dhaka.edu,tahsinislam@iut-dhaka.edu,takiafarhin@iut-dhaka.edu,hasan@iut-dhaka.edu,hasank@iut-dhaka.edu">{{c:band.emails}}</a><span class="marks">{{c:band.marks_note}}</span></div>
+    </div>
+  </div>
+  <div class="band-right"><a href="https://sakhadib.github.io/LLM-Ideoplasticity/"><img class="qr" src="../assets/qr/qr_card_white_compact.svg" alt="QR code to the project page"></a></div>
+</header>
+<div class="rule rule-top"></div>
+
+<!-- ======================================== THESIS LINE AND EPIGRAPH ======================================== -->
+<div class="thesis" data-fit="thesis">
+  <div class="th-line">{{c:thesis_sentence.display}}</div>
+  <div class="th-epi">{{c:epigraph.one_line}}</div>
+</div>
+
+<!-- ======================================== UPPER: SIDEBAR + STAGE ======================================== -->
+<main class="upper">
+
+  <div class="sidebar" data-stack="sidebar" data-fit="sidebar">
+
+    <section class="s1">
+      <h2 class="sec"><span class="n">1</span>{{c:s1_intro.heading}}</h2>
+      <p>{{c:s1_intro.text}}</p>
+    </section>
+
+    <div class="bulbed">
+    <img class="bulb-c" src="../assets/icons/ui/bulb.svg" alt="">
+    <div class="box thesis-box">
+      <div class="box-t">{{c:box_thesis.title}}</div>
+      <div class="box-b">
+        <p>{{c:box_thesis.text_before}}</p>
+        <div class="formal">
+          <span class="f-a">{{c:box_thesis.formal_a}}</span>
+          <span class="eq">{{c:box_thesis.eq1}}</span>
+          <span class="f-b">{{c:box_thesis.formal_b}}</span>
+          <span class="eq">{{c:box_thesis.eq2}}</span>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <figure class="p2s">{{chart:point_to_shape}}</figure>
+
+    <section class="flips" data-fit="flips">
+      <h3 class="sub">{{c:flips.title}}</h3>
+      <div class="flip-who">{{c:flips.model}} <span class="judge">{{c:flips.judge_note}}</span></div>
+      <div class="flip">
+        <p class="flip-st">{{c:flips.reasoning_flip.statement}}</p>
+        {{likert:reasoning_flip}}
+      </div>
+      <div class="flip">
+        <p class="flip-st">{{c:flips.language_flip.statement}}</p>
+        {{likert:language_flip}}
+        <div class="flip-ex">
+          <p class="ex-en">{{c:flips.language_flip.excerpt_en}}</p>
+          <p class="ex-bn"><span class="bn">{{c:flips.language_flip.excerpt_bn_head}} … {{c:flips.language_flip.excerpt_bn_clause}}</span></p>
+          <p class="gloss">{{c:flips.language_flip.gloss}}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="s2 sec-block">
+      <h2 class="sec"><span class="n">2</span>{{c:s2_framework.heading}}</h2>
+      <div class="pipe-row">
+        <figure class="pipe">
+          {{chart:pipeline}}
+        </figure>
+        <div class="pipe-side">
+          <p>{{c:s2_framework.text}}</p>
+          <div class="cohort">
+            <p><b class="runin">{{c:cohort.subhead}}.</b> {{c:cohort.text}}</p>
+            <div class="models">
+              <span>{{c:cohort.models.0}}</span><span>{{c:cohort.models.5}}</span>
+              <span>{{c:cohort.models.1}}</span><span>{{c:cohort.models.6}}</span>
+              <span>{{c:cohort.models.2}}</span><span>{{c:cohort.models.7}}</span>
+              <span>{{c:cohort.models.3}}</span><span>{{c:cohort.models.8}}</span>
+              <span>{{c:cohort.models.4}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="coord">{{c:coord_system.text}}</p>
+
+
+    <div class="box jbs-box">
+      <div class="box-t">{{c:box_jbs.title}}<span class="box-note">{{c:box_jbs.title_note}}</span></div>
+      <div class="box-b"><p>{{c:box_jbs.text}}</p></div>
+    </div>
+
+  </div>
+
+  <div class="stage" data-stack="stage" data-fit="stage">
+
+    <figure class="hero">
+      <div class="panels">
+        <div class="panel">
+          <img src="../assets/figures/fig1a_parties.svg" alt="3D contours of European Parliament parties in VAA-CHES space">
+          <div class="subcap c-party">{{c:fig1.sub_a}}</div>
+        </div>
+        <div class="panel">
+          <img src="../assets/figures/fig1b_llms.svg" alt="3D contours of the nine evaluated LLMs in VAA-CHES space">
+          <div class="subcap c-llm">{{c:fig1.sub_b}}</div>
+        </div>
+      </div>
+      <figcaption class="cap"><b class="fig">Figure 1.</b> {{c:fig1.caption}}</figcaption>
+    </figure>
+
+    <div class="dek" data-fit="dek">
+      <div class="dek-half">
+        <div class="dek-h"><span class="gh">{{c:dek.local_head}}</span><span class="gp">{{c:dek.local_phrase}}</span></div>
+        <p>{{c:dek.local_text}}</p>
+      </div>
+      <div class="dek-rule" aria-hidden="true"><span class="dek-orn"></span></div>
+      <div class="dek-half">
+        <div class="dek-h"><span class="gh">{{c:dek.global_head}}</span><span class="gp">{{c:dek.global_phrase}}</span></div>
+        <p>{{c:dek.global_text}}</p>
+      </div>
+    </div>
+
+    <section class="local sec-block">
+      <h2 class="sec"><span class="n">3</span>{{c:s3_local.heading}}</h2>
+      <div class="lead">
+        <span class="rank">{{c:s3_local.text}}</span>
+        <span class="lead-key">
+          <svg class="mini-key" viewBox="0 0 13 13" width="13mm" height="13mm" aria-hidden="true">
+            <rect x="0" y="0" width="6.5" height="6.5" fill="#F9DCDC"/><rect x="6.5" y="0" width="6.5" height="6.5" fill="#DAE6F4"/>
+            <rect x="0" y="6.5" width="6.5" height="6.5" fill="#E0EFDD"/><rect x="6.5" y="6.5" width="6.5" height="6.5" fill="#FAF0CD"/>
+            <path d="M6.5 0V13M0 6.5H13" stroke="#282040" stroke-width=".22" opacity=".8"/>
+            <rect x=".11" y=".11" width="12.78" height="12.78" rx=".5" fill="none" stroke="#282040" stroke-width=".22" opacity=".55"/>
+          </svg>
+          <span class="key-text">{{c:coord_system.compass_caption}}</span>
+        </span>
+      </div>
+
+      <div class="cards">
+
+        <article class="card" data-fit="card-PSS">
+          <img class="bulb-c" src="../assets/icons/ui/bulb.svg" alt="">
+          <div class="c-head"><span class="c-name">PSS</span><span class="c-full">{{c:cards.PSS.full}}</span><span class="c-axis">{{c:cards.PSS.axis}}</span></div>
+          <div class="c-main">
+            <div class="c-fig">{{chart:pss_compass}}</div>
+            <div class="c-right c-text">
+              <div class="c-formula">{{c:cards.PSS.formula}}</div>
+              <p class="c-find">{{c:cards.PSS.finding}}</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-fit="card-PIS">
+          <img class="bulb-c" src="../assets/icons/ui/bulb.svg" alt="">
+          <div class="c-head"><span class="c-name">PIS</span><span class="c-full">{{c:cards.PIS.full}}</span><span class="c-axis">{{c:cards.PIS.axis}}</span></div>
+          <div class="c-main">
+            <div class="c-fig">{{chart:pis_compass}}</div>
+            <div class="c-right c-text">
+              <div class="c-formula">{{c:cards.PIS.formula}}</div>
+              <p class="c-find">{{c:cards.PIS.finding}}</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-fit="card-RSS">
+          <img class="bulb-c" src="../assets/icons/ui/bulb.svg" alt="">
+          <div class="c-head"><span class="c-name">RSS</span><span class="c-full">{{c:cards.RSS.full}}</span><span class="c-axis">{{c:cards.RSS.axis}}</span></div>
+          <div class="c-main">
+            <div class="c-fig">{{chart:rss_compass}}</div>
+            <div class="c-right">
+              <div class="c-formula">{{c:cards.RSS.formula}}</div>
+              <p class="c-find">{{c:cards.RSS.finding}}</p>
+              <div class="c-chart">{{chart:rss_waffle}}</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-fit="card-LDS">
+          <img class="bulb-c" src="../assets/icons/ui/bulb.svg" alt="">
+          <div class="c-head"><span class="c-name">LDS</span><span class="c-full">{{c:cards.LDS.full}}</span><span class="c-axis">{{c:cards.LDS.axis}}</span></div>
+          <div class="c-main">
+            <div class="c-fig">{{chart:lds_compass}}</div>
+            <div class="c-right">
+              <div class="c-formula">{{c:cards.LDS.formula}}</div>
+              <p class="c-find">{{c:cards.LDS.finding}}</p>
+              <div class="c-chart">{{chart:lds_bars}}</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-ds" data-fit="card-DS">
+          <img class="bulb-c" src="../assets/icons/ui/bulb.svg" alt="">
+          <div class="c-head"><span class="c-name">DS</span><span class="c-full">{{c:cards.DS.full}}</span><span class="c-axis">{{c:cards.DS.axis}}</span></div>
+          <div class="c-main">
+            <div class="c-fig">{{chart:ds_compass}}</div>
+            <div class="c-right c-text">
+              <div class="c-formula">{{c:cards.DS.formula}}</div>
+              <p class="c-find">{{c:cards.DS.finding}}</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-ias" data-fit="card-IAS">
+          <img class="bulb-c" src="../assets/icons/ui/bulb.svg" alt="">
+          <div class="c-head"><span class="c-name">IAS</span><span class="c-full">{{c:cards.IAS.full}}</span><span class="c-axis">{{c:cards.IAS.axis}}</span></div>
+          <div class="c-main">
+            <div class="c-fig">{{chart:ias_dumbbell}}</div>
+            <div class="c-right c-text">
+              <div class="c-formula">{{c:cards.IAS.formula}}</div>
+              <p class="c-find">{{c:cards.IAS.finding}}</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ======================================== LOWER: 2 x 2 ======================================== -->
+<div class="gap"></div>
+<div class="lower" data-fit="lower">
+
+  <section class="global sec-block" data-fit="global">
+    <h2 class="sec"><span class="n">4</span>{{c:s4_global.heading}}</h2>
+    <div class="g-grid">
+      <figure class="g-poly">
+        <img src="../assets/figures/polytope_3d.svg" alt="Convex hull of European parties enclosing the far smaller hull of the nine LLMs">
+      </figure>
+      <div class="g-right">
+        <p><img class="bulb-i" src="../assets/icons/ui/bulb.svg" alt="">{{c:s4_global.finding}} {{c:s4_global.temporal}} {{c:s4_global.monoculture}}</p>
+        <figure class="g-cov">{{chart:coverage_bars}}</figure>
+        <p class="cap g-cap"><b class="fig">Figure 2 (left).</b> {{c:s4_global.polytope_caption}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mtmm sec-block" data-fit="mtmm">
+    <h2 class="sec"><span class="n">5</span>{{c:s5_mtmm.heading}}</h2>
+    <div class="m-grid">
+      <div class="m-chart">{{chart:mtmm}}</div>
+      <div class="m-text"><p><img class="bulb-i" src="../assets/icons/ui/bulb.svg" alt="">{{c:s5_mtmm.text}} {{c:s5_mtmm.pca_caption}}</p></div>
+    </div>
+    <p class="cap m-cap"><b class="fig">Figure 3.</b> {{c:s5_mtmm.matrix_caption}}</p>
+  </section>
+
+  <section class="fp sec-block" data-fit="table">
+    <h2 class="sec"><span class="n">6</span>{{c:s6_table.heading}}</h2>
+    {{table|glyph=28}}
+    <div class="legend">
+      <span class="lg"><i class="sw hi-max"></i>{{c:s6_table.legend.1#1}}</span>
+      <span class="lg"><i class="sw hi-min"></i>{{c:s6_table.legend.2#1}}</span>
+      <span class="lg"><i class="sw hi-amp"></i>{{c:s6_table.legend.3#1}}</span>
+      <span class="lg"><i class="sw hi-stab"></i>{{c:s6_table.legend.4#1}}</span>
+      <span class="lg"><i class="sw hi-asym"></i>{{c:s6_table.legend.5#1}}</span>
+      <span class="lg">{{c:s6_table.legend.6#1}}</span>
+      <span class="lg lg-bold"><b>{{c:s6_table.legend.0#1}}</b></span>
+      <span class="lg lg-note">{{c:s6_table.note}}</span>
+    </div>
+  </section>
+
+  <section class="why sec-block" data-fit="why">
+    <h2 class="sec"><span class="n">7</span>{{c:s7_why.heading}}</h2>
+    <div class="why-body">
+      <p class="why-lead"><img class="bulb-i" src="../assets/icons/ui/bulb.svg" alt="">{{c:s7_why.map_lead}}</p>
+      <figure class="why-matrix">{{chart?:instrument_matrix|w=257.67,,h=75}}</figure>
+      <p class="why-tail">{{c:s7_why.map_tail}}</p>
+      <ul class="bul">
+        <li>{{c:s7_why.takeaways.0}}</li>
+        <li>{{c:s7_why.takeaways.1}}</li>
+      </ul>
+    </div>
+    <p class="limits"><b>{{c:limits.title}}.</b> {{c:limits.bullets.0}} {{c:limits.bullets.1}} {{c:limits.bullets.2}} {{c:limits.bullets.3}}</p>
+  </section>
+
+</div>
+
+<!-- ======================================== CLOSING AND FINE PRINT ======================================== -->
+<div class="closing" data-fit="closing"><span>{{c:s7_why.closing}}</span></div>
+
+<div class="fine" data-fit="fine">
+  <ol class="refs">
+    <li data-n="1">{{c:refs.items.0}}</li>
+    <li data-n="2">{{c:refs.items.1}}</li>
+    <li data-n="3">{{c:refs.items.2}}</li>
+  </ol>
+  <ol class="refs">
+    <li data-n="4">{{c:refs.items.3}}</li>
+    <li data-n="5">{{c:refs.items.4}}</li>
+  </ol>
+  <ol class="refs">
+    <li data-n="6">{{c:refs.items.5}}</li>
+    <li data-n="7">{{c:refs.items.6}}</li>
+    <li class="f-ack">{{c:ack.text}}</li>
+  </ol>
+</div>
+
+<div class="rule rule-foot"></div>
+<footer class="foot" data-fit="foot">
+  <div class="fl">Made with <img class="heart" src="../assets/icons/ui/heart_red.svg" alt="love"> by Sakhawat, Raiyan <i>et al.</i></div>
+  <div class="fc">{{c:footer.center}}</div>
+  <div class="fr"><a href="https://x.com/realRifatRaiyan"><img src="../assets/icons/ui/twitter_white.svg" alt="">{{c:footer.right_twitter}}</a><a class="env" href="mailto:rifatraiyan@iut-dhaka.edu"><img src="../assets/icons/ui/envelope_white.svg" alt="">{{c:footer.right_email}}</a></div>
+</footer>
+
+</div>
+</body>
+</html>

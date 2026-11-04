@@ -1,0 +1,48 @@
+/* Design tokens for the LLM-Ideoplasticity poster. Exact palette; see BRIEF.md. */
+:root {
+  /* The user's nine colours, as defined in the paper's LaTeX source */
+  --indigo: #211CBF;
+  --cyan: #74D2FA;
+  --violet: #7A4DFF;
+  --magenta: #EC8DFF;
+  --lav1: #A7A8F0;
+  --lav2: #9194E4;
+  --lav3: #8180DE;
+  --lav4: #6E65CE;
+  --lav5: #5445B5;
+
+  /* Semantic: cyan = human parties, magenta = LLMs */
+  --party: #74D2FA;
+  --party-deep: #1F94CC;
+  --party-tint: #EAF7FE;
+  --llm: #EC8DFF;
+  --llm-deep: #BC45D8;
+  --llm-tint: #FDF1FF;
+
+  /* Chrome and ink */
+  --band: #5445B5;
+  --ink: #111827;
+  --muted: #4B5563;
+  --hair: #D9DAEC;
+  --ground: #F5F5FE;
+
+  /* Table 1 highlights, from the paper */
+  --hi-max: #FFD1DC;
+  --hi-min: #C7E9F1;
+  --hi-amp: #FFE7A8;
+  --hi-stab: #D4EDC9;
+  --hi-asym: #E6D7F2;
+
+  /* The user's fixed brand gradient */
+  --brand-gradient: linear-gradient(90deg,
+    rgb(201,235,218) 0%,
+    rgb(173,223,222) 23%,
+    rgb(193,221,245) 46%,
+    rgb(233,186,241) 100%);
+
+  /* Families; @font-face rules live in assets/fonts/fonts.css */
+  --font-display: 'Fraunces Poster', 'Fraunces', Georgia, serif;
+  --font-text: 'Pagella Poster', 'TeX Gyre Pagella', 'Palatino Linotype', Palatino, serif;
+  --font-data: 'LM Mono Poster', 'Latin Modern Mono', monospace;
+  --font-num: 'LM Roman Poster', 'Latin Modern Roman', serif;
+}
