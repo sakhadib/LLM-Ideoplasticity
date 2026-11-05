@@ -8,6 +8,7 @@
 
 ### Measuring Ideological Plasticity in the Political Behavior of LLMs as a Context-Conditioned Distribution
 
+<a href="https://aclanthology.org/2026.aacl-long.145/"><img alt="ACL Anthology" src="https://img.shields.io/badge/ACL_Anthology-2026.aacl--long.145-ed1c24?style=flat&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OCA0NiI%2BPHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNDEuOTggMHYzLjAySDBWNDZoNjhWMzAuOTlINTYuOTlWMHpNMTUuMDEgMTcuOTloMjYuOTd2MTNIMTUuMDF6Ii8%2BPC9zdmc%2B"></a>
 <a href="https://arxiv.org/abs/2606.28335"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2606.28335-b31b1b?style=flat&logo=arxiv&logoColor=white"></a>
 <a href="https://sakhadib.github.io/LLM-Ideoplasticity/"><img alt="Project page" src="https://img.shields.io/badge/Project_Page-Website-00b8d4?style=flat&logo=githubpages&logoColor=white"></a>
 <a href="LICENSE"><img alt="License: CC BY-SA 4.0" src="https://img.shields.io/badge/License-CC_BY--SA_4.0-2b8a3e?style=flat"></a>
@@ -15,7 +16,9 @@
 
 </div>
 
-This repository contains the code and data of the paper titled “[LLM-Ideoplasticity: Measuring Ideological Plasticity in the Political Behavior of LLMs as a Context-Conditioned Distribution](https://arxiv.org/abs/2606.28335).”
+This repository contains the code and data for our **AACL-IJCNLP 2026 (Main Conference)** paper, “[LLM-Ideoplasticity: Measuring Ideological Plasticity in the Political Behavior of LLMs as a Context-Conditioned Distribution](https://aclanthology.org/2026.aacl-long.145/).”
+
+The paper received **99.6th-percentile ratings** in the ARR May 2026 cycle (**Top 62 / 17,087 submissions**).
 
 ## Overview
 
@@ -92,7 +95,7 @@ Three year-specific bagged multi-output ElasticNet regressors provide the shared
 | 2014 | 141 | 30 | 0.0195 | 0.7548 |
 | 2019 | 122 | 22 | 0.0174 | 0.8034 |
 
-Keeping the projection fixed makes relative displacement and dispersion the primary quantities of interest. Absolute coordinates should be read as outputs of this European political-space instrument, not as ground-truth ideological labels. See [§3.1 and Appendix B of the paper](https://arxiv.org/pdf/2606.28335) for the complete model design and diagnostics.
+Keeping the projection fixed makes relative displacement and dispersion the primary quantities of interest. Absolute coordinates should be read as outputs of this European political-space instrument, not as ground-truth ideological labels. See [§3.1 and Appendix B of the paper](https://aclanthology.org/2026.aacl-long.145.pdf) for the complete model design and diagnostics.
 
 ### Evaluated models and judge
 
@@ -220,17 +223,27 @@ We thank the Systems and Software Lab (SSL) at the Islamic University of Technol
 ## Citation
 
 ```bibtex
-@misc{sakhawat2026llmideoplasticity,
-  title         = {{LLM-Ideoplasticity}: Measuring Ideological Plasticity in the
-                   Political Behavior of {LLMs} as a Context-Conditioned Distribution},
-  author        = {Sakhawat, Adib and Raiyan, Syed Rifat and Islam, Tahsin and
-                   Farhin, Takia and Mahmud, Hasan and Hasan, Md Kamrul},
-  year          = {2026},
-  eprint        = {2606.28335},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CY},
-  doi           = {10.48550/arXiv.2606.28335},
-  url           = {https://arxiv.org/abs/2606.28335}
+@inproceedings{sakhawat-etal-2026-llm,
+    title = "{LLM}-Ideoplasticity: Measuring Ideological Plasticity in the Political Behavior of {LLM}s as a Context-Conditioned Distribution",
+    author = "Sakhawat, Adib  and
+      Raiyan, Syed Rifat  and
+      Islam, Tahsin  and
+      Farhin, Takia  and
+      Mahmud, Hasan  and
+      Hasan, Md Kamrul",
+    editor = "Zhang, Yue  and
+      Xu, Ruifeng  and
+      Purwarianti, Ayu  and
+      Rong, Tong  and
+      Suzuki, Jun",
+    booktitle = "Proceedings of the 15th International Joint Conference on Natural Language Processing and the 5th Conference of the {A}sia-Pacific Chapter of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)",
+    month = nov,
+    year = "2026",
+    address = "Hengqin, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.aacl-long.145/",
+    pages = "3167--3209",
+    ISBN = "979-8-89176-439-2"
 }
 ```
 
