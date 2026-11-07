@@ -8,6 +8,10 @@
 
 ### Measuring Ideological Plasticity in the Political Behavior of LLMs as a Context-Conditioned Distribution
 
+<p>
+  <a href="https://aclanthology.org/2026.aacl-long.145/"><img alt="Best Paper Award at AACL-IJCNLP 2026" src="images/badges/aacl-2026-best-paper.gif" width="270" height="36"></a>
+</p>
+
 <a href="https://aclanthology.org/2026.aacl-long.145/"><img alt="ACL Anthology" src="https://img.shields.io/badge/ACL_Anthology-2026.aacl--long.145-ed1c24?style=flat&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2OCA0NiI%2BPHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNDEuOTggMHYzLjAySDBWNDZoNjhWMzAuOTlINTYuOTlWMHpNMTUuMDEgMTcuOTloMjYuOTd2MTNIMTUuMDF6Ii8%2BPC9zdmc%2B"></a>
 <a href="https://arxiv.org/abs/2606.28335"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2606.28335-b31b1b?style=flat&logo=arxiv&logoColor=white"></a>
 <a href="https://sakhadib.github.io/LLM-Ideoplasticity/"><img alt="Project page" src="https://img.shields.io/badge/Project_Page-Website-00b8d4?style=flat&logo=githubpages&logoColor=white"></a>
@@ -16,7 +20,7 @@
 
 </div>
 
-This repository contains the code and data for our **AACL-IJCNLP 2026 (Main Conference)** paper, “[LLM-Ideoplasticity: Measuring Ideological Plasticity in the Political Behavior of LLMs as a Context-Conditioned Distribution](https://aclanthology.org/2026.aacl-long.145/).”
+This repository contains the code and data for our **AACL-IJCNLP 2026 (Main Conference)** paper, “[LLM-Ideoplasticity: Measuring Ideological Plasticity in the Political Behavior of LLMs as a Context-Conditioned Distribution](https://aclanthology.org/2026.aacl-long.145/),” which received the **Best Paper Award**.
 
 The paper received **99.6th-percentile ratings** in the ARR May 2026 cycle (**Top 62 / 17,087 submissions**).
 
